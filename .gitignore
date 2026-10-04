@@ -11,3 +11,5 @@ dist/
 
 # Cloudflare Pages / Wrangler
 .wrangler/
+
+tools/mcp-server-typescript/
