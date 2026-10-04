@@ -1,0 +1,13 @@
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+.agents/mcp_config.json
+
+# Node & dependencies
+node_modules/
+dist/
+.astro/
+
+# Cloudflare Pages / Wrangler
+.wrangler/

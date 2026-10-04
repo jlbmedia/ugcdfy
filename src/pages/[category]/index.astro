@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { HUBS, SPOKES, AFFILIATE_LINK, type HubPage } from '../../data/pages';
+
+export async function getStaticPaths() {
+  return Object.values(HUBS).map((hub) => ({
+    params: { category: hub.slug },
+    props: { hub }
+  }));
+}
+
+interface Props {
+  hub: HubPage;
+}
+
+const { hub } = Astro.props;
+const childSpokes = SPOKES.filter((s) => s.category === hub.slug);
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: hub.name, url: `/${hub.slug}/` }
+];
+---
+
+<BaseLayout
+  title={hub.title}
+  description={hub.metaDescription}
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-6">
+        <span>Category Hub • Comprehensive Directory</span>
+      </div>
+
+      <!-- Single H1 per page -->
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6">
+        {hub.h1}
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+        {hub.description}
+      </p>
+
+      <div class="inline-flex items-center justify-center gap-4">
+        <a
+          href={AFFILIATE_LINK}
+          class="px-8 py-3.5 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
+        >
+          Explore Room30 Turnkey Portfolio →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Child Spokes Grid -->
+  <section class="py-16 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white">
+            Specialized Guides & Use Cases
+          </h2>
+          <p class="text-slate-400 text-sm">
+            Select your specific situation below to view tailored blueprints and unit economics.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {childSpokes.map((spoke) => (
+          <a
+            href={`${spoke.categoryPath}${spoke.slug}/`}
+            class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:border-emerald-500/50 hover:bg-slate-900 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-3">
+                {spoke.badge}
+              </span>
+              <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                {spoke.h1}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 line-clamp-3 mb-4">
+                {spoke.heroHeadline}. {spoke.heroSubheadline}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-emerald-400">
+              <span>View Full Strategy</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

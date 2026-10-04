@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND_NAME, AFFILIATE_LINK, HUBS, SPOKES } from '../data/pages';
+
+const pageTitle = `Turnkey Faceless AI & Influencer Automation Systems | ${BRAND_NAME}`;
+const pageDescription = "Explore turnkey faceless AI influencer systems and video automation. Launch verified done-for-you digital assets in 24 hours with zero camera or tech skills.";
+
+const hubList = Object.values(HUBS);
+const featuredSpokes = SPOKES.slice(0, 6);
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={[{ name: "Home", url: "/" }]}
+>
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-brand-500/10 blur-3xl pointer-events-none -z-10 rounded-full"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>The 2026 Faceless Digital Asset Blueprint</span>
+      </div>
+
+      <!-- Single H1 on Homepage -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+        Turnkey Faceless AI Influencer & Content Automation Systems
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+        Build high-yielding virtual media assets and done-for-you cash flow portfolios without ever stepping on camera, editing videos, or writing code.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a
+          href={AFFILIATE_LINK}
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl shadow-emerald-500/20 active:scale-95"
+        >
+          <span>Claim Done-For-You AI Portfolio (24h Handover)</span>
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+        <a
+          href="#hubs"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 transition-colors"
+        >
+          Browse Architecture Hubs ↓
+        </a>
+      </div>
+
+      <!-- Trust Elements -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs text-slate-400">
+        <div><strong class="text-white font-bold">32,000+</strong> Global Members</div>
+        <div><strong class="text-white font-bold">24-Hour</strong> System Deployment</div>
+        <div><strong class="text-white font-bold">100% Faceless</strong> Zero Camera</div>
+        <div><strong class="text-white font-bold">Featured</strong> In Forbes & Entrepreneur</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4 Core Hubs Directory -->
+  <section id="hubs" class="py-20 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Explore Our Category Architecture
+        </h2>
+        <p class="text-slate-400 text-base">
+          Targeted frameworks engineered specifically for your technical comfort level and business goals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {hubList.map((hub) => (
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg mb-4 group-hover:scale-105 transition-transform">
+                ✦
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                {hub.name}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                {hub.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-emerald-400">
+              <a href={`/${hub.slug}/`} class="hover:underline flex items-center space-x-1">
+                <span>View {hub.name} Hub</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Compact Keyword Solutions -->
+  <section class="py-20 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Specialized Solutions</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
+            Tailored Blueprints by Persona & Industry
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2 md:mt-0 max-w-md">
+          Discover how Edward Sturm's compact keyword architecture maps exact solutions to specific searcher needs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {featuredSpokes.map((spoke) => (
+          <a
+            href={`${spoke.categoryPath}${spoke.slug}/`}
+            class="group rounded-2xl border border-slate-800 bg-slate-950 p-6 hover:border-emerald-500/50 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800 mb-3">
+                {spoke.audience}
+              </span>
+              <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                {spoke.h1}
+              </h3>
+              <p class="text-xs text-slate-400 line-clamp-2">
+                {spoke.heroHeadline}
+              </p>
+            </div>
+
+            <div class="pt-4 mt-6 border-t border-slate-800/80 text-xs font-semibold text-emerald-400 flex items-center justify-between">
+              <span>Read Full Breakdown</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Banner -->
+  <section class="py-16 bg-gradient-to-r from-emerald-950/40 via-slate-950 to-emerald-950/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+        Ready to Launch Your Turnkey AI Influencer Portfolio?
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+        Skip months of learning curves and complex setups. Get your complete income asset built, delivered, and live within 24 hours.
+      </p>
+      <a
+        href={AFFILIATE_LINK}
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
+      >
+        <span>Enroll in Room30 Today →</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

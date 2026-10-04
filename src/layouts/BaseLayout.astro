@@ -1,0 +1,192 @@
+---
+import { BRAND_NAME, AFFILIATE_LINK, HUBS, SPOKES } from '../data/pages';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  schemaType?: string;
+  schemaData?: Record<string, any>;
+  breadcrumbs?: { name: string; url: string }[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  schemaType = "WebPage",
+  schemaData,
+  breadcrumbs = []
+} = Astro.props;
+
+// Enforce meta description 120-158 length rule
+if (description.length < 120 || description.length > 158) {
+  console.warn(`[SEO Warning] Meta description for ${title} is ${description.length} chars (Target: 120-158)`);
+}
+
+const siteUrl = Astro.site?.origin || "https://facelessai.pages.dev";
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": crumb.name,
+    "item": new URL(crumb.url, siteUrl).toString()
+  }))
+} : null;
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": BRAND_NAME,
+  "url": siteUrl,
+  "description": "Enterprise and creator guide to AI influencer portfolios and faceless automation systems."
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={BRAND_NAME} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
+    {schemaData && (
+      <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    )}
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-500 selection:text-slate-950">
+    
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm">
+      <span>🚀 2026 Batch Open: Get Your Turnkey Faceless AI Influencer Portfolio Deployed in 24 Hours.</span>
+      <a href={AFFILIATE_LINK} class="underline font-bold ml-2 hover:text-emerald-100 transition-colors">
+        Claim Verified Access →
+      </a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center space-x-2 group">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center font-black text-slate-950 shadow-md">
+            AI
+          </div>
+          <span class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors">
+            {BRAND_NAME}
+          </span>
+        </a>
+
+        <!-- Desktop Navigation: Click Depth <= 1 for all Hubs -->
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+          <a href="/ai-influencers/" class="hover:text-white transition-colors">AI Influencers</a>
+          <a href="/faceless-automation/" class="hover:text-white transition-colors">Faceless Video</a>
+          <a href="/ai-income-systems/" class="hover:text-white transition-colors">Income Systems</a>
+          <a href="/reviews/" class="hover:text-white transition-colors">Audits & Reviews</a>
+        </nav>
+
+        <!-- CTA Header Button -->
+        <div class="flex items-center space-x-3">
+          <a
+            href={AFFILIATE_LINK}
+            class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-md shadow-emerald-500/20 active:scale-95"
+          >
+            Explore Room30 Offer
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Slot (Ensures exactly ONE h1 from child page) -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Comprehensive Footer (Zero Orphan Pages & Under 3 Clicks to Every Spoke) -->
+    <footer class="border-t border-slate-800 bg-slate-900/60 pt-12 pb-16 text-slate-400 text-xs sm:text-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <!-- Hub 1 -->
+          <div>
+            <a href="/ai-influencers/" class="font-bold text-slate-200 text-base hover:text-brand-400 block mb-3">
+              AI Influencers Hub →
+            </a>
+            <ul class="space-y-2">
+              <li><a href="/ai-influencers/for-agencies/" class="hover:text-slate-200">For Agencies</a></li>
+              <li><a href="/ai-influencers/for-beginners/" class="hover:text-slate-200">For Beginners</a></li>
+              <li><a href="/ai-influencers/for-creators/" class="hover:text-slate-200">For Creators</a></li>
+              <li><a href="/ai-influencers/for-freelancers/" class="hover:text-slate-200">For Freelancers</a></li>
+              <li><a href="/ai-influencers/for-startups/" class="hover:text-slate-200">For Startups</a></li>
+            </ul>
+          </div>
+
+          <!-- Hub 2 -->
+          <div>
+            <a href="/faceless-automation/" class="font-bold text-slate-200 text-base hover:text-brand-400 block mb-3">
+              Faceless Automation Hub →
+            </a>
+            <ul class="space-y-2">
+              <li><a href="/faceless-automation/for-beginners/" class="hover:text-slate-200">For Beginners</a></li>
+              <li><a href="/faceless-automation/for-introverts/" class="hover:text-slate-200">For Introverts</a></li>
+              <li><a href="/faceless-automation/for-professionals/" class="hover:text-slate-200">For Professionals</a></li>
+              <li><a href="/faceless-automation/for-teams/" class="hover:text-slate-200">For Teams</a></li>
+            </ul>
+          </div>
+
+          <!-- Hub 3 -->
+          <div>
+            <a href="/ai-income-systems/" class="font-bold text-slate-200 text-base hover:text-brand-400 block mb-3">
+              AI Income Systems Hub →
+            </a>
+            <ul class="space-y-2">
+              <li><a href="/ai-income-systems/for-professionals/" class="hover:text-slate-200">For Corporate Employees</a></li>
+              <li><a href="/ai-income-systems/for-parents/" class="hover:text-slate-200">For Busy Parents</a></li>
+              <li><a href="/ai-income-systems/for-accountants/" class="hover:text-slate-200">For Accountants & Skeptics</a></li>
+              <li><a href="/ai-income-systems/for-skeptics/" class="hover:text-slate-200">For Burned Buyers</a></li>
+            </ul>
+          </div>
+
+          <!-- Hub 4 -->
+          <div>
+            <a href="/reviews/" class="font-bold text-slate-200 text-base hover:text-brand-400 block mb-3">
+              Audits & Reviews Hub →
+            </a>
+            <ul class="space-y-2">
+              <li><a href="/reviews/room30-review/" class="hover:text-slate-200">Room30 System Audit</a></li>
+              <li><a href="/reviews/greg-cooke-ai-portfolio/" class="hover:text-slate-200">Greg Cooke Credibility Review</a></li>
+              <li><a href={AFFILIATE_LINK} class="text-brand-400 font-semibold hover:underline">Official Direct Offer Link</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs">
+          <p>© 2026 {BRAND_NAME}. Built with Edward Sturm's Compact Keywords methodology. Deployed on Cloudflare Pages.</p>
+          <p class="mt-2 sm:mt-0">Affiliate Disclosure: We may receive compensation if you make a purchase through our links at no additional cost to you.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

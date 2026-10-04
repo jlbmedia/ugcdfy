@@ -1,0 +1,97 @@
+---
+import { AFFILIATE_LINK } from '../data/pages';
+
+interface Props {
+  audience: string;
+  avatarContext: string;
+  painPoints: string[];
+  keyBenefits: string[];
+}
+
+const { audience, avatarContext, painPoints, keyBenefits } = Astro.props;
+---
+
+<section id="breakdown" class="py-16 md:py-24 bg-slate-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Introduction -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        Why Traditional Models Fail for {audience}
+      </h2>
+      <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+        {avatarContext}
+      </p>
+    </div>
+
+    <!-- 2-Column Pain vs Solution -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      
+      <!-- Pain Points Column -->
+      <div class="rounded-2xl bg-red-950/20 border border-red-900/30 p-8">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-6">
+          The Old DIY Struggle
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">What Sucks About Starting from Scratch</h3>
+        <ul class="space-y-4">
+          {painPoints.map((point) => (
+            <li class="flex items-start space-x-3 text-slate-300 text-sm sm:text-base">
+              <span class="text-red-400 font-bold text-lg mt-0.5">✕</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Turnkey Solution Column -->
+      <div class="rounded-2xl bg-emerald-950/20 border border-emerald-900/30 p-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
+          The Room30 Turnkey Advantage
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Built & Delivered In 24 Hours</h3>
+        <ul class="space-y-4">
+          {keyBenefits.map((benefit) => (
+            <li class="flex items-start space-x-3 text-slate-200 text-sm sm:text-base font-medium">
+              <span class="text-emerald-400 font-bold text-lg mt-0.5">✓</span>
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Before / After Transformation Grid -->
+    <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8 sm:p-10 mb-16">
+      <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-8">
+        Your Daily Transformation
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm sm:text-base">
+        <div class="space-y-3 p-4 rounded-xl bg-slate-950/50 border border-slate-800/80">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Before Room30</span>
+          <p class="text-slate-300 italic">"Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."</p>
+        </div>
+        <div class="space-y-3 p-4 rounded-xl bg-emerald-950/30 border border-emerald-800/40">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">After 24-Hour Setup</span>
+          <p class="text-emerald-200 font-medium">"Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mid-Page Conversion Trigger -->
+    <div class="text-center">
+      <a
+        href={AFFILIATE_LINK}
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl shadow-emerald-500/20 active:scale-95"
+      >
+        <span>Lock In Your Done-For-You AI Portfolio</span>
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+      <p class="text-xs text-slate-500 mt-3">Backed by 24-Hour Handover Guarantee & Dedicated Implementation</p>
+    </div>
+
+  </div>
+</section>

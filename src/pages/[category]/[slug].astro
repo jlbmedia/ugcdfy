@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboveTheFoldHero from '../../components/AboveTheFoldHero.astro';
+import FeaturesBreakdown from '../../components/FeaturesBreakdown.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import { SPOKES, HUBS, type SpokePage } from '../../data/pages';
+
+export async function getStaticPaths() {
+  return SPOKES.map((spoke) => ({
+    params: {
+      category: spoke.category,
+      slug: spoke.slug
+    },
+    props: { spoke }
+  }));
+}
+
+interface Props {
+  spoke: SpokePage;
+}
+
+const { spoke } = Astro.props;
+const hub = HUBS[spoke.category];
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: spoke.categoryName, url: spoke.categoryPath },
+  { name: spoke.h1, url: `${spoke.categoryPath}${spoke.slug}/` }
+];
+
+// Product / Software Schema for Google SERP
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Room30 AI Influencer Portfolio",
+  "operatingSystem": "Cloud-based / Web",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "175.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://room30.ai/offer?fpr=joseph65"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1420",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+---
+
+<BaseLayout
+  title={spoke.title}
+  description={spoke.metaDescription}
+  breadcrumbs={breadcrumbs}
+  schemaType="SoftwareApplication"
+  schemaData={productSchema}
+>
+  <!-- Above the fold: strictly confirms use case before scrolling -->
+  <AboveTheFoldHero
+    h1={spoke.h1}
+    badge={spoke.badge}
+    headline={spoke.heroHeadline}
+    subheadline={spoke.heroSubheadline}
+    audience={spoke.audience}
+  />
+
+  <!-- Pain points, transformation & benefits tailored to this exact avatar -->
+  <FeaturesBreakdown
+    audience={spoke.audience}
+    avatarContext={spoke.avatarContext}
+    painPoints={spoke.painPoints}
+    keyBenefits={spoke.keyBenefits}
+  />
+
+  <!-- Direct comparison table vs old DIY approaches -->
+  <ComparisonTable />
+
+  <!-- FAQ Accordion with rich FAQPage schema markup -->
+  <FAQAccordion faqList={spoke.faqList} />
+
+  <!-- Fixed bottom conversion anchor -->
+  <StickyCTA offerText={`Get your custom ${spoke.audience} AI portfolio built in 24 hours.`} />
+</BaseLayout>
