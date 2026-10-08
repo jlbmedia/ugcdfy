@@ -24,7 +24,7 @@ if (description.length < 120 || description.length > 158) {
   console.warn(`[SEO Warning] Meta description for ${title} is ${description.length} chars (Target: 120-158)`);
 }
 
-const siteUrl = Astro.site?.origin || "https://facelessai.pages.dev";
+const siteUrl = Astro.site?.origin || "https://ugcdfy.com";
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
 
 const breadcrumbSchema = breadcrumbs.length > 0 ? {
