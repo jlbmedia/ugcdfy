@@ -57,6 +57,16 @@ const websiteSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 
+    <!-- Google Analytics (GA4) & Search Console Verification -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG3LQ6GR9D"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YG3LQ6GR9D');
+    </script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
