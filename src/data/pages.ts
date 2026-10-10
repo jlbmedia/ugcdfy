@@ -65,7 +65,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Unbiased reviews, track record verifications, and performance audits of leading done-for-you AI business models and virtual influencer portfolios.",
     h1: "AI System Audits, Verifications & Reviews",
     description: "Independent breakdowns of turnkey AI influencer systems, examining earnings proof, refund policies, founder credibility, and real user outcomes.",
-    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing"]
+    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service"]
   }
 };
 
@@ -1035,6 +1035,41 @@ export const SPOKES: SpokePage[] = [
       {
         question: "Can I manage this during the busy school semester?",
         answer: "Yes. With turnkey automation handling video generation and funnels, maintenance takes only 15 minutes a day."
+      }
+    ]
+  },
+  {
+    slug: "room30-done-for-you-service",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "room30 done for you ai influencer service review",
+    audience: "High-Ticket & Enterprise Buyers",
+    title: "Room30 Done-For-You AI Influencer Service Review | UGC DFY",
+    metaDescription: "Room30 Done-For-You AI Influencer review: Audit the $4,997 Gold and $9,997 Diamond tiers, 10k follower social accounts, and 90 days of scheduled content.",
+    h1: "Room30 Done-For-You AI Influencer Service Review: Gold vs Diamond",
+    badge: "Enterprise DFY Audit",
+    heroHeadline: "Inside Room30's White-Glove Pre-Made Business: Full Tier & ROI Breakdown",
+    heroSubheadline: "Auditing the $4,997 Gold and $9,997 Diamond packages featuring 10,000-follower social channels, 90 days of scheduled content, and 12 months of mentorship.",
+    avatarContext: "While Room30 offers a $175 self-managed portfolio builder, high-earning investors, executives, and agencies often prefer a completely hands-off turnkey operation. The Done-For-You AI Influencer service provides a fully operational, pre-monetized virtual brand ready on day one.",
+    painPoints: [
+      "Zero time for content production: Inability to write prompts, render video, or edit reels daily.",
+      "Starting from zero social followers: The brutal algorithmic grind of growing social accounts from scratch.",
+      "Uncertainty of audience traction: Needing proven market positioning, custom branding, and professional art direction."
+    ],
+    keyBenefits: [
+      "Turnkey 10,000+ Follower Social Channels: Provisioned Instagram and TikTok accounts with established followings.",
+      "90 Days of Pre-Scheduled Content: Full content stack spanning reels, feed posts, story sets, and asset libraries.",
+      "12 Months of Greg Cooke Workshops: 2-hour weekly live strategic sessions directly with the founder."
+    ],
+    faqList: [
+      {
+        question: "What is the difference between the $175 starter offer and the DFY service?",
+        answer: "The $175 package is a done-for-you portfolio build that you operate yourself in 15 minutes a day. The DFY service ($4,997 Gold / $9,997 Diamond) is a white-glove pre-made business that includes social accounts with 10k+ followers, 90 days of pre-scheduled content, and ongoing mentorship."
+      },
+      {
+        question: "Where can I access the official Done-For-You service portal?",
+        answer: "You can review the official service agreement and tier availability directly through our edge redirect at /go/dfy-influencer."
       }
     ]
   }

@@ -24,6 +24,13 @@ interface Props {
 const { spoke } = Astro.props;
 const hub = HUBS[spoke.category];
 
+const isDfyOffer = spoke.slug === "room30-done-for-you-service";
+const customAffiliateUrl = isDfyOffer ? "/go/dfy-influencer" : undefined;
+const customCtaText = isDfyOffer ? "Explore 100% Done-For-You Pre-Made Business" : undefined;
+const customStickyText = isDfyOffer
+  ? "Get your 10,000-follower AI influencer & 90-day content stack built turnkey."
+  : `Get your custom ${spoke.audience} AI portfolio built in 24 hours.`;
+
 const breadcrumbs = [
   { name: "Home", url: "/" },
   { name: spoke.categoryName, url: spoke.categoryPath },
@@ -73,7 +80,126 @@ const productSchema = {
     headline={spoke.heroHeadline}
     subheadline={spoke.heroSubheadline}
     audience={spoke.audience}
+    affiliateUrl={customAffiliateUrl}
+    ctaText={customCtaText}
   />
+
+  {isDfyOffer && (
+    <section class="py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+            <span>Official Room30 Done-For-You Tier Audit</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+            Gold ($4,997) vs. Diamond ($9,997) White-Glove Packages
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Unlike self-managed courses or software subscriptions, Room30's Done-For-You service delivers a complete pre-made business with verified follower assets and pre-scheduled content.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Gold Tier -->
+          <div class="rounded-3xl border border-amber-500/30 bg-gradient-to-b from-slate-900/90 to-slate-950 p-8 flex flex-col justify-between shadow-2xl relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                  Gold Package
+                </span>
+                <span class="text-2xl sm:text-3xl font-black text-white">$4,997 <span class="text-xs text-slate-400 font-normal">USD</span></span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Turnkey 1-Persona Pre-Made Business</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-6">
+                Complete AI influencer build with live social accounts, established followings, and 90 days of queued video assets.
+              </p>
+              <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200 border-t border-slate-800 pt-6">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>1 Custom AI Influencer Persona:</strong> Face, voice, look, and niche built within 24 hours</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>10,000+ Followers:</strong> Live Instagram & TikTok accounts provisioned with active audiences</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>90 Days of Pre-Scheduled Content:</strong> Full feed posts, reels, carousels, and story sets</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Automation Stack:</strong> Full prompt library and publishing engine for ongoing operation</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>12 Months of Workshops:</strong> 2-hour weekly live strategic training with Gregory Cooke</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+              <a
+                href="/go/dfy-influencer"
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 hover:from-amber-400 hover:to-amber-300 transition-all shadow-lg active:scale-95"
+              >
+                <span>Apply for Gold Tier ($4,997) →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Diamond Tier -->
+          <div class="rounded-3xl border border-teal-500/40 bg-gradient-to-b from-slate-900/90 to-slate-950 p-8 flex flex-col justify-between shadow-2xl relative">
+            <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-teal-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md">
+              Most Scalable
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider">
+                  Diamond Package
+                </span>
+                <span class="text-2xl sm:text-3xl font-black text-white">$9,997 <span class="text-xs text-slate-400 font-normal">USD</span></span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Dual-Persona Multi-Brand Enterprise</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-6">
+                Two complete 10,000-follower AI influencer assets paired with 1:1 dedicated executive Slack & Zoom mentorship.
+              </p>
+              <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200 border-t border-slate-800 pt-6">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-teal-400 font-bold">✓</span>
+                  <span><strong>Everything in Gold Tier:</strong> Full 90-day content stack and 12-month workshop access</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-teal-400 font-bold">✓</span>
+                  <span><strong>Second 10k-Follower AI Influencer:</strong> Double your market presence across two distinct niches</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-teal-400 font-bold">✓</span>
+                  <span><strong>Dedicated 1:1 Slack Mentor:</strong> Direct daily communication with Room30 implementation staff</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-teal-400 font-bold">✓</span>
+                  <span><strong>Monthly 1:1 Zoom Strategy Calls:</strong> High-level campaign optimization and monetization reviews</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+              <a
+                href="/go/dfy-influencer"
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 hover:from-teal-300 hover:to-emerald-300 transition-all shadow-lg active:scale-95"
+              >
+                <span>Apply for Diamond Tier ($9,997) →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-xs text-slate-500">
+            All builds executed under formal online service agreement with verified Stripe payment processing.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Pain points, transformation & benefits tailored to this exact avatar -->
   <FeaturesBreakdown
@@ -155,5 +281,5 @@ const productSchema = {
   </section>
 
   <!-- Fixed bottom conversion anchor -->
-  <StickyCTA offerText={`Get your custom ${spoke.audience} AI portfolio built in 24 hours.`} />
+  <StickyCTA offerText={customStickyText} affiliateUrl={customAffiliateUrl} />
 </BaseLayout>
