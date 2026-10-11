@@ -65,7 +65,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Unbiased reviews, track record verifications, and performance audits of leading done-for-you AI business models and virtual influencer portfolios.",
     h1: "AI System Audits, Verifications & Reviews",
     description: "Independent breakdowns of turnkey AI influencer systems, examining earnings proof, refund policies, founder credibility, and real user outcomes.",
-    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service"]
+    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg"]
   }
 };
 
@@ -927,6 +927,10 @@ export const SPOKES: SpokePage[] = [
       {
         question: "Are there ongoing mandatory software fees?",
         answer: "No mandatory software subscriptions are required to operate your handed-over portfolio system."
+      },
+      {
+        question: "Does Room30 offer higher-tier done-for-you or private founder options?",
+        answer: "Yes. Beyond the $175 starter, Room30 offers white-glove Done-For-You Pre-Made Businesses ($4,997 Gold / $9,997 Diamond) and a 1-on-1 European founder immersion ($100,000 'Three Days With Greg')."
       }
     ]
   },
@@ -1070,6 +1074,41 @@ export const SPOKES: SpokePage[] = [
       {
         question: "Where can I access the official Done-For-You service portal?",
         answer: "You can review the official service agreement and tier availability directly through our edge redirect at /go/dfy-influencer."
+      }
+    ]
+  },
+  {
+    slug: "three-days-with-greg",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "three days with greg room30 review",
+    audience: "7-Figure Founders & Enterprise Operators",
+    title: "Three Days With Greg Review: $100k VIP Immersion | UGC DFY",
+    metaDescription: "Three Days With Greg review: Audit the $100,000 Room30 private immersion, 1-on-1 founder calendar access, live persona builds, and 90-day sprint.",
+    h1: "Three Days With Greg Review: Inside Room30's $100k VIP Immersion",
+    badge: "Private Founder Immersion Audit",
+    heroHeadline: "Three Days With Greg Cooke: Auditing the $100,000 Private AI Immersion",
+    heroSubheadline: "An executive breakdown of the 3-day European sprint, live AI persona builds, proprietary automation stacks, and 90-day post-trip advisory.",
+    avatarContext: "For 7-figure operators and enterprise leaders, courses and group programs move too slowly. 'Three Days With Greg' is Room30's most exclusive engagement: 3 uninterrupted in-person days with founder Gregory Cooke, capped at four clients per year.",
+    painPoints: [
+      "Group program fatigue: Tired of generic Zoom calls, junior coaches, and basic slide decks.",
+      "Implementation bottlenecks: Having great ideas but lacking the proprietary automation stack to execute.",
+      "Need for enterprise speed: Wanting multiple AI persona assets and funnels operational in days, not quarters."
+    ],
+    keyBenefits: [
+      "1-on-1 Founder Calibration: Three full days directly with Gregory Cooke with zero stand-ins or group distractions.",
+      "Live Portfolio Architecture: Multiple AI personas, offer funnels, and proprietary automation stacks built in the room.",
+      "90-Day Post-Sprint Direct Line: Private direct communication with Greg and weekly check-ins to lock in execution."
+    ],
+    faqList: [
+      {
+        question: "What is included in the $100,000 investment?",
+        answer: "The $100,000 private immersion includes full concierge travel and luxury accommodation, a pre-trip audit, 3 full 1-on-1 in-person days with Gregory Cooke, live construction of multiple AI personas and automations, and 90 days of direct post-trip founder access."
+      },
+      {
+        question: "How do I apply for one of the four annual slots?",
+        answer: "Applications are processed through the official Room30 private advisory intake portal. After submitting your application via /go/three-days, the team conducts an intake call to confirm operational fit."
       }
     ]
   }

@@ -25,9 +25,23 @@ const { spoke } = Astro.props;
 const hub = HUBS[spoke.category];
 
 const isDfyOffer = spoke.slug === "room30-done-for-you-service";
-const customAffiliateUrl = isDfyOffer ? "/go/dfy-influencer" : undefined;
-const customCtaText = isDfyOffer ? "Explore 100% Done-For-You Pre-Made Business" : undefined;
-const customStickyText = isDfyOffer
+const isVipImmersion = spoke.slug === "three-days-with-greg";
+
+const customAffiliateUrl = isVipImmersion
+  ? "/go/three-days"
+  : isDfyOffer
+  ? "/go/dfy-influencer"
+  : undefined;
+
+const customCtaText = isVipImmersion
+  ? "Apply for Private 1-on-1 Immersion"
+  : isDfyOffer
+  ? "Explore 100% Done-For-You Pre-Made Business"
+  : undefined;
+
+const customStickyText = isVipImmersion
+  ? "Apply for 1 of 4 private founder slots: 3 days in-person with Greg Cooke."
+  : isDfyOffer
   ? "Get your 10,000-follower AI influencer & 90-day content stack built turnkey."
   : `Get your custom ${spoke.audience} AI portfolio built in 24 hours.`;
 
@@ -195,6 +209,102 @@ const productSchema = {
         <div class="text-center">
           <p class="text-xs text-slate-500">
             All builds executed under formal online service agreement with verified Stripe payment processing.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {isVipImmersion && (
+    <section class="py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+            <span>Room30 Founder Tier Audit • Strictly 4 Clients / Year</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+            Private 1-on-1 In-Person Founder Immersion ($100,000 USD)
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Not a course or group mastermind. Three uninterrupted days with Gregory Cooke at a private European location, building your entire AI persona portfolio, proprietary automation stack, and scaling operations in the room.
+          </p>
+        </div>
+
+        <!-- 3-Phase Delivery Architecture -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Phase 1 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Phase 01 • Pre-Trip</div>
+              <h3 class="text-lg font-bold text-white mb-2">Audit & Concierge Logistics</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-4">
+                Full business, funnel, and traffic intake to map every moving part before arrival, with complete luxury travel coordination.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span><span>Private intake call with Greg's team</span></li>
+                <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span><span>Full audit of funnels, traffic & offers</span></li>
+                <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span><span>Concierge travel & accommodation handled</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="rounded-2xl border border-amber-500/40 bg-gradient-to-b from-slate-900/90 to-slate-950 p-6 flex flex-col justify-between shadow-2xl relative">
+            <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">
+              In Person
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Phase 02 • 3 Days With Greg</div>
+              <h3 class="text-lg font-bold text-white mb-2">Live Build & Automation</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-4">
+                Three full days 1-on-1 with Gregory Cooke. Multi-persona assets designed live, automations wired in, and scaling SOPs handed over.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span>Mindset & money architecture model</span></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span>Multiple AI personas built live in the room</span></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span>Founder's proprietary automation stack installed</span></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span>Operator hiring, SOPs & org chart playbook</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Phase 03 • 90-Day Sprint</div>
+              <h3 class="text-lg font-bold text-white mb-2">Founder Advisory & Direct Line</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-4">
+                Post-sprint implementation support with direct founder communication to ensure all systems scale cleanly after flying home.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2"><span class="text-teal-400 font-bold">✓</span><span>Private direct asynchronous line to Greg for 90 days</span></li>
+                <li class="flex items-start gap-2"><span class="text-teal-400 font-bold">✓</span><span>Weekly check-ins to unblock bottlenecks</span></li>
+                <li class="flex items-start gap-2"><span class="text-teal-400 font-bold">✓</span><span>Warm introductions to trusted vendors & partners</span></li>
+                <li class="flex items-start gap-2"><span class="text-teal-400 font-bold">✓</span><span>Full asset vault of prompts, frameworks & SOPs</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Investment Callout Box -->
+        <div class="max-w-2xl mx-auto rounded-3xl border border-amber-500/30 bg-gradient-to-b from-slate-900 to-slate-950 p-8 text-center shadow-2xl">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+              Private Founder Allocation
+            </span>
+            <span class="text-2xl sm:text-3xl font-black text-white">$100,000 <span class="text-xs text-slate-400 font-normal">USD</span></span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6">
+            Private investment covers concierge travel, luxury European venue, the 3-day sprint, and 90-day post-trip advisory. Strictly limited to four clients per calendar year by application.
+          </p>
+          <a
+            href="/go/three-days"
+            class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-teal-400 text-slate-950 hover:brightness-110 transition-all shadow-xl active:scale-95"
+          >
+            <span>Apply for Private 1-on-1 Immersion Slot →</span>
+          </a>
+          <p class="text-[11px] text-slate-500 mt-4">
+            Applications reviewed within 48 hours. Fit confirmed via private executive intake call before commitment.
           </p>
         </div>
       </div>
