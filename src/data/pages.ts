@@ -47,7 +47,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Master faceless channel automation with leading AI video tools. Build hands-off content revenue streams without ever showing your face on camera.",
     h1: "Faceless Channel & Video Automation Systems",
     description: "Explore turnkey faceless video systems, AI content syndication, and hands-off media assets that generate recurring traffic on autopilot.",
-    spokeSlugs: ["for-beginners", "for-teams", "for-introverts", "for-professionals", "for-tiktok-shop", "for-youtube-shorts", "for-instagram-reels", "for-busy-executives", "for-teachers"]
+    spokeSlugs: ["for-beginners", "for-teams", "for-introverts", "for-professionals", "for-tiktok-shop", "for-youtube-shorts", "for-instagram-reels", "for-busy-executives", "for-teachers", "monetized-channels-for-busy-executives", "monetized-tiktok-for-dropshippers"]
   },
   "ai-income-systems": {
     slug: "ai-income-systems",
@@ -65,7 +65,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Unbiased reviews, track record verifications, and performance audits of leading done-for-you AI business models and virtual influencer portfolios.",
     h1: "AI System Audits, Verifications & Reviews",
     description: "Independent breakdowns of turnkey AI influencer systems, examining earnings proof, refund policies, founder credibility, and real user outcomes.",
-    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg"]
+    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg", "dfy-dave-monetized-youtube-channel", "dfy-dave-monetized-tiktok-account", "dfy-dave-amazon-affiliate-website", "dfy-dave-done-for-you-youtube-videos", "dfy-dave-review", "room30-vs-dfy-dave"]
   }
 };
 
@@ -1111,5 +1111,287 @@ export const SPOKES: SpokePage[] = [
         answer: "Applications are processed through the official Room30 private advisory intake portal. After submitting your application via /go/three-days, the team conducts an intake call to confirm operational fit."
       }
     ]
+  },
+  // DFY DAVE SPOKES (WAVE 3 EXPANSION)
+  {
+    slug: "dfy-dave-monetized-youtube-channel",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "buy monetized youtube channel",
+    audience: "Faceless Creators & Video Entrepreneurs",
+    title: "Buy Monetized YouTube Channel Review: DFY Dave Audit | UGC DFY",
+    metaDescription: "Buy a monetized YouTube channel: Audit DFY Dave's $695 turnkey YPP channels with 1,000+ subscribers and 4,000 watch hours ready for day-one AdSense earnings.",
+    h1: "Buy a Monetized YouTube Channel: DFY Dave Service Review",
+    badge: "Turnkey YPP Channel Audit",
+    heroHeadline: "Skip the 4,000-Hour Watch Time Barrier: Auditing DFY Dave's Monetized Channels",
+    heroSubheadline: "An executive review of Dave Nick's $695 turnkey monetized YouTube channels delivered with active AdSense eligibility and verified organic subscriber history.",
+    avatarContext: "For creators and investors launching faceless video assets, waiting 6 to 12 months to pass YouTube's Partner Program threshold creates massive friction. DFY Dave offers pre-monetized channels configured to earn ad revenue from your very first upload.",
+    painPoints: [
+      "The brutal 4,000-hour hurdle: Spending months publishing videos without earning a single dollar in ad revenue.",
+      "Application rejection risk: Reaching the subscriber mark only to be delayed or rejected during AdSense compliance review.",
+      "Lost compound momentum: Missing out on early search and browse algorithmic monetization during launch phase."
+    ],
+    keyBenefits: [
+      "Day-One AdSense Revenue: Channels arrive fully enrolled in the YouTube Partner Program with zero watch time backlog.",
+      "Verified Organic Foundation: Minimum 1,000+ subscribers and 4,000+ watch hours built through compliant engagement.",
+      "Instant Asset Handover: Ownership transfer to your personal Google account with complete management control."
+    ],
+    faqList: [
+      {
+        question: "Is buying a monetized YouTube channel safe and compliant?",
+        answer: "Yes, when executed properly. DFY Dave channels are built following YouTube Partner Program community guidelines and transferred securely to your primary Google account."
+      },
+      {
+        question: "How quickly can I upload videos and earn ad revenue?",
+        answer: "Immediately upon handover. Because monetization is already active, every monetizable view on your new uploads generates ad revenue."
+      }
+    ]
+  },
+  {
+    slug: "dfy-dave-monetized-tiktok-account",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "monetized tiktok account",
+    audience: "Short-Form Creators & TikTok Marketers",
+    title: "Monetized TikTok Account Review: DFY Dave Creator Audit | UGC DFY",
+    metaDescription: "Monetized TikTok account review: Audit DFY Dave's US/UK accounts with 10k followers, 100k views, and instant Creator Rewards Program payout eligibility.",
+    h1: "Monetized TikTok Account Review: DFY Dave Creator Program Audit",
+    badge: "TikTok Creator Rewards Audit",
+    heroHeadline: "Instant TikTok Creator Rewards: Reviewing DFY Dave's Monetized Accounts",
+    heroSubheadline: "Auditing the $795 to $1,195 turnkey TikTok accounts featuring 10,000+ real followers, US/UK geographic setup, and verified Creator Rewards eligibility.",
+    avatarContext: "TikTok's Creator Rewards Program offers lucrative RPM payouts ($0.50 to $1.50 per 1,000 qualified views), but strict requirements (10,000 followers and US/UK location) lock out most creators. DFY Dave provisions pre-qualified accounts ready for immediate publishing.",
+    painPoints: [
+      "Geographic payout restrictions: Living outside the US, UK, or eligible regions where TikTok does not offer creator rewards.",
+      "Follower grind exhaustion: Posting dozens of viral videos without hitting the mandatory 10,000 follower threshold.",
+      "Account burnout: Burning creative energy on account setup instead of high-converting short-form content."
+    ],
+    keyBenefits: [
+      "Pre-Qualified Creator Rewards: 10,000+ followers and 100,000+ video views already unlocked on day one.",
+      "US & UK Geographic Eligibility: Bypasses international restrictions with natively provisioned region-compliant profiles.",
+      "Seamless Payout Linking: Connect your PayPal or bank account directly to receive monthly video performance rewards."
+    ],
+    faqList: [
+      {
+        question: "Can international creators use these accounts to get paid?",
+        answer: "Yes. DFY Dave specifically provisions US and UK accounts so creators worldwide can access TikTok Creator Rewards and TikTok Shop affiliate features."
+      },
+      {
+        question: "What is the difference between standard and PLUS+ accounts?",
+        answer: "Standard accounts ($795–$995) include base Creator Rewards qualification. PLUS+ accounts ($1,195+) provide enhanced niche alignment and higher initial follower authority."
+      }
+    ]
+  },
+  {
+    slug: "dfy-dave-amazon-affiliate-website",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "done for you amazon affiliate website for beginners",
+    audience: "Affiliate Marketers & Passive Income Seekers",
+    title: "Done-For-You Amazon Affiliate Website Review | UGC DFY",
+    metaDescription: "Done-for-you Amazon affiliate website review: Audit DFY Dave's $995 prebuilt sites with SEO keyword articles, Amazon Associates integration, and fast setup.",
+    h1: "Done-For-You Amazon Affiliate Website Review: DFY Dave Audit",
+    badge: "Turnkey Affiliate Site Audit",
+    heroHeadline: "Pre-Built Amazon Review Blogs: Full Audit of DFY Dave's Turnkey Sites",
+    heroSubheadline: "Examining the $995 Standard and $1,995 Advanced done-for-you Amazon affiliate websites featuring keyword-optimized product reviews and monetization.",
+    avatarContext: "Building an Amazon affiliate site from scratch requires web development, copywriting, keyword research, and on-page SEO. DFY Dave delivers complete turnkey WordPress blogs pre-loaded with commercial product reviews and affiliate links ready for organic search traffic.",
+    painPoints: [
+      "Content bottleneck: Spending weeks writing hundreds of product comparisons and buying guides.",
+      "Technical setup headaches: Configuring hosting, domain DNS, WordPress plugins, and affiliate link cloaking.",
+      "Amazon compliance fears: Worrying about account suspension due to improperly formatted affiliate disclosures."
+    ],
+    keyBenefits: [
+      "Pre-Written Commercial Articles: Loaded with high-intent product roundups, comparison tables, and buyer guides.",
+      "100% Amazon Associates Compliant: Clean disclosure architecture and API-compliant product presentation.",
+      "Full Domain & Host Transfer: You receive complete administrative credentials and perpetual ownership of the site."
+    ],
+    faqList: [
+      {
+        question: "How do I add my Amazon Associates affiliate ID?",
+        answer: "DFY Dave configures the site so you simply input your personal Amazon Associate tracking tag, updating all product links across the site automatically."
+      },
+      {
+        question: "What is the difference between Standard and Advanced packages?",
+        answer: "Standard ($995) includes foundational review content and setup. Advanced ($1,995) includes an expanded article library and deep niche keyword clustering."
+      }
+    ]
+  },
+  {
+    slug: "dfy-dave-done-for-you-youtube-videos",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "youtube video editing service for faceless channels",
+    audience: "Channel Operators & Content Delegators",
+    title: "DFY Dave Video Editing Service Review | UGC DFY",
+    metaDescription: "DFY Dave YouTube video editing review: Audit the 10, 20, and 30 long-form video packages, voiceover syncing, motion graphics, and faceless channel scaling.",
+    h1: "DFY Dave YouTube Video Editing Service Review: 10, 20 & 30 Video Packs",
+    badge: "Faceless Video Editing Audit",
+    heroHeadline: "Hands-Off Long-Form Production: Auditing DFY Dave's Video Editing Packages",
+    heroSubheadline: "A complete breakdown of Dave Nick's 10, 20, and 30 faceless video bundles featuring scripting, voiceovers, dynamic motion graphics, and SEO metadata.",
+    avatarContext: "The biggest reason faceless channels stall out is video editing fatigue. Sourcing footage, cutting timelines, and mastering audio takes 10+ hours per video. DFY Dave provides batch-produced long-form videos ready to schedule straight into YouTube Studio.",
+    painPoints: [
+      "Production burnout: Spending entire weekends editing single 8-minute videos instead of scaling business strategy.",
+      "Inconsistent upload schedules: Losing YouTube algorithm favor when editing bottlenecks cause missed deadlines.",
+      "Freelancer unreliability: Dealing with flaky Upwork and Fiverr video editors who deliver inconsistent quality."
+    ],
+    keyBenefits: [
+      "Full-Stack Production: Every video includes research, scriptwriting, voiceover, b-roll, motion graphics, and sound design.",
+      "Bulk Volume Economics: Tiered packages (10, 20, 30 videos) drastically reduce cost per completed asset.",
+      "Turnkey Upload Readiness: Delivered with click-worthy thumbnails, SEO titles, and description tags ready to publish."
+    ],
+    faqList: [
+      {
+        question: "What niches are supported for these video packages?",
+        answer: "DFY Dave supports all top faceless niches including finance, tech, luxury, history, motivational, gaming, and documentary-style storytelling."
+      },
+      {
+        question: "Can I request revisions if something needs tweaking?",
+        answer: "Yes, each package includes quality check rounds to ensure branding, tone, and pacing meet your channel standards before final export."
+      }
+    ]
+  },
+  {
+    slug: "dfy-dave-review",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "dfy dave reviews: is dfy dave legit?",
+    audience: "Prospective Asset Buyers & Service Evaluators",
+    title: "DFY Dave Review: Is DFY Dave Legit? Full Audit | UGC DFY",
+    metaDescription: "Honest DFY Dave review: Is DFY Dave legit? Audit Dave Nick's done-for-you monetized channels, TikTok accounts, delivery timelines, and real buyer results.",
+    h1: "DFY Dave Review: Is Dave Nick's Done-For-You Platform Legit?",
+    badge: "Comprehensive Platform Audit",
+    heroHeadline: "Inside DFY Dave: Evaluating the Industry's Largest Turnkey Asset Provider",
+    heroSubheadline: "An independent review of Dave Nick's DFY Dave ecosystem, examining channel delivery track records, buyer protections, pricing, and long-term asset health.",
+    avatarContext: "With hundreds of creators searching for DFY Dave reviews, buyers want unvarnished truth before investing hundreds of dollars in digital assets. We performed an independent evaluation of Dave Nick's company structure, customer service, and asset quality.",
+    painPoints: [
+      "Scam anxiety: Fear of paying for digital channels and receiving fake bots or shadowbanned accounts.",
+      "Founder reputation questions: Verifying whether Dave Nick is an actual operator or just an affiliate promoter.",
+      "Long-term asset durability: Wondering if pre-monetized accounts retain their monetization status over time."
+    ],
+    keyBenefits: [
+      "Battle-Tested Operator Track Record: Backed by Dave Nick's multi-million subscriber media network and public reputation.",
+      "Full Escrow & Delivery Support: 24/7 client support ensuring verified Google and TikTok credential handovers.",
+      "Clear Replacement Protocols: Operational policies in place to address compliance issues during onboarding."
+    ],
+    faqList: [
+      {
+        question: "Who is Dave Nick?",
+        answer: "Dave Nick is a leading digital entrepreneur and YouTube creator recognized globally for pioneering faceless automation and automated media channels."
+      },
+      {
+        question: "Does DFY Dave offer customer support after delivery?",
+        answer: "Yes, DFY Dave provides 24/7 worldwide customer support and dedicated onboarding staff to guide credential transitions."
+      }
+    ]
+  },
+  {
+    slug: "room30-vs-dfy-dave",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "room30 vs dfy dave for faceless automation",
+    audience: "Comparative Buyers & Systems Architects",
+    title: "Room30 vs DFY Dave: Best Faceless Automation? | UGC DFY",
+    metaDescription: "Room30 vs DFY Dave comparison: Compare Greg Cooke's AI influencer portfolios with Dave Nick's monetized channels, delivery models, pricing, and ROI potential.",
+    h1: "Room30 vs DFY Dave: Which Turnkey System Delivers Better ROI?",
+    badge: "Head-to-Head System Battle",
+    heroHeadline: "AI Influencer Systems vs. Pre-Monetized Channels: The Ultimate Comparison",
+    heroSubheadline: "Comparing Greg Cooke's Room30 AI persona portfolios with Dave Nick's DFY Dave monetized asset model across cost, monetization speed, and scalability.",
+    avatarContext: "Room30 and DFY Dave are the two premier names in the done-for-you automation space, but they solve two completely different problems. Room30 builds your content production machine; DFY Dave provides the monetized platform channels.",
+    painPoints: [
+      "Model confusion: Not knowing whether to invest in AI content generators or pre-monetized social channels.",
+      "Capital allocation dilemmas: Deciding where your first $1,000 will produce the highest ROI and shortest payback window.",
+      "Risk management: Wondering which platform provides safer compliance and sustainable audience retention."
+    ],
+    keyBenefits: [
+      "Room30 Advantage: Produces infinite, custom photorealistic AI video assets and automated brand deal funnels.",
+      "DFY Dave Advantage: Eliminates the 12-month monetization waiting period with instant YPP and Creator Rewards approval.",
+      "The Power Combo: Use Room30 to generate your videos, and publish them to a DFY Dave monetized channel for day-one ad checks."
+    ],
+    faqList: [
+      {
+        question: "Can I use Room30 content on a DFY Dave monetized channel?",
+        answer: "Yes! This is actually the most profitable workflow. Room30 generates your faceless video reels, and your DFY Dave channel monetizes them with instant AdSense."
+      },
+      {
+        question: "Which platform is better for complete beginners?",
+        answer: "If you want to learn AI content creation with low entry cost, start with Room30 ($175). If you want an established channel ready to earn immediately, choose DFY Dave ($695)."
+      }
+    ]
+  },
+  {
+    slug: "monetized-channels-for-busy-executives",
+    category: "faceless-automation",
+    categoryName: "Faceless Automation",
+    categoryPath: "/faceless-automation/",
+    keyword: "monetized youtube channels for busy executives",
+    audience: "Corporate Executives & High-Income Investors",
+    title: "Monetized YouTube Channels for Busy Executives | UGC DFY",
+    metaDescription: "Monetized YouTube channels for busy executives: Acquire turnkey cash-flowing digital media assets. Skip the subscriber grind with passive AdSense ownership.",
+    h1: "Monetized YouTube Channels for Busy Executives: Cash-Flow Assets",
+    badge: "Executive Digital Asset Matrix",
+    heroHeadline: "Acquire Cash-Flowing Media Real Estate Without Starting from Zero",
+    heroSubheadline: "How corporate leaders and high-income earners acquire pre-monetized YouTube channels as scalable digital income assets with outsourced production teams.",
+    avatarContext: "Executives earning six figures don't have 20 hours a week to edit videos or wait 12 months for algorithmic traction. They treat digital media like real estate: acquire a cash-flowing asset, delegate management, and collect monthly cash flow.",
+    painPoints: [
+      "Zero time for creation: 60-hour corporate work weeks make content creation impossible.",
+      "Desire for non-correlated income: Seeking cash flow independent of the stock market or traditional employment.",
+      "Frustration with slow growth: Impatience with traditional creator trajectories that take years to yield returns."
+    ],
+    keyBenefits: [
+      "Turnkey Asset Acquisition: Step straight into an enrolled YouTube Partner Program channel with active AdSense.",
+      "Fully Delegatable Operations: Pair the channel with outsourced editing teams to maintain hands-off ownership.",
+      "Diversified Revenue Portfolio: Multiple monetized channels operate as digital rental properties paying monthly royalties.",
+    ],
+    faqList: [
+      {
+        question: "How much time does an executive need to manage a monetized channel?",
+        answer: "When paired with a done-for-you editing package, channel oversight requires only 30 minutes per week to review schedules and analytics."
+      },
+      {
+        question: "Can the channel be owned under an LLC?",
+        answer: "Yes. You can link your corporate AdSense account and business bank details to receive all monthly payments directly to your business entity."
+      }
+    ]
+  },
+  {
+    slug: "monetized-tiktok-for-dropshippers",
+    category: "faceless-automation",
+    categoryName: "Faceless Automation",
+    categoryPath: "/faceless-automation/",
+    keyword: "monetized tiktok accounts for dropshippers",
+    audience: "E-Commerce Brands & Dropshipping Operators",
+    title: "Monetized TikTok Accounts for Dropshippers | UGC DFY",
+    metaDescription: "Monetized TikTok accounts for dropshippers: Unlock instant TikTok Shop affiliate access, US creator rewards, and viral organic ecom product conversions fast.",
+    h1: "Monetized TikTok Accounts for Dropshippers: Instant Shop Access",
+    badge: "E-Commerce Monetization Matrix",
+    heroHeadline: "Scale E-Com Sales and Creator Rewards with Pre-Monetized TikTok Profiles",
+    heroSubheadline: "Skip account warm-up delays and access TikTok Shop and Creator Rewards on day one with verified, high-authority US and UK TikTok accounts.",
+    avatarContext: "In e-commerce, paid ads are getting more expensive every quarter. Dropshippers need viral organic reach and instant TikTok Shop integration to showcase winning products. A pre-monetized 10,000-follower account bypasses account restrictions immediately.",
+    painPoints: [
+      "Rising ad costs: Facebook and TikTok ad CPMs eroding e-commerce product profit margins.",
+      "TikTok Shop lockouts: Inability to tag products or join the TikTok Shop affiliate network on brand-new profiles.",
+      "Geo-targeting barriers: Foreign IP addresses preventing international dropshippers from reaching high-purchasing US buyers."
+    ],
+    keyBenefits: [
+      "Instant TikTok Shop Integration: Qualify immediately to tag e-commerce products and earn creator commissions.",
+      "US/UK Geographic Targeting: Feed algorithms prioritize lucrative Western consumer demographics.",
+      "Dual Revenue Streams: Earn both direct product dropshipping profit and TikTok Creator Rewards RPM on the same viral video."
+    ],
+    faqList: [
+      {
+        question: "Can I connect my Shopify store to this TikTok account?",
+        answer: "Yes. Once handed over, you can integrate your Shopify or TikTok Shop catalog to tag products directly in videos and live streams."
+      },
+      {
+        question: "Does the account come with active followers?",
+        answer: "Yes. Accounts arrive with 10,000+ followers and 100,000+ views, meeting all TikTok commercial threshold criteria."
+      }
+    ]
   }
 ];
+

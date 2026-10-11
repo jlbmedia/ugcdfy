@@ -27,23 +27,51 @@ const hub = HUBS[spoke.category];
 const isDfyOffer = spoke.slug === "room30-done-for-you-service";
 const isVipImmersion = spoke.slug === "three-days-with-greg";
 
-const customAffiliateUrl = isVipImmersion
-  ? "/go/three-days"
-  : isDfyOffer
-  ? "/go/dfy-influencer"
-  : undefined;
+// DFY Dave spokes
+const isDfyDaveYouTube = spoke.slug === "dfy-dave-monetized-youtube-channel" || spoke.slug === "monetized-channels-for-busy-executives";
+const isDfyDaveTikTok = spoke.slug === "dfy-dave-monetized-tiktok-account" || spoke.slug === "monetized-tiktok-for-dropshippers";
+const isDfyDaveAmazon = spoke.slug === "dfy-dave-amazon-affiliate-website";
+const isDfyDaveVideos = spoke.slug === "dfy-dave-done-for-you-youtube-videos";
+const isDfyDaveReview = spoke.slug === "dfy-dave-review";
+const isRoom30VsDfyDave = spoke.slug === "room30-vs-dfy-dave";
 
-const customCtaText = isVipImmersion
-  ? "Apply for Private 1-on-1 Immersion"
-  : isDfyOffer
-  ? "Explore 100% Done-For-You Pre-Made Business"
-  : undefined;
+let customAffiliateUrl: string | undefined;
+let customCtaText: string | undefined;
+let customStickyText = `Get your custom ${spoke.audience} AI portfolio built in 24 hours.`;
 
-const customStickyText = isVipImmersion
-  ? "Apply for 1 of 4 private founder slots: 3 days in-person with Greg Cooke."
-  : isDfyOffer
-  ? "Get your 10,000-follower AI influencer & 90-day content stack built turnkey."
-  : `Get your custom ${spoke.audience} AI portfolio built in 24 hours.`;
+if (isVipImmersion) {
+  customAffiliateUrl = "/go/three-days";
+  customCtaText = "Apply for Private 1-on-1 Immersion";
+  customStickyText = "Apply for 1 of 4 private founder slots: 3 days in-person with Greg Cooke.";
+} else if (isDfyOffer) {
+  customAffiliateUrl = "/go/dfy-influencer";
+  customCtaText = "Explore 100% Done-For-You Pre-Made Business";
+  customStickyText = "Get your 10,000-follower AI influencer & 90-day content stack built turnkey.";
+} else if (isDfyDaveYouTube) {
+  customAffiliateUrl = "/go/dfy-youtube";
+  customCtaText = "Check Monetized Channel Availability →";
+  customStickyText = "Acquire a turnkey YouTube channel enrolled in YPP with instant AdSense.";
+} else if (isDfyDaveTikTok) {
+  customAffiliateUrl = "/go/dfy-tiktok";
+  customCtaText = "Claim Monetized TikTok Account →";
+  customStickyText = "Access US/UK monetized TikTok accounts eligible for Creator Rewards.";
+} else if (isDfyDaveAmazon) {
+  customAffiliateUrl = "/go/dfy-amazon";
+  customCtaText = "Launch Turnkey Amazon Affiliate Site →";
+  customStickyText = "Deploy pre-built Amazon review blogs loaded with SEO buyer guides.";
+} else if (isDfyDaveVideos) {
+  customAffiliateUrl = "/go/dfy-videos";
+  customCtaText = "Order Done-For-You Video Package →";
+  customStickyText = "Get 10, 20, or 30 edited faceless YouTube videos delivered turnkey.";
+} else if (isDfyDaveReview) {
+  customAffiliateUrl = "/go/dfy-dave";
+  customCtaText = "Explore DFY Dave Platform Catalog →";
+  customStickyText = "Audit Dave Nick's complete catalog of turnkey monetized digital assets.";
+} else if (isRoom30VsDfyDave) {
+  customAffiliateUrl = "/go/dfy-youtube";
+  customCtaText = "Compare Turnkey Monetization Solutions →";
+  customStickyText = "Combine Room30 AI video systems with DFY Dave monetized channels.";
+}
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -56,19 +84,53 @@ const categorySpokes = SPOKES.filter((s) => s.category === spoke.category && s.s
 const otherCategorySpokes = SPOKES.filter((s) => s.category !== spoke.category && s.slug !== spoke.slug);
 const relatedSpokes = [...categorySpokes, ...otherCategorySpokes].slice(0, 3);
 
-// Product / Software Schema for Google SERP
+// Dynamic Product / Software Schema for Google SERP
+let productSchemaName = "Room30 AI Influencer Portfolio";
+let productSchemaPrice = "175.00";
+let productSchemaUrl = "https://room30.ai/offer?fpr=joseph65";
+
+if (isVipImmersion) {
+  productSchemaName = "Room30 Three Days With Greg Founder Immersion";
+  productSchemaPrice = "100000.00";
+  productSchemaUrl = "https://room30.ai/three-days-with-greg?fpr=joseph65";
+} else if (isDfyOffer) {
+  productSchemaName = "Room30 Done-For-You Pre-Made Business";
+  productSchemaPrice = "4997.00";
+  productSchemaUrl = "https://room30.ai/dfy-ai-influencer?fpr=joseph65";
+} else if (isDfyDaveYouTube) {
+  productSchemaName = "DFY Dave Monetized YouTube Channel";
+  productSchemaPrice = "695.00";
+  productSchemaUrl = "https://dfydave.com/monetization?p=B63B41B5";
+} else if (isDfyDaveTikTok) {
+  productSchemaName = "DFY Dave Monetized TikTok Account";
+  productSchemaPrice = "795.00";
+  productSchemaUrl = "https://www.dfydave.com/tiktok-monetization?p=B63B41B5";
+} else if (isDfyDaveAmazon) {
+  productSchemaName = "DFY Dave Turnkey Amazon Affiliate Website";
+  productSchemaPrice = "995.00";
+  productSchemaUrl = "https://www.dfydave.com/amazon-affiliate-website?p=B63B41B5";
+} else if (isDfyDaveVideos) {
+  productSchemaName = "DFY Dave Faceless YouTube Video Production";
+  productSchemaPrice = "250.00";
+  productSchemaUrl = "https://buy.dfydave.com/dfy-10-long-form-youtube-videos?p=B63B41B5";
+} else if (isDfyDaveReview) {
+  productSchemaName = "DFY Dave Digital Asset & Automation Platform";
+  productSchemaPrice = "695.00";
+  productSchemaUrl = "https://www.dfydave.com/?p=B63B41B5";
+}
+
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Room30 AI Influencer Portfolio",
+  "name": productSchemaName,
   "operatingSystem": "Cloud-based / Web",
   "applicationCategory": "BusinessApplication",
   "offers": {
     "@type": "Offer",
-    "price": "175.00",
+    "price": productSchemaPrice,
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
-    "url": "https://room30.ai/offer?fpr=joseph65"
+    "url": productSchemaUrl
   },
   "aggregateRating": {
     "@type": "AggregateRating",
