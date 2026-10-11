@@ -35,6 +35,9 @@ const isDfyDaveVideos = spoke.slug === "dfy-dave-done-for-you-youtube-videos";
 const isDfyDaveReview = spoke.slug === "dfy-dave-review";
 const isRoom30VsDfyDave = spoke.slug === "room30-vs-dfy-dave";
 
+const isDfyDavePage = isDfyDaveYouTube || isDfyDaveTikTok || isDfyDaveAmazon || isDfyDaveVideos || isDfyDaveReview || isRoom30VsDfyDave;
+const isRoom30Review = spoke.category === "reviews" && !isDfyDavePage;
+
 let customAffiliateUrl: string | undefined;
 let customCtaText: string | undefined;
 let customStickyText = `Get your custom ${spoke.audience} AI portfolio built in 24 hours.`;
@@ -73,16 +76,132 @@ if (isVipImmersion) {
   customStickyText = "Combine Room30 AI video systems with DFY Dave monetized channels.";
 }
 
+// Global Layout CTAs & Announcement Bar Context
+let layoutAnnouncementText = "🚀 2026 Batch Open: Get Your Turnkey Faceless AI Influencer Portfolio Deployed in 24 Hours.";
+let layoutAnnouncementCtaText = "Claim Verified Access →";
+let layoutAnnouncementCtaUrl = "/go/dfy";
+let layoutHeaderCtaText = "Explore Room30 Offer";
+let layoutHeaderCtaUrl = "/go/dfy";
+
+if (isVipImmersion) {
+  layoutAnnouncementText = "👑 Private Founder Immersion: 3 Days In-Person with Gregory Cooke (Strictly 4 Clients/Year).";
+  layoutAnnouncementCtaText = "Apply for Immersion →";
+  layoutAnnouncementCtaUrl = "/go/three-days";
+  layoutHeaderCtaText = "Apply for Immersion";
+  layoutHeaderCtaUrl = "/go/three-days";
+} else if (isDfyOffer) {
+  layoutAnnouncementText = "⚡ 100% Done-For-You Pre-Made Business: 10k Follower AI Influencer & 90-Day Content Stack.";
+  layoutAnnouncementCtaText = "View DFY Packages →";
+  layoutAnnouncementCtaUrl = "/go/dfy-influencer";
+  layoutHeaderCtaText = "Explore DFY Packages";
+  layoutHeaderCtaUrl = "/go/dfy-influencer";
+} else if (isDfyDavePage) {
+  layoutAnnouncementText = "⚡ Turnkey Media Assets: Pre-Monetized Channels & Done-For-You Production Ready for Handover.";
+  layoutAnnouncementCtaText = "Claim Verified Asset →";
+  layoutAnnouncementCtaUrl = customAffiliateUrl || "/go/dfy-dave";
+  layoutHeaderCtaText = "Explore DFY Dave Assets";
+  layoutHeaderCtaUrl = customAffiliateUrl || "/go/dfy-dave";
+}
+
+// Tailored Hero Authority Signals
+let authoritySignals = [
+  "100% Done-For-You in 24h",
+  "Zero Camera or Face Required",
+  "32,000+ Enrolled Worldwide",
+  "As Seen on Forbes & Entrepreneur"
+];
+
+if (isDfyDaveYouTube) {
+  authoritySignals = [
+    "Turnkey Handover in 24–48h",
+    "Active YPP & AdSense Enrolled",
+    "100% Google Brand Account Transfer",
+    "24/7 Global Onboarding Support"
+  ];
+} else if (isDfyDaveTikTok) {
+  authoritySignals = [
+    "10,000+ Verified Followers",
+    "TikTok Shop Affiliate Eligible",
+    "US / UK Creator Rewards Active",
+    "24/7 Dedicated Handover Team"
+  ];
+} else if (isDfyDaveAmazon) {
+  authoritySignals = [
+    "50+ SEO Buyer Guides Pre-Loaded",
+    "Turnkey WordPress Deployment",
+    "Amazon Associates TOS Compliant",
+    "100% Passive Fulfillment Model"
+  ];
+} else if (isDfyDaveVideos) {
+  authoritySignals = [
+    "10, 20, or 30 Complete 1080p Videos",
+    "Script, Voice, Edit & Thumbnail Included",
+    "Engineered for High Retention & CTR",
+    "Batch Delivered Ready to Upload"
+  ];
+} else if (isDfyDaveReview) {
+  authoritySignals = [
+    "Dave Nick Media Ecosystem",
+    "1,000+ Digital Assets Delivered",
+    "Verified Primary Owner Transfers",
+    "24/7 Customer Support Guarantee"
+  ];
+} else if (isRoom30VsDfyDave) {
+  authoritySignals = [
+    "Objective Independent System Audit",
+    "Greg Cooke vs. Dave Nick Frameworks",
+    "Head-to-Head Pricing & Unit Economics",
+    "Hybrid High-ROI Workflow Revealed"
+  ];
+}
+
+// Comparison Table Variant
+type CompVariant = "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave";
+let comparisonVariant: CompVariant = "room30";
+
+if (isDfyDaveYouTube) {
+  comparisonVariant = "dfy-dave-youtube";
+} else if (isDfyDaveTikTok) {
+  comparisonVariant = "dfy-dave-tiktok";
+} else if (isDfyDaveAmazon) {
+  comparisonVariant = "dfy-dave-amazon";
+} else if (isDfyDaveVideos) {
+  comparisonVariant = "dfy-dave-videos";
+} else if (isDfyDaveReview) {
+  comparisonVariant = "dfy-dave-platform";
+} else if (isRoom30VsDfyDave) {
+  comparisonVariant = "room30-vs-dfy-dave";
+}
+
 const breadcrumbs = [
   { name: "Home", url: "/" },
   { name: spoke.categoryName, url: spoke.categoryPath },
   { name: spoke.h1, url: `${spoke.categoryPath}${spoke.slug}/` }
 ];
 
-// Related spokes for internal linking mesh: prefer same category, fallback to other categories
-const categorySpokes = SPOKES.filter((s) => s.category === spoke.category && s.slug !== spoke.slug);
-const otherCategorySpokes = SPOKES.filter((s) => s.category !== spoke.category && s.slug !== spoke.slug);
-const relatedSpokes = [...categorySpokes, ...otherCategorySpokes].slice(0, 3);
+// Related spokes for internal linking mesh:
+// Strictly isolate DFY Dave spokes from Room30 spokes for maximum offer congruency
+const dfyDaveSlugs = [
+  "dfy-dave-monetized-youtube-channel",
+  "dfy-dave-monetized-tiktok-account",
+  "dfy-dave-amazon-affiliate-website",
+  "dfy-dave-done-for-you-youtube-videos",
+  "dfy-dave-review",
+  "room30-vs-dfy-dave",
+  "monetized-channels-for-busy-executives",
+  "monetized-tiktok-for-dropshippers"
+];
+
+let relatedSpokes: SpokePage[];
+if (isDfyDavePage) {
+  const otherDfySpokes = SPOKES.filter((s) => dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  const remainingSpokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  relatedSpokes = [...otherDfySpokes, ...remainingSpokes].slice(0, 3);
+} else {
+  const otherRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category === spoke.category);
+  const remainingRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category !== spoke.category);
+  relatedSpokes = [...otherRoom30Spokes, ...remainingRoom30Spokes].slice(0, 3);
+}
 
 // Dynamic Product / Software Schema for Google SERP
 let productSchemaName = "Room30 AI Influencer Portfolio";
@@ -148,6 +267,11 @@ const productSchema = {
   breadcrumbs={breadcrumbs}
   schemaType="SoftwareApplication"
   schemaData={productSchema}
+  announcementText={layoutAnnouncementText}
+  announcementCtaText={layoutAnnouncementCtaText}
+  announcementCtaUrl={layoutAnnouncementCtaUrl}
+  headerCtaText={layoutHeaderCtaText}
+  headerCtaUrl={layoutHeaderCtaUrl}
 >
   <!-- Above the fold: strictly confirms use case before scrolling -->
   <AboveTheFoldHero
@@ -158,6 +282,7 @@ const productSchema = {
     audience={spoke.audience}
     affiliateUrl={customAffiliateUrl}
     ctaText={customCtaText}
+    authoritySignals={authoritySignals}
   />
 
   {isDfyOffer && (
@@ -379,9 +504,22 @@ const productSchema = {
     avatarContext={spoke.avatarContext}
     painPoints={spoke.painPoints}
     keyBenefits={spoke.keyBenefits}
+    solutionBadge={isDfyDavePage ? "The DFY Dave Asset Advantage" : "The Room30 Turnkey Advantage"}
+    solutionTitle={isDfyDavePage ? "Turnkey Handover & Onboarding Protocol" : "Built & Delivered In 24 Hours"}
+    beforeBadge={isDfyDavePage ? "Before DFY Dave" : "Before Room30"}
+    beforeQuote={isDfyDavePage ? "Stuck in the 12-month subscriber grind, struggling to hit 4,000 watch hours, and earning $0 for months of video production." : "Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."}
+    afterBadge={isDfyDavePage ? "After Turnkey Handover" : "After 24-Hour Setup"}
+    afterQuote={isDfyDavePage ? "Owning an enrolled, cash-flowing digital media asset with immediate monetization, automated production, and zero camera requirements." : "Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."}
+    workflowTitle={isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
+    workflowSubtitle={isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
+    isDfyDave={isDfyDavePage}
+    affiliateUrl={customAffiliateUrl}
+    midCtaText={customCtaText || "Lock In Your Turnkey Solution"}
+    midCtaSubtext={isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}
   />
 
-  {spoke.category === "reviews" && (
+  {/* Reviews Hub Scorecard / Audit Matrix */}
+  {isRoom30Review && (
     <section class="py-12 bg-slate-900/30 border-b border-slate-800">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
@@ -405,8 +543,183 @@ const productSchema = {
     </section>
   )}
 
+  {isDfyDavePage && spoke.category === "reviews" && !isRoom30VsDfyDave && (
+    <section class="py-12 bg-slate-900/30 border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <span>Verified Turnkey Audit • 2026 Assessment</span>
+          </div>
+          <h2 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            Independent Audit: DFY Dave Digital Media Assets
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Rigorous evaluation of account standing, monetization eligibility, transfer protocols, and Dave Nick ecosystem credibility.
+          </p>
+        </div>
+
+        <!-- Overall Score Card -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-6 sm:p-8 shadow-2xl mb-8">
+          <div class="flex flex-col sm:flex-row items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Asset Status Verdict</div>
+              <div class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 mt-1">
+                <span>Verified Turnkey Asset Provider</span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-right">
+                <div class="text-xs text-slate-400 font-medium">Composite Score</div>
+                <div class="text-xs text-emerald-400 font-bold">Tier 1 Rating</div>
+              </div>
+              <div class="w-16 h-16 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-center font-black text-2xl text-emerald-400 shadow-inner">
+                9.4
+              </div>
+            </div>
+          </div>
+
+          <!-- 6-Metric Audit Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Account Cleanliness</span>
+                <span class="text-xs font-bold text-emerald-400">9.8 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Zero strikes, organic watch hours, compliant with platform policies.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Transfer Security</span>
+                <span class="text-xs font-bold text-emerald-400">9.6 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Google Brand Account protocol; zero password sharing risks.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Monetization Speed</span>
+                <span class="text-xs font-bold text-emerald-400">9.9 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Day 1 AdSense and Creator Rewards eligibility unlocked immediately.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Content Quality (Videos)</span>
+                <span class="text-xs font-bold text-emerald-400">9.1 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">1080p faceless editing, retention hooks, and custom thumbnails.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Customer Support</span>
+                <span class="text-xs font-bold text-emerald-400">9.2 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">24/7 dedicated handover staff and post-delivery guidance.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Unit Economics & ROI</span>
+                <span class="text-xs font-bold text-emerald-400">9.3 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Saves 12 months of manual video production labor and equipment costs.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+            <span class="italic text-center sm:text-left">
+              "Auditor Finding: DFY Dave is the premier institutional source for buyers seeking pre-monetized digital real estate without the 12-month grind."
+            </span>
+            <a
+              href={customAffiliateUrl}
+              class="flex-shrink-0 font-bold text-emerald-400 hover:text-emerald-300 underline"
+            >
+              Verify Available Inventory →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {isRoom30VsDfyDave && (
+    <section class="py-12 bg-slate-900/30 border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <span>Head-to-Head Comparative Scorecard</span>
+          </div>
+          <h2 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            System Scorecard: Room30 vs. DFY Dave
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Comparing Greg Cooke's AI influencer system with Dave Nick's pre-monetized media channels across delivery, scalability, and long-term ROI.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Room30 Scorecard -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                  Room30 (Greg Cooke)
+                </span>
+                <span class="text-2xl font-black text-emerald-400">9.4 / 10</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Best for Proprietary Brand Equity</h3>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                Builds proprietary virtual creators that you own 100%. Generates brand deals, sponsorship revenue, and high-ticket fan funnels.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li class="flex items-center justify-between"><span>Persona Photorealism:</span><strong class="text-white">9.8 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>Script-to-Video Engine:</span><strong class="text-white">9.5 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>Brand Deal Potential:</span><strong class="text-white">9.6 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>Entry Investment:</span><strong class="text-white">$175.00</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DFY Dave Scorecard -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider">
+                  DFY Dave (Dave Nick)
+                </span>
+                <span class="text-2xl font-black text-teal-400">9.4 / 10</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Best for Day-One Cash Flow</h3>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                Provides established YouTube & TikTok channels enrolled in monetization programs with instant Google AdSense and Creator Rewards.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li class="flex items-center justify-between"><span>Monetization Speed:</span><strong class="text-white">9.9 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>YPP Compliance:</span><strong class="text-white">9.8 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>AdSense Passive Flow:</span><strong class="text-white">9.5 / 10</strong></li>
+                <li class="flex items-center justify-between"><span>Entry Investment:</span><strong class="text-white">$695.00</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combined Synergy Callout -->
+        <div class="p-6 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 shadow-xl text-center">
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">The Auditor's Top Recommendation</div>
+          <h4 class="text-base sm:text-lg font-bold text-white mb-2">The Hybrid Power Combo (Score: 9.8 / 10)</h4>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto mb-4 leading-relaxed">
+            Acquiring a DFY Dave monetized YouTube channel and publishing Room30 AI persona videos eliminates both the 12-month monetization wait AND video production fatigue.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Direct comparison table vs old DIY approaches -->
-  <ComparisonTable />
+  <ComparisonTable
+    variant={comparisonVariant}
+    affiliateUrl={customAffiliateUrl}
+    ctaText={customCtaText}
+  />
 
   <!-- FAQ Accordion with rich FAQPage schema markup -->
   <FAQAccordion faqList={spoke.faqList} />
@@ -416,7 +729,7 @@ const productSchema = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <h2 class="text-xl sm:text-3xl font-bold text-white tracking-tight mb-2">
-          Related AI Portfolios & Use Cases
+          {isDfyDavePage ? "Related Turnkey Assets & Blueprints" : "Related AI Portfolios & Use Cases"}
         </h2>
         <p class="text-slate-400 text-sm">
           Explore specialized turnkey frameworks designed for complementary professions, channels, and business models.

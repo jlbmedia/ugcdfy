@@ -20,6 +20,18 @@ const breadcrumbs = [
   { name: "Home", url: "/" },
   { name: hub.name, url: `/${hub.slug}/` }
 ];
+
+// Contextual Hub CTA
+let hubCtaText = "Explore Room30 Turnkey Portfolio →";
+let hubCtaUrl = AFFILIATE_LINK;
+
+if (hub.slug === "faceless-automation") {
+  hubCtaText = "Explore Faceless Video & Monetized Systems →";
+  hubCtaUrl = "/reviews/room30-vs-dfy-dave/";
+} else if (hub.slug === "reviews") {
+  hubCtaText = "Compare Verified Systems & Scorecards →";
+  hubCtaUrl = "/reviews/room30-vs-dfy-dave/";
+}
 ---
 
 <BaseLayout
@@ -42,26 +54,72 @@ const breadcrumbs = [
         {hub.description}
       </p>
 
-      <div class="inline-flex items-center justify-center gap-4">
-        <a
-          href={AFFILIATE_LINK}
-          class="px-8 py-3.5 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
-        >
-          Explore Room30 Turnkey Portfolio →
-        </a>
-      </div>
+      {hub.slug === "reviews" ? (
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/reviews/room30-review/"
+            class="w-full sm:w-auto px-6 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
+          >
+            Room30 AI Portfolio Audit →
+          </a>
+          <a
+            href="/reviews/dfy-dave-monetized-youtube-channel/"
+            class="w-full sm:w-auto px-6 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shadow-md active:scale-95"
+          >
+            DFY Dave Monetized Assets Audit →
+          </a>
+        </div>
+      ) : hub.slug === "faceless-automation" ? (
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={AFFILIATE_LINK}
+            class="w-full sm:w-auto px-6 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
+          >
+            Explore Room30 AI Video Systems →
+          </a>
+          <a
+            href="/go/dfy-youtube"
+            class="w-full sm:w-auto px-6 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shadow-md active:scale-95"
+          >
+            Acquire DFY Dave Monetized Channels →
+          </a>
+        </div>
+      ) : (
+        <div class="inline-flex items-center justify-center gap-4">
+          <a
+            href={hubCtaUrl}
+            class="px-8 py-3.5 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl active:scale-95"
+          >
+            {hubCtaText}
+          </a>
+        </div>
+      )}
 
       {hub.slug === "reviews" && (
         <div class="mt-12 max-w-4xl mx-auto rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
-          <img
-            src="/images/room30-system-audit-scorecard.webp"
-            alt="Independent system audit scorecard and verification for Room30 AI Influencer Portfolio showing 9.4 trust score and evaluation metrics"
-            width="1376"
-            height="768"
-            class="w-full h-auto object-cover rounded-2xl"
-            loading="eager"
-            fetchpriority="high"
-          />
+          <div class="p-6 bg-slate-900/60 border-b border-slate-800 text-center">
+            <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Comprehensive Multi-System Directory</span>
+            <h3 class="text-lg sm:text-xl font-bold text-white mt-1">Comparing Room30 AI Personas & DFY Dave Monetized Channels</h3>
+            <p class="text-xs text-slate-400 mt-1">Reviewing verification audits, delivery SLAs, and verified customer returns across 2026 digital asset providers.</p>
+          </div>
+          <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="flex items-center justify-between mb-2">
+                <strong class="text-white text-sm">Room30 AI Systems</strong>
+                <span class="text-xs font-bold text-emerald-400">Score: 9.4/10</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-3">Custom photorealistic AI influencer portfolios, script-to-video pipelines, and brand partnerships.</p>
+              <a href="/reviews/room30-review/" class="text-xs font-bold text-emerald-400 hover:underline">Read Full Audit →</a>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="flex items-center justify-between mb-2">
+                <strong class="text-white text-sm">DFY Dave Digital Media</strong>
+                <span class="text-xs font-bold text-teal-400">Score: 9.4/10</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-3">Turnkey monetized YouTube & TikTok accounts with day-one Google AdSense and Creator Rewards.</p>
+              <a href="/reviews/dfy-dave-monetized-youtube-channel/" class="text-xs font-bold text-teal-400 hover:underline">Read Full Audit →</a>
+            </div>
+          </div>
         </div>
       )}
     </div>

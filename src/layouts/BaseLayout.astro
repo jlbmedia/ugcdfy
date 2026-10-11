@@ -8,6 +8,11 @@ interface Props {
   schemaType?: string;
   schemaData?: Record<string, any>;
   breadcrumbs?: { name: string; url: string }[];
+  announcementText?: string;
+  announcementCtaText?: string;
+  announcementCtaUrl?: string;
+  headerCtaText?: string;
+  headerCtaUrl?: string;
 }
 
 const {
@@ -16,7 +21,12 @@ const {
   canonicalPath = Astro.url.pathname,
   schemaType = "WebPage",
   schemaData,
-  breadcrumbs = []
+  breadcrumbs = [],
+  announcementText = "🚀 2026 Turnkey Media: Compare Verified AI Influencer Systems & Monetized Channels.",
+  announcementCtaText = "Compare Top Systems →",
+  announcementCtaUrl = "/reviews/",
+  headerCtaText = "Compare Systems",
+  headerCtaUrl = "/reviews/"
 } = Astro.props;
 
 // Enforce meta description 120-158 length rule
@@ -84,7 +94,7 @@ const websiteSchema = {
           const anchor = e.target.closest('a');
           if (!anchor) return;
           const href = anchor.getAttribute('href') || '';
-          if (href.startsWith('/go/') || href.includes('room30.ai')) {
+          if (href.startsWith('/go/') || href.includes('room30.ai') || href.includes('dfydave.com')) {
             if (typeof window.gtag === 'function') {
               window.gtag('event', 'affiliate_click', {
                 event_category: 'outbound_conversion',
@@ -128,9 +138,9 @@ const websiteSchema = {
     
     <!-- Top Announcement Bar -->
     <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm">
-      <span>🚀 2026 Batch Open: Get Your Turnkey Faceless AI Influencer Portfolio Deployed in 24 Hours.</span>
-      <a href={AFFILIATE_LINK} class="underline font-bold ml-2 hover:text-emerald-100 transition-colors">
-        Claim Verified Access →
+      <span>{announcementText}</span>
+      <a href={announcementCtaUrl} class="underline font-bold ml-2 hover:text-emerald-100 transition-colors">
+        {announcementCtaText}
       </a>
     </div>
 
@@ -157,10 +167,10 @@ const websiteSchema = {
         <!-- CTA Header Button -->
         <div class="flex items-center space-x-3">
           <a
-            href={AFFILIATE_LINK}
+            href={headerCtaUrl}
             class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-md shadow-emerald-500/20 active:scale-95"
           >
-            Explore Room30 Offer
+            {headerCtaText}
           </a>
         </div>
       </div>
@@ -198,7 +208,8 @@ const websiteSchema = {
               <li><a href="/faceless-automation/for-beginners/" class="hover:text-slate-200">For Beginners</a></li>
               <li><a href="/faceless-automation/for-introverts/" class="hover:text-slate-200">For Introverts</a></li>
               <li><a href="/faceless-automation/for-professionals/" class="hover:text-slate-200">For Professionals</a></li>
-              <li><a href="/faceless-automation/for-teams/" class="hover:text-slate-200">For Teams</a></li>
+              <li><a href="/faceless-automation/monetized-channels-for-busy-executives/" class="hover:text-slate-200">Executive Monetized Channels</a></li>
+              <li><a href="/faceless-automation/monetized-tiktok-for-dropshippers/" class="hover:text-slate-200">Dropshipper Monetized TikTok</a></li>
             </ul>
           </div>
 
@@ -212,6 +223,7 @@ const websiteSchema = {
               <li><a href="/ai-income-systems/for-parents/" class="hover:text-slate-200">For Busy Parents</a></li>
               <li><a href="/ai-income-systems/for-accountants/" class="hover:text-slate-200">For Accountants & Skeptics</a></li>
               <li><a href="/ai-income-systems/for-skeptics/" class="hover:text-slate-200">For Burned Buyers</a></li>
+              <li><a href="/ai-income-systems/for-retirees/" class="hover:text-slate-200">For Retirees</a></li>
             </ul>
           </div>
 
@@ -222,8 +234,11 @@ const websiteSchema = {
             </a>
             <ul class="space-y-2">
               <li><a href="/reviews/room30-review/" class="hover:text-slate-200">Room30 System Audit</a></li>
-              <li><a href="/reviews/greg-cooke-ai-portfolio/" class="hover:text-slate-200">Greg Cooke Credibility Review</a></li>
-              <li><a href={AFFILIATE_LINK} class="text-brand-400 font-semibold hover:underline">Official Direct Offer Link</a></li>
+              <li><a href="/reviews/dfy-dave-monetized-youtube-channel/" class="hover:text-slate-200">DFY Dave Monetized YouTube</a></li>
+              <li><a href="/reviews/dfy-dave-monetized-tiktok-account/" class="hover:text-slate-200">DFY Dave Monetized TikTok</a></li>
+              <li><a href="/reviews/dfy-dave-amazon-affiliate-website/" class="hover:text-slate-200">DFY Dave Amazon Website</a></li>
+              <li><a href="/reviews/room30-vs-dfy-dave/" class="hover:text-slate-200">Room30 vs DFY Dave</a></li>
+              <li><a href="/reviews/dfy-dave-review/" class="hover:text-slate-200">DFY Dave Platform Audit</a></li>
             </ul>
           </div>
         </div>

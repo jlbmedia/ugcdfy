@@ -1,117 +1,848 @@
 ---
 import { AFFILIATE_LINK } from '../data/pages';
+
+interface Props {
+  variant?: "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave";
+  affiliateUrl?: string;
+  ctaText?: string;
+}
+
+const {
+  variant = "room30",
+  affiliateUrl = AFFILIATE_LINK,
+  ctaText
+} = Astro.props;
 ---
 
 <section class="py-16 md:py-24 bg-slate-900/40 border-t border-b border-slate-800">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-        Direct Comparison: Room30 vs. Traditional Online Models
-      </h2>
-      <p class="text-slate-400 text-sm sm:text-base">
-        Why analytical buyers and busy professionals choose turnkey faceless AI assets over exhausting DIY side hustles.
-      </p>
-    </div>
 
-    <!-- Responsive Comparison Table -->
-    <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
-      <table class="w-full text-left text-xs sm:text-sm">
-        <thead>
-          <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
-            <th class="p-4 sm:p-5 font-semibold">Feature / Metric</th>
-            <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              Room30 AI Influencer Portfolio
-            </th>
-            <th class="p-4 sm:p-5 font-semibold text-slate-400">Dropshipping / E-Com</th>
-            <th class="p-4 sm:p-5 font-semibold text-slate-400">Personal YouTube/Vlog</th>
-            <th class="p-4 sm:p-5 font-semibold text-slate-400">Freelance Gigs</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-800/60 text-slate-300">
-          <tr>
-            <td class="p-4 sm:p-5 font-medium text-white">Setup Time</td>
-            <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              ⚡ 24 Hours (Turnkey)
-            </td>
-            <td class="p-4 sm:p-5">2 to 6 Months</td>
-            <td class="p-4 sm:p-5">6 to 12 Months</td>
-            <td class="p-4 sm:p-5">Immediate (Low pay)</td>
-          </tr>
-          <tr>
-            <td class="p-4 sm:p-5 font-medium text-white">On-Camera Required</td>
-            <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              🛡️ Zero (100% Faceless)
-            </td>
-            <td class="p-4 sm:p-5">No (High ad cost)</td>
-            <td class="p-4 sm:p-5">Yes (100% Public)</td>
-            <td class="p-4 sm:p-5">Yes (Client Calls)</td>
-          </tr>
-          <tr>
-            <td class="p-4 sm:p-5 font-medium text-white">Technical Skill Needed</td>
-            <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              None (Done-For-You)
-            </td>
-            <td class="p-4 sm:p-5">High (Shopify, Ads, Pixels)</td>
-            <td class="p-4 sm:p-5">High (Editing, Lighting)</td>
-            <td class="p-4 sm:p-5">Specialized Skill</td>
-          </tr>
-          <tr>
-            <td class="p-4 sm:p-5 font-medium text-white">Daily Commitment</td>
-            <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              15 Minutes Daily
-            </td>
-            <td class="p-4 sm:p-5">4–6 Hours Daily</td>
-            <td class="p-4 sm:p-5">5–8 Hours Daily</td>
-            <td class="p-4 sm:p-5">Trades Time For Cash</td>
-          </tr>
-          <tr>
-            <td class="p-4 sm:p-5 font-medium text-white">High-Ticket Backend</td>
-            <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
-              $1,000–$10,000 Payouts
-            </td>
-            <td class="p-4 sm:p-5">Low Margins (10–15%)</td>
-            <td class="p-4 sm:p-5">AdSense Pennies Early On</td>
-            <td class="p-4 sm:p-5">Capped Hourly Rates</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    {variant === "room30" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Direct Comparison: Room30 vs. Traditional Online Models
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why analytical buyers and busy professionals choose turnkey faceless AI assets over exhausting DIY side hustles.
+          </p>
+        </div>
 
-    <!-- Unit Economics Breakdown Infographic -->
-    <div class="mb-12">
-      <div class="text-center max-w-2xl mx-auto mb-6">
-        <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
-          The Self-Liquidating Unit Economics Model
-        </h3>
-        <p class="text-slate-400 text-xs sm:text-sm">
-          Why Room30's math works: Front-end break-even customer acquisition costs paired with high-yield 5x ROAS backend margins.
-        </p>
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Feature / Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Room30 AI Influencer Portfolio
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Dropshipping / E-Com</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Personal YouTube/Vlog</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Freelance Gigs</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Setup Time</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ 24 Hours (Turnkey)
+                </td>
+                <td class="p-4 sm:p-5">2 to 6 Months</td>
+                <td class="p-4 sm:p-5">6 to 12 Months</td>
+                <td class="p-4 sm:p-5">Immediate (Low pay)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">On-Camera Required</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ Zero (100% Faceless)
+                </td>
+                <td class="p-4 sm:p-5">No (High ad cost)</td>
+                <td class="p-4 sm:p-5">Yes (100% Public)</td>
+                <td class="p-4 sm:p-5">Yes (Client Calls)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Technical Skill Needed</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  None (Done-For-You)
+                </td>
+                <td class="p-4 sm:p-5">High (Shopify, Ads, Pixels)</td>
+                <td class="p-4 sm:p-5">High (Editing, Lighting)</td>
+                <td class="p-4 sm:p-5">Specialized Skill</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Daily Commitment</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  15 Minutes Daily
+                </td>
+                <td class="p-4 sm:p-5">4–6 Hours Daily</td>
+                <td class="p-4 sm:p-5">5–8 Hours Daily</td>
+                <td class="p-4 sm:p-5">Trades Time For Cash</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">High-Ticket Backend</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $1,000–$10,000 Payouts
+                </td>
+                <td class="p-4 sm:p-5">Low Margins (10–15%)</td>
+                <td class="p-4 sm:p-5">AdSense Pennies Early On</td>
+                <td class="p-4 sm:p-5">Capped Hourly Rates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Self-Liquidating Unit Economics Model
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Why Room30's math works: Front-end break-even customer acquisition costs paired with high-yield 5x ROAS backend margins.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
+            <img
+              src="/images/ai-income-system-unit-economics.webp"
+              alt="Financial infographic detailing self-liquidating customer acquisition cost and high-ticket backend ROI for AI portfolio systems"
+              width="1376"
+              height="768"
+              class="w-full h-auto object-cover rounded-2xl"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Skip the DIY Grind: Claim Done-For-You Portfolio"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
-        <img
-          src="/images/ai-income-system-unit-economics.webp"
-          alt="Financial infographic detailing self-liquidating customer acquisition cost and high-ticket backend ROI for AI portfolio systems"
-          width="1376"
-          height="768"
-          class="w-full h-auto object-cover rounded-2xl"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </div>
+    )}
 
-    <!-- Quick Takeaway -->
-    <div class="text-center">
-      <a
-        href={AFFILIATE_LINK}
-        class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
-      >
-        <span>Skip the DIY Grind: Claim Done-For-You Portfolio</span>
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
-      </a>
-    </div>
+    {variant === "dfy-dave-youtube" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Turnkey Monetized Channels vs. Starting from Scratch
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why serious investors and busy creators acquire pre-monetized YouTube assets instead of grinding YouTube Partner Program thresholds.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Evaluation Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  DFY Dave Monetized Channel
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">DIY YouTube (From Zero)</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Black-Market Brokers</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Paid Ad Arbitrage</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Time to Monetization</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ Day 1 (Immediate AdSense)
+                </td>
+                <td class="p-4 sm:p-5">9 to 18 Months</td>
+                <td class="p-4 sm:p-5">1 to 3 Days</td>
+                <td class="p-4 sm:p-5">Immediate (High Burn)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">YPP Qualification</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ 1,000 Subs & 4,000 Hours Met
+                </td>
+                <td class="p-4 sm:p-5">0 / 4,000 Hours (Grind)</td>
+                <td class="p-4 sm:p-5">Bot Views (High Ban Risk)</td>
+                <td class="p-4 sm:p-5">N/A</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Ownership Security</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Google Brand Account Transfer
+                </td>
+                <td class="p-4 sm:p-5">Full (Your account)</td>
+                <td class="p-4 sm:p-5">High Scam Risk (Recovered Email)</td>
+                <td class="p-4 sm:p-5">Fragile Ad Accounts</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">AdSense Integration</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Link Personal or LLC AdSense
+                </td>
+                <td class="p-4 sm:p-5">Must Apply & Await Approval</td>
+                <td class="p-4 sm:p-5">Locked to Foreign Bank Accounts</td>
+                <td class="p-4 sm:p-5">Complex Merchant Processing</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Weekly Time Commitment</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  30 Mins (With DFY Packages)
+                </td>
+                <td class="p-4 sm:p-5">15–20 Hours Filming/Editing</td>
+                <td class="p-4 sm:p-5">Stressful Troubleshooting</td>
+                <td class="p-4 sm:p-5">4–6 Hours Daily Campaign Work</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Monetized Digital Real Estate Cash Flow Model
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              How pre-monetized channels bypass algorithmic friction and turn video views into direct Google AdSense royalties.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">High Tier-1 RPMs</div>
+              <h4 class="text-lg font-bold text-white mb-2">$4.00 – $18.00+ CPM</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Channels targeted at US, UK, and tier-1 audiences earn premium advertising rates across Finance, Tech, and Business niches.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Evergreen Compounding</div>
+              <h4 class="text-lg font-bold text-white mb-2">24/7 Passive Video Catalog</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Every uploaded faceless video remains active in the YouTube search index, generating recurring AdSense checks month after month.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Capital Value Growth</div>
+              <h4 class="text-lg font-bold text-white mb-2">24x–36x Net Multiple</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Monetized channels with established history can be held for monthly dividends or sold on digital asset exchanges for capital gains.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Check Pre-Monetized Channel Availability →"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "dfy-dave-tiktok" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Pre-Monetized TikTok Accounts vs. New Profile Warmup
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why e-commerce operators and creators bypass algorithmic warmup to unlock TikTok Shop and Creator Rewards on day one.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Capability / Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  DFY Dave Monetized TikTok
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">New Organic Profile</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Foreign VPN Profile</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Paid Influencer Ads</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Creator Rewards Access</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ 10k Followers & 100k Views Met
+                </td>
+                <td class="p-4 sm:p-5">6–12 Months Grind</td>
+                <td class="p-4 sm:p-5">Stripped for VPN Fraud</td>
+                <td class="p-4 sm:p-5">Zero (You Pay Influencer)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">TikTok Shop Affiliate</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ Instant Product Tagging
+                </td>
+                <td class="p-4 sm:p-5">Locked Until Tier Thresholds</td>
+                <td class="p-4 sm:p-5">Regional Country Restrictions</td>
+                <td class="p-4 sm:p-5">High Commission Retainers</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Audience Demographics</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  High-RPM US & UK Feeds
+                </td>
+                <td class="p-4 sm:p-5">Local Low-RPM Pool</td>
+                <td class="p-4 sm:p-5">Misaligned Demographics</td>
+                <td class="p-4 sm:p-5">Fragmented Audience</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Handover Protocol</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Clean Verified Credential Migration
+                </td>
+                <td class="p-4 sm:p-5">Manual Setup</td>
+                <td class="p-4 sm:p-5">High Ban Rate</td>
+                <td class="p-4 sm:p-5">No Asset Ownership</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Dual-Stream TikTok Monetization Flywheel
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Capturing Creator Rewards Program RPM and direct TikTok Shop affiliate commissions on the exact same viral clip.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Creator Rewards RPM</div>
+              <h4 class="text-lg font-bold text-white mb-2">$0.50 – $1.50 / 1k Views</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Earn payouts on qualified 1-minute+ original video views from high-purchasing Western audiences.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">TikTok Shop Affiliates</div>
+              <h4 class="text-lg font-bold text-white mb-2">10% – 25% Revenue Share</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Tag trending e-commerce and dropshipping products directly in videos for instant viral shopping cart sales.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Immediate Social Proof</div>
+              <h4 class="text-lg font-bold text-white mb-2">10k+ Real Follower Base</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Bypasses the "zero-view" algorithmic purgatory to deliver immediate organic feed distribution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Claim Monetized TikTok Account →"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "dfy-dave-amazon" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Turnkey Amazon Affiliate Sites vs. Custom Development
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Compare DFY Dave pre-loaded affiliate review blogs against expensive broker acquisitions and tedious DIY website builds.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Comparison Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  DFY Dave Amazon Site
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">DIY WordPress Build</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Broker Marketplaces (Flippa)</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Dropshipping Store</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Investment Required</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $995 Flat Turnkey Fee
+                </td>
+                <td class="p-4 sm:p-5">$2,500+ Dev & Content Costs</td>
+                <td class="p-4 sm:p-5">$5,000–$25,000+ Multiples</td>
+                <td class="p-4 sm:p-5">Ad Spend & Inventory Risk</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Pre-Loaded Content</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  50+ SEO Buyer Guides Pre-Loaded
+                </td>
+                <td class="p-4 sm:p-5">100+ Hours Manual Writing</td>
+                <td class="p-4 sm:p-5">Outdated Content / Tech Debt</td>
+                <td class="p-4 sm:p-5">Single Product Landing Page</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Customer Support Burden</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Zero (Amazon Handles 100%)
+                </td>
+                <td class="p-4 sm:p-5">Zero (Amazon Handles)</td>
+                <td class="p-4 sm:p-5">Zero (Amazon Handles)</td>
+                <td class="p-4 sm:p-5">15–20 Hours/Week Ticket Chaos</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Setup Timeline</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  24–48 Hours Turnkey Handover
+                </td>
+                <td class="p-4 sm:p-5">3 to 6 Months</td>
+                <td class="p-4 sm:p-5">2 to 4 Weeks Escrow</td>
+                <td class="p-4 sm:p-5">2 to 4 Weeks Build</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Amazon Associates Evergreen Review Model
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Targeting high-intent commercial keywords where Google searchers are already holding credit cards to purchase.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">High Buyer Intent</div>
+              <h4 class="text-lg font-bold text-white mb-2">Organic Google Search</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Rank for product reviews and "best [niche] products" queries that convert at industry-leading percentages.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">24h Universal Cart</div>
+              <h4 class="text-lg font-bold text-white mb-2">Full Session Commissions</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Earn commissions on everything the user buys on Amazon during their session, not just the recommended item.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Zero Operational Drag</div>
+              <h4 class="text-lg font-bold text-white mb-2">Amazon Logistics Support</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Prime shipping, customer returns, credit card processing, and customer queries are handled 100% by Amazon.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Launch Turnkey Amazon Affiliate Site →"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "dfy-dave-videos" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            DFY Video Packages vs. Freelancers & DIY
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why automated channel owners use bundled 10, 20, or 30 video production packages instead of managing unreliable freelance editors.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Production Feature</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  DFY Dave Video Packages
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Upwork / Fiverr Freelancers</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">DIY Script & Edit</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Full Creative Agency</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Cost Per Long-Form Video</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $16.60 – $25.00 Complete
+                </td>
+                <td class="p-4 sm:p-5">$80 – $200+ Per Video</td>
+                <td class="p-4 sm:p-5">"Free" (10+ Hours of Your Time)</td>
+                <td class="p-4 sm:p-5">$500 – $1,500 Per Video</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Deliverables Included</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Script, Voice, 1080p Edit & Thumbnail
+                </td>
+                <td class="p-4 sm:p-5">Fragmented Contractors</td>
+                <td class="p-4 sm:p-5">Manual Labor Across 4 Apps</td>
+                <td class="p-4 sm:p-5">Full Agency Package</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Faceless Optimization</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Engineered for Retention & CTR
+                </td>
+                <td class="p-4 sm:p-5">Generic Editing Skills</td>
+                <td class="p-4 sm:p-5">Amateur Quality</td>
+                <td class="p-4 sm:p-5">Corporate/TV Focus</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Batch Scalability</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Order 10, 20, or 30 in 1-Click
+                </td>
+                <td class="p-4 sm:p-5">Complex Contractor Coordination</td>
+                <td class="p-4 sm:p-5">Capped by Personal Hours</td>
+                <td class="p-4 sm:p-5">Multi-Month Retainers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Long-Form YouTube Production Economics
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              How keeping production costs under $25 per video guarantees asymmetrical ROI on monetized YouTube channels.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Low Payback Threshold</div>
+              <h4 class="text-lg font-bold text-white mb-2">~3,100 Views to Break Even</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                At an average $8 RPM in business/tech niches, a $25 video achieves 100% payback in just a few thousand lifetime views.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Search Compounding</div>
+              <h4 class="text-lg font-bold text-white mb-2">Long-Tail AdSense Returns</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                YouTube functions as a search engine; well-titled faceless videos continue collecting ad checks years into the future.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Content Consistency</div>
+              <h4 class="text-lg font-bold text-white mb-2">Algorithmic Feeding</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                YouTube's recommendation algorithm rewards channels that upload predictably without burnout or multi-week gaps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Order Done-For-You Video Package →"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "dfy-dave-platform" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            DFY Dave Asset Catalog vs. Traditional Creator Models
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            How Dave Nick's turnkey asset marketplace changes digital entrepreneurship from skill-learning to media asset ownership.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Evaluation Criteria</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  DFY Dave Platform
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Course-Only Programs</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">DIY Channel Grinding</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">High-Ticket Coaching</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Core Deliverable</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Live Cash-Flowing Asset (Channels, Sites, Videos)
+                </td>
+                <td class="p-4 sm:p-5">Recorded Videos & Slide Decks</td>
+                <td class="p-4 sm:p-5">Blank Accounts & Zero Subs</td>
+                <td class="p-4 sm:p-5">Weekly Advice & Theory</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Time to First Revenue</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Day 1 (Instant Monetization)
+                </td>
+                <td class="p-4 sm:p-5">Months of Studying</td>
+                <td class="p-4 sm:p-5">12+ Months Grinding</td>
+                <td class="p-4 sm:p-5">6+ Months Trial & Error</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Underlying Asset Ownership</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  You Own Channel, AdSense & Equity
+                </td>
+                <td class="p-4 sm:p-5">You Own Course Access</td>
+                <td class="p-4 sm:p-5">You Own Unmonetized Profile</td>
+                <td class="p-4 sm:p-5">You Own Call Recordings</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Investment Structure</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $250 – $995 One-Time Flat Fee
+                </td>
+                <td class="p-4 sm:p-5">$997 – $1,997 Course Fees</td>
+                <td class="p-4 sm:p-5">$0 + Hundreds of Hours</td>
+                <td class="p-4 sm:p-5">$5,000 – $15,000 Retainers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              The Digital Media Asset Allocation Framework
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Why modern investors treat YouTube channels and affiliate sites as digital real estate rather than side hustles.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Immediate Cash Flow</div>
+              <h4 class="text-lg font-bold text-white mb-2">Bypass Startup Drag</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Step into an established asset already enrolled in monetization programs without waiting for approval.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Zero Physical Overhead</div>
+              <h4 class="text-lg font-bold text-white mb-2">Pure Digital Leverage</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                No inventory, warehouse rent, product returns, or shipping bottlenecks. Media assets scale friction-free.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Institutional Support</div>
+              <h4 class="text-lg font-bold text-white mb-2">Dave Nick Support Staff</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Dedicated onboarding team to verify credential handover, Brand Account transfer, and AdSense linking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Explore Complete DFY Dave Catalog →"}</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "room30-vs-dfy-dave" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Room30 vs. DFY Dave: Comprehensive Head-to-Head Comparison
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Detailed comparison across core technology, delivery model, monetization mechanics, and the hybrid workflow.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Comparison Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Room30 (Greg Cooke)
+                </th>
+                <th class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  DFY Dave (Dave Nick)
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  The Hybrid Power Combo
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Core Value Proposition</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  AI Influencer Persona & Video Engine
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  Pre-Monetized Channels & Affiliate Sites
+                </td>
+                <td class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  Room30 AI Videos on DFY Dave Channels
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Entry Pricing</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $175 (Portfolio) / $4,997 (DFY)
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  $695 (Monetized YT) / $795 (TikTok)
+                </td>
+                <td class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  ~$870 Combined Entry
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Monetization Engine</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Sponsorships, Fan Funnels & Affiliate
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  Google AdSense & TikTok Creator Rewards
+                </td>
+                <td class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  Dual Stream: AdSense + Brand Deals
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">On-Camera Required</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  0% (Photorealistic Virtual Persona)
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  0% (Faceless Channel Ownership)
+                </td>
+                <td class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  0% (100% Anonymous Digital Media Asset)
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Delivery Timeline</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  24-Hour System Deployment
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-teal-400 bg-teal-950/20 border-r border-teal-900/40">
+                  24–48 Hours Handover Protocol
+                </td>
+                <td class="p-4 sm:p-5 font-semibold text-amber-300 bg-amber-950/10">
+                  Complete Setup in Under 48 Hours
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">
+              Why the Hybrid Strategy Delivers Maximum ROI
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Room30 solves content creation; DFY Dave solves platform distribution and monetization delays.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Pillar 1: The Platform</div>
+              <h4 class="text-lg font-bold text-white mb-2">DFY Dave Monetized Channel</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Acquire an approved YouTube Partner Program channel with active AdSense and established metrics.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Pillar 2: The Content</div>
+              <h4 class="text-lg font-bold text-white mb-2">Room30 AI Persona Generator</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Deploy Room30's automated script-to-video pipeline to produce photorealistic video reels in 15 minutes a day.
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/80 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">Pillar 3: The Compounding</div>
+              <h4 class="text-lg font-bold text-white mb-2">Day-One Cash Flow Checks</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Publish Room30 videos to your monetized channel to collect direct Google AdSense royalties without waiting 12 months.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/go/dfy-youtube"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 hover:from-teal-300 hover:to-emerald-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>Explore DFY Dave Monetized Channels →</span>
+          </a>
+          <a
+            href={AFFILIATE_LINK}
+            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shadow-md active:scale-95"
+          >
+            <span>Explore Room30 AI Influencers →</span>
+          </a>
+        </div>
+      </div>
+    )}
 
   </div>
 </section>

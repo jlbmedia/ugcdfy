@@ -9,6 +9,7 @@ interface Props {
   audience: string;
   affiliateUrl?: string;
   ctaText?: string;
+  authoritySignals?: string[];
 }
 
 const {
@@ -18,7 +19,13 @@ const {
   subheadline,
   audience,
   affiliateUrl = AFFILIATE_LINK,
-  ctaText = "Deploy Room30 AI System in 24 Hours"
+  ctaText = "Deploy Room30 AI System in 24 Hours",
+  authoritySignals = [
+    "100% Done-For-You in 24h",
+    "Zero Camera or Face Required",
+    "32,000+ Enrolled Worldwide",
+    "As Seen on Forbes & Entrepreneur"
+  ]
 } = Astro.props;
 ---
 
@@ -65,22 +72,12 @@ const {
 
     <!-- Third-Party Authority Signals -->
     <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-400 font-medium">
-      <div class="flex items-center space-x-2">
-        <span class="text-emerald-400 font-bold">✓</span>
-        <span>100% Done-For-You in 24h</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="text-emerald-400 font-bold">✓</span>
-        <span>Zero Camera or Face Required</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="text-emerald-400 font-bold">✓</span>
-        <span>32,000+ Enrolled Worldwide</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="text-emerald-400 font-bold">✓</span>
-        <span>As Seen on Forbes & Entrepreneur</span>
-      </div>
+      {authoritySignals.map((signal) => (
+        <div class="flex items-center space-x-2">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>{signal}</span>
+        </div>
+      ))}
     </div>
 
   </div>
