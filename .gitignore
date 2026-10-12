@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 .agents/mcp_config.json
+*gsc*.json
+service-account*.json
+fasttrackcreator/
 
 # Node & dependencies
 node_modules/
