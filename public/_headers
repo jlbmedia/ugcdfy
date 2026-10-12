@@ -1,0 +1,3 @@
+# Cloudflare Pages Headers
+/go/*
+  X-Robots-Tag: noindex, nofollow

@@ -13,6 +13,7 @@ interface Props {
   announcementCtaUrl?: string;
   headerCtaText?: string;
   headerCtaUrl?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -22,12 +23,16 @@ const {
   schemaType = "WebPage",
   schemaData,
   breadcrumbs = [],
+  noindex = false,
   announcementText = "🚀 2026 Turnkey Media: Compare Verified AI Influencer Systems & Monetized Channels.",
   announcementCtaText = "Compare Top Systems →",
   announcementCtaUrl = "/reviews/",
   headerCtaText = "Compare Systems",
   headerCtaUrl = "/reviews/"
 } = Astro.props;
+
+const isAnnouncementAffiliate = announcementCtaUrl.startsWith('/go/') || announcementCtaUrl.startsWith('http');
+const isHeaderAffiliate = headerCtaUrl.startsWith('/go/') || headerCtaUrl.startsWith('http');
 
 // Enforce meta description 120-158 length rule
 if (description.length < 120 || description.length > 158) {
@@ -65,7 +70,7 @@ const websiteSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1"} />
 
     <!-- Favicon & Site Icons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -139,7 +144,11 @@ const websiteSchema = {
     <!-- Top Announcement Bar -->
     <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm">
       <span>{announcementText}</span>
-      <a href={announcementCtaUrl} class="underline font-bold ml-2 hover:text-emerald-100 transition-colors">
+      <a 
+        href={announcementCtaUrl} 
+        rel={isAnnouncementAffiliate ? "nofollow noopener noreferrer" : undefined}
+        class="underline font-bold ml-2 hover:text-emerald-100 transition-colors"
+      >
         {announcementCtaText}
       </a>
     </div>
@@ -168,6 +177,7 @@ const websiteSchema = {
         <div class="flex items-center space-x-3">
           <a
             href={headerCtaUrl}
+            rel={isHeaderAffiliate ? "nofollow noopener noreferrer" : undefined}
             class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 transition-all shadow-md shadow-emerald-500/20 active:scale-95"
           >
             {headerCtaText}
