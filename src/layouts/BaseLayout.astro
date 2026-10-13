@@ -253,9 +253,28 @@ const websiteSchema = {
           </div>
         </div>
 
-        <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs">
-          <p>© 2026 {BRAND_NAME}. All rights reserved.</p>
-          <p class="mt-2 sm:mt-0">Affiliate Disclosure: We may receive compensation if you make a purchase through our links at no additional cost to you.</p>
+        <!-- Legal & Compliance Links -->
+        <div class="pt-8 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 text-slate-400 text-xs">
+          <div>
+            © {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
+          </div>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-400">
+            <a href="/about/" class="hover:text-brand-400 transition-colors">About Us</a>
+            <span>•</span>
+            <a href="/contact/" class="hover:text-brand-400 transition-colors">Contact Us</a>
+            <span>•</span>
+            <a href="/privacy-policy/" class="hover:text-brand-400 transition-colors">Privacy Policy</a>
+            <span>•</span>
+            <a href="/terms-of-service/" class="hover:text-brand-400 transition-colors">Terms of Service</a>
+            <span>•</span>
+            <a href="/affiliate-disclosure/" class="hover:text-brand-400 transition-colors">Affiliate Disclosure</a>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 leading-relaxed">
+          <p>
+            <strong>FTC Compliance Notice:</strong> UGC DFY participates in select affiliate marketing programs (including Room30 and Soldi/DFY Dave), which means we may earn referral commissions on purchases made through our links at zero additional cost to you. Read our full <a href="/affiliate-disclosure/" class="text-brand-400 hover:underline">Affiliate Disclosure</a> and <a href="/terms-of-service/" class="text-brand-400 hover:underline">Earnings Disclaimer</a>.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND_NAME } from '../data/pages';
+
+const title = `About Us | Mission & Editorial Standards - ${BRAND_NAME}`;
+const description = "Learn how UGC DFY audits AI influencer systems, faceless media automation, and turnkey creator assets. Read our mission and editorial testing rubric.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "About Us", url: "/about/" }
+];
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": `About ${BRAND_NAME}`,
+  "description": description,
+  "mainEntity": {
+    "@type": "Organization",
+    "name": BRAND_NAME,
+    "url": "https://ugcdfy.com",
+    "email": "contact@ugcdfy.com",
+    "publishingPrinciples": "https://ugcdfy.com/about/",
+    "sameAs": [
+      "https://ugcdfy.com"
+    ]
+  }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath="/about/"
+  breadcrumbs={breadcrumbs}
+  schemaData={aboutSchema}
+>
+  <div class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumbs -->
+    <nav class="mb-8 flex items-center space-x-2 text-xs text-slate-400">
+      <a href="/" class="hover:text-brand-400 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-slate-200">About Us</span>
+    </nav>
+
+    <!-- Header Section (Strictly 1 H1) -->
+    <header class="mb-12 border-b border-slate-800 pb-10">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Independent Research & Audits</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+        De-risking AI Influencers & Turnkey Media Assets
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
+        UGC DFY is an independent media intelligence portal dedicated to testing, auditing, and benchmarking artificial intelligence creator systems, faceless automation channels, and turnkey digital portfolios.
+      </p>
+    </header>
+
+    <!-- Content Body -->
+    <div class="prose prose-invert max-w-none space-y-10 text-slate-300 leading-relaxed text-base">
+      
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">Why UGC DFY Was Created</h2>
+        <p>
+          The creator economy is undergoing a massive structural shift. Between synthetic media generation, virtual influencer brand partnerships, and algorithmically optimized faceless video syndication, the barriers to entry for digital media ownership have fallen dramatically.
+        </p>
+        <p>
+          Unfortunately, the market is saturated with exaggerated claims, unverified revenue screenshots, and opaque services. Beginners and corporate executives alike frequently lose money on broken automation promises. <strong>{BRAND_NAME}</strong> was built to provide rigorous, unbiased evaluations of done-for-you (DFY) systems, software platforms, and asset marketplaces.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">Our Core Evaluation Rubric</h2>
+        <p>
+          When reviewing platforms such as Room30, Soldi/DFY Dave, and digital asset marketplaces, we evaluate vendors against four non-negotiable criteria:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose my-6">
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-brand-400 mb-2">1. Technical Feasibility & LoRA Quality</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We verify photorealism, character face-consistency, prompt adherence, and output quality across high-definition video formats.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-accent-400 mb-2">2. Transfer & Escrow Security</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We audit Google Brand Account handover procedures, primary email ownership, and third-party escrow protections to safeguard buyers.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-indigo-400 mb-2">3. Unit Economics & Net Margins</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We calculate realistic cost-per-video, software API token expenses, RPM variations, and net return on invested capital.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-emerald-400 mb-2">4. Platform Policy Compliance</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We check adherence to YouTube Partner Program (YPP), TikTok Creator Rewards Program, and Meta synthetic media disclosure standards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">Editorial Independence</h2>
+        <p>
+          Our audits are independent. While we maintain affiliate relationships with select verified providers (earning referral commissions at zero extra cost to readers), no provider can pay for a higher rating or edit our audit findings.
+        </p>
+      </section>
+
+      <!-- Communication Box -->
+      <section class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 not-prose">
+        <h2 class="text-lg font-bold text-white mb-2">Connect With Our Research Team</h2>
+        <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+          Have an AI creator system you would like us to audit, or spotted data that needs updating? Reach out directly.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="/contact/" class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-xl bg-brand-500 hover:bg-brand-400 text-white transition-colors">
+            Contact Us →
+          </a>
+          <a href="/affiliate-disclosure/" class="text-xs text-slate-400 hover:text-slate-200 underline">
+            Review Affiliate Disclosure
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

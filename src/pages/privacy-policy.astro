@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND_NAME } from '../data/pages';
+
+const title = `Privacy Policy | Cookies & Data Protection - ${BRAND_NAME}`;
+const description = "Read the UGC DFY Privacy Policy. Discover how we protect your personal information, handle Google Analytics cookies, and honor user privacy rights.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Privacy Policy", url: "/privacy-policy/" }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath="/privacy-policy/"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumbs -->
+    <nav class="mb-8 flex items-center space-x-2 text-xs text-slate-400">
+      <a href="/" class="hover:text-brand-400 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-slate-200">Privacy Policy</span>
+    </nav>
+
+    <!-- Header Section (Strictly 1 H1) -->
+    <header class="mb-12 border-b border-slate-800 pb-10">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>GDPR & CCPA Compliant</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+        Privacy Policy
+      </h1>
+      <p class="text-sm text-slate-400">
+        Last Updated: October 13, 2026
+      </p>
+    </header>
+
+    <!-- Content Body -->
+    <div class="prose prose-invert max-w-none space-y-10 text-slate-300 leading-relaxed text-base">
+      
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">1. Overview</h2>
+        <p>
+          At <strong>{BRAND_NAME}</strong> (<a href="https://ugcdfy.com" class="text-brand-400 hover:underline">ugcdfy.com</a>), your privacy is of paramount importance. This document explains what information is collected when you browse our site, how it is processed, and how your privacy rights are safeguarded under global privacy legislation (including GDPR and CCPA).
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">2. Information Collection & Telemetry</h2>
+        <p>We collect minimal data necessary for site performance and visitor understanding:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Server Log Files:</strong> Cloudflare edge servers automatically record connection details including IP address, browser type, referral headers, and access timestamps.</li>
+          <li><strong>Google Analytics 4:</strong> We deploy GA4 (Measurement ID: <code>G-YG3LQ6GR9D</code>) to analyze aggregate readership trends, page view velocity, device distributions, and bounce rates.</li>
+          <li><strong>Affiliate Outbound Clicks:</strong> When you navigate via a <code>/go/*</code> vanity route, anonymous event telemetry records click engagement without linking it to personally identifiable profiles.</li>
+          <li><strong>Direct Correspondence:</strong> When contacting us via email at <a href="mailto:contact@ugcdfy.com" class="text-brand-400 hover:underline">contact@ugcdfy.com</a>, your email address and message body are stored securely for customer response purposes.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">3. Cookies & Tracking Technologies</h2>
+        <p>
+          We utilize standard first-party cookies to support page caching and aggregate audience analytics.
+        </p>
+        <p>
+          Google Analytics cookies (such as <code>_ga</code>) collect pseudonymous usage metrics. They do not retain personally identifiable information. You can block or clear cookies via your browser settings or opt out using Google's <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">Opt-out Browser Extension</a>.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">4. Data Usage & Protection</h2>
+        <p>
+          All collected information is used solely to maintain technical stability, defend against abuse, evaluate content efficacy, and respond to reader inquiries. <strong>We do not sell, rent, or monetize your personal data with third-party brokers.</strong>
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">5. User Privacy Rights (GDPR & CCPA)</h2>
+        <p>
+          You retain the right to inspect, correct, or request the deletion of any personal communications stored in our records. To submit a request, contact us at <a href="mailto:contact@ugcdfy.com" class="text-brand-400 hover:underline">contact@ugcdfy.com</a>.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white tracking-tight">6. Contact Information</h2>
+        <p class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 not-prose text-sm text-slate-300">
+          <strong>UGC DFY Media</strong><br />
+          Email: <a href="mailto:contact@ugcdfy.com" class="text-brand-400 hover:underline">contact@ugcdfy.com</a><br />
+          Website: <a href="https://ugcdfy.com" class="text-brand-400 hover:underline">https://ugcdfy.com</a>
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
