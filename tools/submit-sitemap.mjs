@@ -48,11 +48,10 @@ async function getAccessToken() {
   return tokenData.access_token;
 }
 
-async function submitSitemap(feedUrl) {
+async function submitSitemap(siteUrl, feedUrl) {
   const token = await getAccessToken();
-  const siteUrl = 'sc-domain:ugcdfy.com';
 
-  console.log(`📡 Submitting sitemap: ${feedUrl} to ${siteUrl}...`);
+  console.log(`📡 Submitting sitemap: ${feedUrl} to property ${siteUrl}...`);
   const res = await fetch(
     `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/sitemaps/${encodeURIComponent(feedUrl)}`,
     {
@@ -75,8 +74,11 @@ async function submitSitemap(feedUrl) {
     }
   );
   const listData = await listRes.json();
-  console.log('📋 Updated Sitemaps list in GSC:');
+  console.log(`📋 Updated Sitemaps list in GSC for ${siteUrl}:`);
   console.log(JSON.stringify(listData, null, 2));
 }
 
-submitSitemap('https://ugcdfy.com/sitemap-index.xml').catch(console.error);
+const targetSite = process.argv[2] || 'sc-domain:fasttrackcreator.com';
+const targetFeed = process.argv[3] || 'https://fasttrackcreator.com/sitemap-index.xml';
+
+submitSitemap(targetSite, targetFeed).catch(console.error);
