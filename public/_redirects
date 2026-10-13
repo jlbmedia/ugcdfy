@@ -1,3 +1,7 @@
+# Cloudflare Pages 301 Domain Redirects (Canonical enforcement)
+https://www.ugcdfy.com/* https://ugcdfy.com/:splat 301
+http://www.ugcdfy.com/*  https://ugcdfy.com/:splat 301
+
 # Cloudflare Pages 302 Affiliate Redirects
 /go/room30          https://room30.ai/offer?fpr=joseph65 302
 /go/ai-influencer   https://room30.ai/offer?fpr=joseph65 302
