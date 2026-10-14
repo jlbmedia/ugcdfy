@@ -6,6 +6,8 @@
 *gsc*.json
 service-account*.json
 fasttrackcreator/
+activomrr/
+petmedoutlet/
 
 # Node & dependencies
 node_modules/
