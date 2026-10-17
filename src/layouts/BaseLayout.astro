@@ -99,13 +99,25 @@ const websiteSchema = {
           const anchor = e.target.closest('a');
           if (!anchor) return;
           const href = anchor.getAttribute('href') || '';
-          if (href.startsWith('/go/') || href.includes('room30.ai') || href.includes('dfydave.com')) {
+          if (
+            href.startsWith('/go/') ||
+            href.includes('room30.ai') ||
+            href.includes('dfydave.com') ||
+            href.includes('soldi.ai') ||
+            href.includes('fameswap.com') ||
+            href.includes('skool.com') ||
+            href.includes('fanvue.com') ||
+            href.includes('beacons.ai') ||
+            href.includes('fiverr.com')
+          ) {
             if (typeof window.gtag === 'function') {
               window.gtag('event', 'affiliate_click', {
                 event_category: 'outbound_conversion',
                 event_label: (anchor.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60),
                 destination_url: href,
-                source_path: window.location.pathname
+                source_path: window.location.pathname,
+                site_source: 'ugcdfy.com',
+                subid: 'ugcdfy'
               });
             }
           }

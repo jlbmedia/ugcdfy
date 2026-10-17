@@ -2,22 +2,51 @@
 https://www.ugcdfy.com/* https://ugcdfy.com/:splat 301
 http://www.ugcdfy.com/*  https://ugcdfy.com/:splat 301
 
-# Cloudflare Pages 302 Affiliate Redirects
-/go/room30          https://room30.ai/offer?fpr=joseph65 302
-/go/ai-influencer   https://room30.ai/offer?fpr=joseph65 302
-/go/faceless-income https://room30.ai/offer?fpr=joseph65 302
-/go/offer           https://room30.ai/offer?fpr=joseph65 302
-/go/portfolio       https://room30.ai/offer?fpr=joseph65 302
-/go/dfy-influencer  https://room30.ai/dfy-ai-influencer?fpr=joseph65 302
-/go/dfy             https://room30.ai/dfy-ai-influencer?fpr=joseph65 302
-/go/three-days      https://room30.ai/three-days-with-greg?fpr=joseph65 302
-/go/vip             https://room30.ai/three-days-with-greg?fpr=joseph65 302
-/go/dfy-dave        https://www.dfydave.com/?p=B63B41B5 302
-/go/dfy-youtube     https://dfydave.com/monetization?p=B63B41B5 302
-/go/dfy-tiktok      https://www.dfydave.com/tiktok-monetization?p=B63B41B5 302
-/go/dfy-tiktok-plus https://www.dfydave.com/tiktok-monetization?p=B63B41B5 302
-/go/dfy-amazon      https://www.dfydave.com/amazon-affiliate-website?p=B63B41B5 302
-/go/dfy-videos      https://buy.dfydave.com/dfy-10-long-form-youtube-videos?p=B63B41B5 302
-/go/dfy-videos-10   https://buy.dfydave.com/dfy-10-long-form-youtube-videos?p=B63B41B5 302
-/go/dfy-videos-20   https://buy.dfydave.com/dfy-20-long-form-youtube-videos?p=B63B41B5 302
-/go/dfy-videos-30   https://buy.dfydave.com/dfy-30-long-form-youtube-videos?p=B63B41B5 302
+# Cloudflare Pages 302 Affiliate Redirects for UGC DFY
+# Sub-ID & Attribution Tag: ugcdfy
+
+# Room30 (FirstPromoter - fp_sid Sub-ID)
+/go/room30             https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/room30-dfy         https://room30.ai/dfy-ai-influencer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/room30-vip         https://room30.ai/three-days-with-greg?fpr=joseph65&fp_sid=ugcdfy 302
+/go/ai-influencer      https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/faceless-income    https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/offer              https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/portfolio          https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/dfy-influencer     https://room30.ai/dfy-ai-influencer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/dfy                https://room30.ai/dfy-ai-influencer?fpr=joseph65&fp_sid=ugcdfy 302
+/go/three-days         https://room30.ai/three-days-with-greg?fpr=joseph65&fp_sid=ugcdfy 302
+/go/vip                https://room30.ai/three-days-with-greg?fpr=joseph65&fp_sid=ugcdfy 302
+
+# DFY Dave (Soldi.ai with subid)
+/go/dfy-dave           https://www.dfydave.com/?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-youtube        https://dfydave.com/monetization?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-tiktok         https://www.dfydave.com/tiktok-monetization?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-tiktok-plus    https://www.dfydave.com/tiktok-monetization?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-amazon         https://www.dfydave.com/amazon-affiliate-website?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-videos         https://buy.dfydave.com/dfy-10-long-form-youtube-videos?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-videos-10      https://buy.dfydave.com/dfy-10-long-form-youtube-videos?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-videos-20      https://buy.dfydave.com/dfy-20-long-form-youtube-videos?p=B63B41B5&subid=ugcdfy 302
+/go/dfy-videos-30      https://buy.dfydave.com/dfy-30-long-form-youtube-videos?p=B63B41B5&subid=ugcdfy 302
+
+# Network Monetization Suite (Attributed to ugcdfy)
+# Fameswap
+/go/fameswap           https://fameswap.com/?ref=1514192&sub=ugcdfy 302
+/go/fameswap-youtube   https://fameswap.com/browse-youtube-accounts-for-sale?ref=1514192&sub=ugcdfy 302
+/go/fameswap-tiktok    https://fameswap.com/browse-tiktok-accounts-for-sale?ref=1514192&sub=ugcdfy 302
+/go/fameswap-instagram https://fameswap.com/browse-instagram-accounts-for-sale?ref=1514192&sub=ugcdfy 302
+
+# Skool
+/go/skool              https://www.skool.com/signup?ref=f5c036bfb1ee414b80732fbee6b19ccd&utm_source=ugcdfy 302
+
+# Fanvue
+/go/fanvue             https://www.fanvue.com/signup?referral=FV-YQ6P77&source=ugcdfy&campaign=ugcdfy 302
+
+# Beacons
+/go/beacons            https://beacons.ai/signup?c=jlbmedia&utm_source=ugcdfy 302
+
+# Fiverr
+/go/fiverr             https://go.fiverr.com/visit/?bta=843111&brand=fiverrmarketplace&afp=ugcdfy&subid=ugcdfy 302
+/go/fiverr-video       https://go.fiverr.com/visit/?bta=843111&brand=fiverrmarketplace&afp=ugcdfy&subid=ugcdfy&landingPage=https%3A%2F%2Fwww.fiverr.com%2Fcategories%2Fvideo-animation%2Fvideo-editing 302
+/go/fiverr-automation  https://go.fiverr.com/visit/?bta=843111&brand=fiverrmarketplace&afp=ugcdfy&subid=ugcdfy&landingPage=https%3A%2F%2Fwww.fiverr.com%2Fsearch%2Fgigs%3Fquery%3Dyoutube%2Bautomation 302
+/go/fiverr-ai          https://go.fiverr.com/visit/?bta=843111&brand=fiverrmarketplace&afp=ugcdfy&subid=ugcdfy&landingPage=https%3A%2F%2Fwww.fiverr.com%2Fsearch%2Fgigs%3Fquery%3Dai%2Binfluencer 302
