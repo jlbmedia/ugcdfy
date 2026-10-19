@@ -42,7 +42,16 @@ const isLinkStackReview = spoke.slug === "linkstack-review";
 const isStanStoreAlternative = spoke.slug === "stan-store-alternative";
 const isLinkStackPage = isLinkStackReview || isStanStoreAlternative;
 
-const isRoom30Review = spoke.category === "reviews" && !isDfyDavePage && !isLinkStackPage;
+// Room30 Spokes & Strict Review Whitelist (Prevents Room30 images from showing on non-Room30 pages)
+const isRoom30Page = !isDfyDavePage && !isLinkStackPage;
+const room30ReviewSlugs = [
+  "room30-review",
+  "greg-cooke-ai-portfolio",
+  "room30-vs-dropshipping",
+  "room30-vs-diy-faceless-channels",
+  "room30-cost-and-pricing"
+];
+const isRoom30Review = room30ReviewSlugs.includes(spoke.slug);
 
 let customAffiliateUrl: string | undefined;
 let customCtaText: string | undefined;
@@ -568,6 +577,8 @@ const productSchema = {
     workflowTitle={isLinkStackPage ? "The Zero-Friction Creator Commerce Protocol" : isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
     workflowSubtitle={isLinkStackPage ? "How LinkStack converts social traffic into direct Stripe sales and newsletter subscribers with zero technical overhead." : isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
     isDfyDave={isDfyDavePage}
+    isLinkStack={isLinkStackPage}
+    isRoom30={isRoom30Page}
     affiliateUrl={customAffiliateUrl}
     midCtaText={customCtaText || "Lock In Your Turnkey Solution"}
     midCtaSubtext={isLinkStackPage ? "Free Forever Core Account • Instant Direct Stripe Payouts • No Credit Card Required" : isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}

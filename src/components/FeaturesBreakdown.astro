@@ -18,6 +18,8 @@ interface Props {
   workflowTitle?: string;
   workflowSubtitle?: string;
   isDfyDave?: boolean;
+  isLinkStack?: boolean;
+  isRoom30?: boolean;
 }
 
 const {
@@ -36,7 +38,9 @@ const {
   midCtaSubtext = "Backed by 24-Hour Handover Protocol & Dedicated Implementation",
   workflowTitle = "The 24-Hour Automated Execution Architecture",
   workflowSubtitle = "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture.",
-  isDfyDave = false
+  isDfyDave = false,
+  isLinkStack = false,
+  isRoom30 = false
 } = Astro.props;
 ---
 
@@ -157,8 +161,63 @@ const {
             </div>
           </div>
         </div>
-      ) : (
-        <!-- Standard Room30 Workflow Diagram -->
+      ) : isLinkStack ? (
+        <!-- LinkStack 4-Step Zero-Friction Creator Commerce Protocol -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 01</div>
+              <h4 class="text-base font-bold text-white mb-2">Instant Storefront Setup</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Claim your creator handle, customize your mobile theme, and link your Stripe account for instant direct payouts in under 3 minutes.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Zero coding • Free core tier available
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 02</div>
+              <h4 class="text-base font-bold text-white mb-2">Digital Product & Lead Host</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Upload PDFs, guides, video modules, or free opt-in lead magnets with automated file delivery and zero third-party hosting costs.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Automated delivery & list building
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Step 03</div>
+              <h4 class="text-base font-bold text-white mb-2">Automated DM Funnels</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Set up automated comment-to-DM triggers on Instagram and TikTok. Commenters instantly receive checkout and download links in their DMs.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Official Meta Tech Provider integration
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Step 04</div>
+              <h4 class="text-base font-bold text-white mb-2">Smart App Routing & 0% Fee</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Links open directly in native YouTube and Amazon apps rather than buggy in-app browsers, preventing drop-offs and maximizing earnings.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Direct Stripe payouts • 0% platform fee option
+            </div>
+          </div>
+        </div>
+      ) : isRoom30 ? (
+        <!-- Standard Room30 Workflow Diagram (Strictly shown only on Room30 AI persona pages) -->
         <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900/50">
           <img
             src="/images/dfy-ai-system-workflow.webp"
@@ -170,7 +229,7 @@ const {
             decoding="async"
           />
         </div>
-      )}
+      ) : null}
     </div>
 
     <!-- Before / After Transformation Grid -->
