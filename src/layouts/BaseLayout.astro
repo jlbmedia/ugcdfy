@@ -101,6 +101,7 @@ const websiteSchema = {
           const href = anchor.getAttribute('href') || '';
           if (
             href.startsWith('/go/') ||
+            href.includes('linkstack.fyi') ||
             href.includes('room30.ai') ||
             href.includes('dfydave.com') ||
             href.includes('soldi.ai') ||
@@ -256,6 +257,8 @@ const websiteSchema = {
             </a>
             <ul class="space-y-2">
               <li><a href="/reviews/room30-review/" class="hover:text-slate-200">Room30 System Audit</a></li>
+              <li><a href="/reviews/linkstack-review/" class="hover:text-slate-200">LinkStack Platform Audit</a></li>
+              <li><a href="/reviews/stan-store-alternative/" class="hover:text-slate-200">Stan Store Alternative</a></li>
               <li><a href="/reviews/dfy-dave-monetized-youtube-channel/" class="hover:text-slate-200">DFY Dave Monetized YouTube</a></li>
               <li><a href="/reviews/dfy-dave-monetized-tiktok-account/" class="hover:text-slate-200">DFY Dave Monetized TikTok</a></li>
               <li><a href="/reviews/dfy-dave-amazon-affiliate-website/" class="hover:text-slate-200">DFY Dave Amazon Website</a></li>

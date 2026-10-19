@@ -2,7 +2,7 @@
 import { AFFILIATE_LINK } from '../data/pages';
 
 interface Props {
-  variant?: "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave";
+  variant?: "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack";
   affiliateUrl?: string;
   ctaText?: string;
 }
@@ -839,6 +839,196 @@ const {
             class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shadow-md active:scale-95"
           >
             <span>Explore Room30 AI Influencers →</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "linkstack" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Platform Benchmark: LinkStack vs. Fragmented Creator Tools
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            See how consolidating link-in-bio, app-opening deep links, Instagram DM automations, and digital storefronts saves hundreds per year.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Core Capability</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  LinkStack (All-in-One)
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Linktree</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">Stan Store</th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">ManyChat</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Entry Subscription Cost</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ $0/mo (Free Forever)
+                </td>
+                <td class="p-4 sm:p-5">$5 to $24 / month</td>
+                <td class="p-4 sm:p-5">$29 to $99 / month</td>
+                <td class="p-4 sm:p-5">$15 to $65+ / month</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Smart App Deep-Linking</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ Native App Opener (Included)
+                </td>
+                <td class="p-4 sm:p-5">In-App Browser Only</td>
+                <td class="p-4 sm:p-5">In-App Browser Only</td>
+                <td class="p-4 sm:p-5">Not Applicable</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Instagram Comment-to-DM</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Meta-Certified Partner
+                </td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+                <td class="p-4 sm:p-5">✅ Supported (Complex)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Digital Product & Course Store</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Built-In Checkout
+                </td>
+                <td class="p-4 sm:p-5">Limited Tips / Integrations</td>
+                <td class="p-4 sm:p-5">✅ Core Feature</td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Transaction Fee Options</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  0% Fee (Growth) / 5% / 10%
+                </td>
+                <td class="p-4 sm:p-5">0.5% to 10%</td>
+                <td class="p-4 sm:p-5">0% ($29/mo min required)</td>
+                <td class="p-4 sm:p-5">Not Applicable</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Amazon Geo-Affiliate Routing</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Worldwide Auto-Routing
+                </td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+                <td class="p-4 sm:p-5">❌ Missing</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Annual Cost for Full Stack</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $0 to $299 / year
+                </td>
+                <td class="p-4 sm:p-5" colspan="3">Combined fragmented stack costs $600 to $1,800+ per year</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/linkstack"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Claim Your Free LinkStack Account (No Card Required) →"}</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "stan-store-vs-linkstack" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Head-to-Head Comparison: LinkStack vs. Stan Store
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why digital creators and AI influencers are switching to LinkStack to protect margins and avoid the $29/month starting fee.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Evaluation Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  LinkStack (The Free Alternative)
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Stan Store ($29/mo Creator Tax)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Monthly Subscription</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ $0.00 / month (Free Forever)
+                </td>
+                <td class="p-4 sm:p-5">$29.00 / month ($348/year min)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Cost During Slow or Launch Months</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $0.00 (Zero fixed overhead)
+                </td>
+                <td class="p-4 sm:p-5">$29.00 every 30 days regardless of revenue</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Smart App Deep-Linking</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Included (Launches YouTube & Amazon apps)
+                </td>
+                <td class="p-4 sm:p-5">❌ In-app browser only (40%+ click loss)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Instagram Comment-to-DM</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Built-In (Meta Tech Provider certified)
+                </td>
+                <td class="p-4 sm:p-5">❌ Missing (Requires ManyChat integration)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">0% Platform Selling Fee</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Available on Growth ($24.92/mo)
+                </td>
+                <td class="p-4 sm:p-5">Available on $29/mo or $99/mo plans</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Custom Domain Support</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ 1 Custom Domain on Growth
+                </td>
+                <td class="p-4 sm:p-5">✅ Supported on standard plan</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Year 1 Minimum Operating Cost</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $0.00 USD
+                </td>
+                <td class="p-4 sm:p-5">$348.00 USD (Excluding Stripe fees)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/linkstack-compare"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Switch to LinkStack ($0/mo Free Tier) →"}</span>
           </a>
         </div>
       </div>

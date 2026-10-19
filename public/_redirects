@@ -5,6 +5,11 @@ http://www.ugcdfy.com/*  https://ugcdfy.com/:splat 301
 # Cloudflare Pages 302 Affiliate Redirects for UGC DFY
 # Sub-ID & Attribution Tag: ugcdfy
 
+# LinkStack (Founding Creator 70% / 40% MRR Suite)
+/go/linkstack          https://www.linkstack.fyi/?ref=jlb&subid=ugcdfy 302
+/go/linkstack-free     https://www.linkstack.fyi/?ref=jlb&subid=ugcdfy 302
+/go/linkstack-compare  https://www.linkstack.fyi/p/compare?ref=jlb&subid=ugcdfy 302
+
 # Room30 (FirstPromoter - fp_sid Sub-ID)
 /go/room30             https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy 302
 /go/room30-dfy         https://room30.ai/dfy-ai-influencer?fpr=joseph65&fp_sid=ugcdfy 302

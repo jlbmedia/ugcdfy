@@ -65,7 +65,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Unbiased reviews, track record verifications, and performance audits of leading done-for-you AI business models and virtual influencer portfolios.",
     h1: "AI System Audits, Verifications & Reviews",
     description: "Independent breakdowns of turnkey AI influencer systems, examining earnings proof, refund policies, founder credibility, and real user outcomes.",
-    spokeSlugs: ["room30-review", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg", "dfy-dave-monetized-youtube-channel", "dfy-dave-monetized-tiktok-account", "dfy-dave-amazon-affiliate-website", "dfy-dave-done-for-you-youtube-videos", "dfy-dave-review", "room30-vs-dfy-dave"]
+    spokeSlugs: ["room30-review", "linkstack-review", "stan-store-alternative", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg", "dfy-dave-monetized-youtube-channel", "dfy-dave-monetized-tiktok-account", "dfy-dave-amazon-affiliate-website", "dfy-dave-done-for-you-youtube-videos", "dfy-dave-review", "room30-vs-dfy-dave"]
   }
 };
 
@@ -1390,6 +1390,92 @@ export const SPOKES: SpokePage[] = [
       {
         question: "Does the account come with active followers?",
         answer: "Yes. Accounts arrive with 10,000+ followers and 100,000+ views, meeting all TikTok commercial threshold criteria."
+      }
+    ]
+  },
+  {
+    slug: "linkstack-review",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "linkstack review",
+    audience: "Creators, Faceless Channels & UGC Influencers",
+    title: "LinkStack Review: All-in-One Creator Platform Audit | UGC DFY",
+    metaDescription: "Comprehensive LinkStack review: Audit Kyle Colquitt's creator platform, deep-link engine, Instagram DM automation, and pricing vs Stan Store and Linktree.",
+    h1: "LinkStack Review: All-in-One Creator Store & Deep Link Audit",
+    badge: "2026 Platform Audit & Benchmark",
+    heroHeadline: "The Unvarnished Truth About LinkStack: Replaces 4 Subscriptions in One Stack",
+    heroSubheadline: "An exhaustive technical audit of Kyle Colquitt's LinkStack platform: smart app-opening deep links, Meta-verified Instagram DM automation, digital storefronts, and 70% founding economics.",
+    avatarContext: "Virtual influencers, faceless video channels, and UGC creators lose up to 40% of their affiliate conversions when Instagram's in-app browser drops login cookies. LinkStack was built to fix this 'link leak' while replacing separate costly subscriptions for Linktree, Stan Store, ManyChat, and URLgenius.",
+    painPoints: [
+      "In-app browser link leak: Instagram and TikTok webviews force users to log in again, destroying YouTube subs and Amazon affiliate sales.",
+      "Costly SaaS subscription fatigue: Paying $29/mo for Stan Store, $15/mo for ManyChat, and $10/mo for Linktree before earning consistent revenue.",
+      "Manual DM burnout: Inability to scale automated comment-to-DM flows for viral videos without complex, fragile flow builders."
+    ],
+    keyBenefits: [
+      "Native App Deep-Linking: Automatically routes visitors straight into the YouTube, Amazon, and Spotify native apps for 1-click conversions.",
+      "Meta-Verified DM Automation: Certified Meta Tech Provider automation triggers instant DM deliveries with comment memory.",
+      "Free Forever Starting Tier ($0/mo): Launch your link-in-bio, products, and automations with zero monthly SaaS fees."
+    ],
+    faqList: [
+      {
+        question: "Is LinkStack legit or just another Linktree clone?",
+        answer: "LinkStack is a verified creator infrastructure platform founded by Kyle Colquitt. Unlike basic link aggregators, it incorporates deep linking to bypass in-app browsers, Meta-certified Instagram DM automations, and full digital product checkout."
+      },
+      {
+        question: "How does LinkStack's deep linking prevent lost sales?",
+        answer: "When visitors tap social bio links, ordinary browsers load external sites in mobile webviews where users aren't logged in. LinkStack detects the device and launches the native mobile application (such as YouTube or Amazon) directly, preserving active session cookies and 1-click buying."
+      },
+      {
+        question: "What does LinkStack cost compared to Stan Store?",
+        answer: "LinkStack offers a Free Forever plan with 500 deep clicks and 50 DM triggers per month. Its paid Starter plan is $8.25/mo ($99/year), and its top-tier Growth plan is $24.92/mo ($299/year) with 0% platform transaction fees, compared to Stan Store's mandatory $29 to $99/mo starting price."
+      },
+      {
+        question: "Where can I access the official LinkStack platform?",
+        answer: "You can create a free account and test the link leak scanner directly through our verified first-party redirect at /go/linkstack."
+      }
+    ]
+  },
+  {
+    slug: "stan-store-alternative",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "stan store alternative",
+    audience: "Cost-Conscious Creators & Digital Sellers",
+    title: "Best Stan Store Alternative: LinkStack vs Stan Store | UGC DFY",
+    metaDescription: "Looking for the best Stan Store alternative? Compare LinkStack vs Stan Store: Save $29/mo with a free creator store, deep links, and automated Instagram DMs.",
+    h1: "Best Stan Store Alternative: LinkStack vs Stan Store 2026 Audit",
+    badge: "The Comparison Switch Playbook",
+    heroHeadline: "Stop Paying the $29/Month Creator Tax: Why Sellers Switch to LinkStack",
+    heroSubheadline: "Stan Store charges $348/year before you make your first dollar. Discover how LinkStack delivers a free storefront, native app deep linking, and Instagram DM automation without fixed fees.",
+    avatarContext: "Creators are increasingly frustrated by Stan Store charging a mandatory $29 monthly fee regardless of sales volume. For beginners, AI influencers, and side-hustle operators, fixed monthly software fees eat into margins before traffic matures. LinkStack provides a modern, zero-risk alternative.",
+    painPoints: [
+      "Stan Store's $29/mo mandatory tax: Paying $348 to $1,188 per year even during months when you publish zero products or take a content break.",
+      "Zero deep linking: Stan Store links open inside restrictive in-app browsers, causing mobile visitors to abandon carts.",
+      "Missing social DM automation: Stan Store lacks native Instagram comment-to-DM workflows, forcing you to buy third-party tools like ManyChat."
+    ],
+    keyBenefits: [
+      "Zero Monthly Cost to Start ($0/mo): Launch your digital store, courses, and booking calendar with zero subscription fees.",
+      "Integrated App-Opening Links: Protect affiliate commissions and subscriber growth by opening links directly in native mobile apps.",
+      "Complete 0% Fee Tier on Growth: Scale your storefront on LinkStack Growth with 0% transaction fees at lower monthly cost than Stan Store."
+    ],
+    faqList: [
+      {
+        question: "Why is LinkStack considered the top Stan Store alternative?",
+        answer: "LinkStack combines digital product sales and courses with features Stan Store completely lacks: smart app deep-linking (opening YouTube/Amazon apps directly) and Meta-certified Instagram comment-to-DM automation, starting on a $0/month free tier."
+      },
+      {
+        question: "Does LinkStack take transaction fees on sales?",
+        answer: "The Free plan has a 10% platform fee, the Starter plan ($8.25/mo) reduces this to 5%, and the Growth plan ($24.92/mo) charges 0% platform fees. Standard Stripe merchant processing applies across all tiers."
+      },
+      {
+        question: "Can I migrate my products from Stan Store to LinkStack?",
+        answer: "Yes. You can upload digital downloads, PDF guides, video courses, and calendar booking links into LinkStack within minutes, replacing your bio link immediately."
+      },
+      {
+        question: "How can I test LinkStack for free?",
+        answer: "You can sign up without a credit card and explore all core features through our direct partner link at /go/linkstack-free."
       }
     ]
   }
