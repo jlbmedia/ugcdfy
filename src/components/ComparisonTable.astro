@@ -2,7 +2,7 @@
 import { AFFILIATE_LINK } from '../data/pages';
 
 interface Props {
-  variant?: "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack";
+  variant?: "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack" | "fameswap" | "buy-youtube-marketplace-vs-dfy" | "fameswap-alternatives" | "buy-tiktok-accounts";
   affiliateUrl?: string;
   ctaText?: string;
 }
@@ -1029,6 +1029,379 @@ const {
             class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
           >
             <span>{ctaText || "Switch to LinkStack ($0/mo Free Tier) →"}</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "fameswap" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Safety Benchmark: Fameswap Escrow vs. Direct P2P Deals
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why professional creators and media investors use Fameswap's neutral escrow protection over risky PayPal, crypto, or Discord transactions.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Evaluation Metric</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Fameswap Escrow Marketplace
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Direct Wire / Discord / Telegram
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Unmoderated Forums
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Payment Protection</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ 100% Locked in Neutral Escrow
+                </td>
+                <td class="p-4 sm:p-5">0% (Irreversible wire/crypto theft)</td>
+                <td class="p-4 sm:p-5">High dispute / chargeback risk</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Original Email (OGE) Handover</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Mandatory OGE Verification
+                </td>
+                <td class="p-4 sm:p-5">Rarely provided (Seller reclaims later)</td>
+                <td class="p-4 sm:p-5">Inconsistent compliance</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Buyer Inspection Period</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ 24 to 72 Hours Guaranteed
+                </td>
+                <td class="p-4 sm:p-5">None (Funds release immediately)</td>
+                <td class="p-4 sm:p-5">Limited or disputed</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Seller Identity Vetting</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ KYC, Bank & Phone Verified
+                </td>
+                <td class="p-4 sm:p-5">Anonymous online handles</td>
+                <td class="p-4 sm:p-5">Vouch-based (easily faked)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Supported Platforms</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  YouTube, TikTok & Instagram
+                </td>
+                <td class="p-4 sm:p-5">Unstructured</td>
+                <td class="p-4 sm:p-5">Mostly gaming handles</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Dispute Resolution</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Dedicated Escrow Mediation Team
+                </td>
+                <td class="p-4 sm:p-5">Zero recourse (100% loss)</td>
+                <td class="p-4 sm:p-5">Unpaid volunteer forum moderators</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/fameswap"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Explore Verified Accounts on Fameswap Escrow →"}</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "buy-youtube-marketplace-vs-dfy" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            YouTube Acquisition Matrix: Fameswap vs. DFY Dave vs. DIY
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Comparing the top 3 routes to owning a cash-flowing YouTube Partner Program (YPP) channel in 2026.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Acquisition Factor</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Fameswap Escrow Marketplace
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  DFY Dave White-Glove Handover
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  DIY Scratch (0 to 4,000 Watch Hours)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Time to First AdSense Dollar</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ Day 1 (Upon Handover)
+                </td>
+                <td class="p-4 sm:p-5">⚡ 24 to 48 Hours Turnkey</td>
+                <td class="p-4 sm:p-5">9 to 18 Months of Unpaid Labor</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Niche & Topic Selection</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  1,000+ Specific Aged Niches
+                </td>
+                <td class="p-4 sm:p-5">Sterile New Channel in Broad Topic</td>
+                <td class="p-4 sm:p-5">Any chosen topic (Zero initial reach)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Handover Mechanism</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Google Brand Account Escrow
+                </td>
+                <td class="p-4 sm:p-5">Brand Account + Dedicated Staff</td>
+                <td class="p-4 sm:p-5">Self-managed personal account</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">AdSense Integration</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Direct Studio Link (24-hour review)
+                </td>
+                <td class="p-4 sm:p-5">Assisted Onboarding Link</td>
+                <td class="p-4 sm:p-5">Must qualify for YPP threshold first</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Pricing & Unit Economics</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $200 to $5,000+ (Market Negotiated)
+                </td>
+                <td class="p-4 sm:p-5">$695.00 Flat Turnkey Package</td>
+                <td class="p-4 sm:p-5">$0 Cash / 500+ Hours Video Editing</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Ideal Use Case</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Targeting specific niche communities
+                </td>
+                <td class="p-4 sm:p-5">Executive looking for sterile assets</td>
+                <td class="p-4 sm:p-5">Personal personality/vlog creators</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/fameswap-youtube"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Browse Monetized YouTube Channels on Fameswap →"}</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "fameswap-alternatives" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Marketplace Benchmark: Fameswap vs. Top Alternatives
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Evaluating escrow reliability, inventory depth, and fee transparency across the leading social media account marketplaces.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Marketplace Feature</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Fameswap (Top Pick)
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Swapd
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  PlayerUp
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Social Tradia
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Access & Registration</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Instant Public Access
+                </td>
+                <td class="p-4 sm:p-5">Invite-Only / Strict Vetting</td>
+                <td class="p-4 sm:p-5">Open Registration</td>
+                <td class="p-4 sm:p-5">Open Registration</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Escrow Processing Speed</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ 24 to 72 Hour SLA
+                </td>
+                <td class="p-4 sm:p-5">Moderate (Forum thread broker)</td>
+                <td class="p-4 sm:p-5">Slow (7-14 day queue)</td>
+                <td class="p-4 sm:p-5">Manual staff review</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Channel & Social Scope</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  YouTube, TikTok & Instagram
+                </td>
+                <td class="p-4 sm:p-5">High-Ticket Social & Domains</td>
+                <td class="p-4 sm:p-5">Gaming Accounts & Keys</td>
+                <td class="p-4 sm:p-5">Instagram Only</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Buyer Fee Transparency</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  5% - 10% Flat Escrow
+                </td>
+                <td class="p-4 sm:p-5">10% - 15% + Surcharges</td>
+                <td class="p-4 sm:p-5">Up to 20% in hidden fees</td>
+                <td class="p-4 sm:p-5">Included in listing markup</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">OGE Verification Protocol</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Standardized Requirement
+                </td>
+                <td class="p-4 sm:p-5">✅ Enforced by brokers</td>
+                <td class="p-4 sm:p-5">❌ Frequent seller bypass</td>
+                <td class="p-4 sm:p-5">✅ Verified by staff</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Composite Trust Score</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  9.5 / 10
+                </td>
+                <td class="p-4 sm:p-5">8.8 / 10</td>
+                <td class="p-4 sm:p-5">7.2 / 10</td>
+                <td class="p-4 sm:p-5">8.1 / 10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/fameswap"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Access Fameswap's Escrow Marketplace →"}</span>
+          </a>
+        </div>
+      </div>
+    )}
+
+    {variant === "buy-tiktok-accounts" && (
+      <div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Aged 10K Follower TikTok Account vs. Fresh Account
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Why professional faceless clippers and TikTok Shop affiliates acquire aged accounts to bypass follower gates and sandboxes.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl mb-12">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900/90 text-slate-300">
+                <th class="p-4 sm:p-5 font-semibold">Monetization Factor</th>
+                <th class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Aged 10k+ TikTok Account (Fameswap)
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  DFY Dave Turnkey Account
+                </th>
+                <th class="p-4 sm:p-5 font-semibold text-slate-400">
+                  Fresh 0-Follower Account
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Creator Rewards Program</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ⚡ Day 1 Active ($0.50-$1.20 RPM)
+                </td>
+                <td class="p-4 sm:p-5">⚡ Day 1 Active Handover</td>
+                <td class="p-4 sm:p-5">❌ Locked (Requires 10,000 followers)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">TikTok Shop Affiliate Showcase</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  ✅ Unlocked (Pre-Qualified 5k+ threshold)
+                </td>
+                <td class="p-4 sm:p-5">✅ Pre-Qualified US/UK standing</td>
+                <td class="p-4 sm:p-5">❌ Locked (Requires 5,000 followers)</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Algorithmic Sandbox (200-View Jail)</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  🛡️ Bypassed (Established viewer trust)
+                </td>
+                <td class="p-4 sm:p-5">🛡️ Bypassed (Clean brand handover)</td>
+                <td class="p-4 sm:p-5">Severe 200-view throttling risk</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Setup & Onboarding Time</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Instant Escrow Handover
+                </td>
+                <td class="p-4 sm:p-5">24-48 Hours Assisted Onboarding</td>
+                <td class="p-4 sm:p-5">3 to 6 Months Daily Content</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Audience Geography Choice</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  Choose US, UK, or EU accounts
+                </td>
+                <td class="p-4 sm:p-5">US/UK Monetized Accounts</td>
+                <td class="p-4 sm:p-5">Tied to local physical IP/SIM</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-medium text-white">Typical Capital Investment</td>
+                <td class="p-4 sm:p-5 font-bold text-emerald-400 bg-emerald-950/20 border-x border-emerald-900/40">
+                  $150 to $800+
+                </td>
+                <td class="p-4 sm:p-5">$795.00 Flat Asset Handover</td>
+                <td class="p-4 sm:p-5">$0 + 300 Hours Unpaid Video Creation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center">
+          <a
+            href={affiliateUrl || "/go/fameswap-tiktok"}
+            class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 hover:from-emerald-300 hover:to-teal-300 transition-all shadow-lg active:scale-95"
+          >
+            <span>{ctaText || "Browse Aged TikTok Accounts on Fameswap →"}</span>
           </a>
         </div>
       </div>

@@ -19,6 +19,7 @@ interface Props {
   workflowSubtitle?: string;
   isDfyDave?: boolean;
   isLinkStack?: boolean;
+  isFameswap?: boolean;
   isRoom30?: boolean;
 }
 
@@ -40,6 +41,7 @@ const {
   workflowSubtitle = "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture.",
   isDfyDave = false,
   isLinkStack = false,
+  isFameswap = false,
   isRoom30 = false
 } = Astro.props;
 ---
@@ -213,6 +215,61 @@ const {
             </div>
             <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
               Direct Stripe payouts • 0% platform fee option
+            </div>
+          </div>
+        </div>
+      ) : isFameswap ? (
+        <!-- Fameswap 4-Step Escrow Handover Protocol -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 01</div>
+              <h4 class="text-base font-bold text-white mb-2">Discovery & Verification</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Filter thousands of aged accounts by niche, audience geography, and verified strike-free standing before initiating an offer.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Transparent live audience demographics
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 02</div>
+              <h4 class="text-base font-bold text-white mb-2">Escrow Deposit Lock</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Buyer deposits purchase funds into Fameswap Escrow. The seller is notified to begin transfer, with 0% risk of direct wire theft.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              100% Buyer payment protection guarantee
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Step 03</div>
+              <h4 class="text-base font-bold text-white mb-2">OGE & Primary Transfer</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Seller transfers original email (OGE) and initiates Google Brand Account or TikTok security migrations to grant full control.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Prevents post-sale account recovery
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Step 04</div>
+              <h4 class="text-base font-bold text-white mb-2">Inspection & Release</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Buyer audits metrics, updates recovery phones and 2FA, and signs off. Fameswap only releases escrow payout upon buyer approval.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Full 24-72h inspection window
             </div>
           </div>
         </div>

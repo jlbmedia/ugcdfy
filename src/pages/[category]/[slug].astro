@@ -42,8 +42,15 @@ const isLinkStackReview = spoke.slug === "linkstack-review";
 const isStanStoreAlternative = spoke.slug === "stan-store-alternative";
 const isLinkStackPage = isLinkStackReview || isStanStoreAlternative;
 
+// Fameswap spokes
+const isFameswapReview = spoke.slug === "fameswap-review";
+const isBuyMonetizedYoutube = spoke.slug === "buy-monetized-youtube-channel";
+const isFameswapAlternatives = spoke.slug === "fameswap-alternatives";
+const isBuyTikTokAccounts = spoke.slug === "buy-tiktok-accounts";
+const isFameswapPage = isFameswapReview || isBuyMonetizedYoutube || isFameswapAlternatives || isBuyTikTokAccounts;
+
 // Room30 Spokes & Strict Review Whitelist (Prevents Room30 images from showing on non-Room30 pages)
-const isRoom30Page = !isDfyDavePage && !isLinkStackPage;
+const isRoom30Page = !isDfyDavePage && !isLinkStackPage && !isFameswapPage;
 const room30ReviewSlugs = [
   "room30-review",
   "greg-cooke-ai-portfolio",
@@ -97,6 +104,22 @@ if (isVipImmersion) {
   customAffiliateUrl = "/go/linkstack-compare";
   customCtaText = "Switch to LinkStack Free →";
   customStickyText = "Replace $348/yr Stan Store subscriptions with LinkStack's 0% fee creator engine.";
+} else if (isBuyMonetizedYoutube) {
+  customAffiliateUrl = "/go/fameswap-youtube";
+  customCtaText = "Browse Monetized YouTube Channels →";
+  customStickyText = "Acquire verified, strike-free monetized YouTube channels protected by neutral escrow.";
+} else if (isBuyTikTokAccounts) {
+  customAffiliateUrl = "/go/fameswap-tiktok";
+  customCtaText = "Browse Aged TikTok Accounts →";
+  customStickyText = "Browse verified aged TikTok accounts with Creator Rewards & TikTok Shop eligibility.";
+} else if (isFameswapReview) {
+  customAffiliateUrl = "/go/fameswap";
+  customCtaText = "Explore Fameswap Escrow Catalog →";
+  customStickyText = "Audit verified social assets with bank-grade buyer protection and OGE transfer guarantee.";
+} else if (isFameswapAlternatives) {
+  customAffiliateUrl = "/go/fameswap";
+  customCtaText = "Compare Escrow Marketplaces →";
+  customStickyText = "Why Fameswap's neutral escrow beats unvetted Discord channels and risky forums.";
 }
 
 // Global Layout CTAs & Announcement Bar Context
@@ -130,6 +153,12 @@ if (isVipImmersion) {
   layoutAnnouncementCtaUrl = "/go/linkstack-free";
   layoutHeaderCtaText = "Get LinkStack Free";
   layoutHeaderCtaUrl = "/go/linkstack-free";
+} else if (isFameswapPage) {
+  layoutAnnouncementText = "🛡️ Verified Account Marketplace: Buy Aged & Monetized Channels with Bank-Grade Escrow.";
+  layoutAnnouncementCtaText = "Browse Verified Assets →";
+  layoutAnnouncementCtaUrl = customAffiliateUrl || "/go/fameswap";
+  layoutHeaderCtaText = "Explore Fameswap Assets";
+  layoutHeaderCtaUrl = customAffiliateUrl || "/go/fameswap";
 }
 
 // Tailored Hero Authority Signals
@@ -196,10 +225,38 @@ if (isDfyDaveYouTube) {
     "Built-in DM Funnels & Storefront",
     "3-Minute Migration Protocol"
   ];
+} else if (isBuyMonetizedYoutube) {
+  authoritySignals = [
+    "Bank-Grade Neutral Escrow",
+    "Verified YPP & AdSense Standing",
+    "Original Email (OGE) Guaranteed",
+    "24–72h Inspection Window"
+  ];
+} else if (isBuyTikTokAccounts) {
+  authoritySignals = [
+    "Creator Rewards & Shop Eligible",
+    "Aged 2019–2024 US/UK Accounts",
+    "Bank-Grade Buyer Escrow",
+    "100% Strike-Free Guarantee"
+  ];
+} else if (isFameswapReview) {
+  authoritySignals = [
+    "10+ Year Track Record (Since 2013)",
+    "Bank-Grade Escrow Protection",
+    "Original Email Handover Standard",
+    "1,000,000+ Community Members"
+  ];
+} else if (isFameswapAlternatives) {
+  authoritySignals = [
+    "Neutral Escrow vs. Direct Wire",
+    "Mandatory OGE Verification",
+    "KYC & Phone-Verified Sellers",
+    "Full Dispute Resolution Desk"
+  ];
 }
 
 // Comparison Table Variant
-type CompVariant = "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack";
+type CompVariant = "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack" | "fameswap" | "buy-youtube-marketplace-vs-dfy" | "fameswap-alternatives" | "buy-tiktok-accounts";
 let comparisonVariant: CompVariant = "room30";
 
 if (isDfyDaveYouTube) {
@@ -218,6 +275,14 @@ if (isDfyDaveYouTube) {
   comparisonVariant = "linkstack";
 } else if (isStanStoreAlternative) {
   comparisonVariant = "stan-store-vs-linkstack";
+} else if (isFameswapReview) {
+  comparisonVariant = "fameswap";
+} else if (isBuyMonetizedYoutube) {
+  comparisonVariant = "buy-youtube-marketplace-vs-dfy";
+} else if (isFameswapAlternatives) {
+  comparisonVariant = "fameswap-alternatives";
+} else if (isBuyTikTokAccounts) {
+  comparisonVariant = "buy-tiktok-accounts";
 }
 
 const breadcrumbs = [
@@ -227,7 +292,7 @@ const breadcrumbs = [
 ];
 
 // Related spokes for internal linking mesh:
-// Strictly isolate DFY Dave and LinkStack spokes from Room30 spokes for maximum offer congruency
+// Strictly isolate DFY Dave, LinkStack, and Fameswap spokes from Room30 spokes for maximum offer congruency
 const dfyDaveSlugs = [
   "dfy-dave-monetized-youtube-channel",
   "dfy-dave-monetized-tiktok-account",
@@ -244,18 +309,29 @@ const linkStackSlugs = [
   "stan-store-alternative"
 ];
 
+const fameswapSlugs = [
+  "fameswap-review",
+  "buy-monetized-youtube-channel",
+  "fameswap-alternatives",
+  "buy-tiktok-accounts"
+];
+
 let relatedSpokes: SpokePage[];
-if (isDfyDavePage) {
+if (isFameswapPage) {
+  const otherFameswapSpokes = SPOKES.filter((s) => fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "dfy-dave-monetized-youtube-channel" || s.slug === "dfy-dave-monetized-tiktok-account" || s.slug === "room30-review");
+  relatedSpokes = [...otherFameswapSpokes, ...complementarySpokes].slice(0, 3);
+} else if (isDfyDavePage) {
   const otherDfySpokes = SPOKES.filter((s) => dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug);
-  const remainingSpokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  const remainingSpokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug);
   relatedSpokes = [...otherDfySpokes, ...remainingSpokes].slice(0, 3);
 } else if (isLinkStackPage) {
   const partnerLinkStackSpoke = SPOKES.filter((s) => linkStackSlugs.includes(s.slug) && s.slug !== spoke.slug);
   const complementarySpokes = SPOKES.filter((s) => s.slug === "faceless-ugc-for-course-creators" || s.slug === "room30-done-for-you-service");
   relatedSpokes = [...partnerLinkStackSpoke, ...complementarySpokes].slice(0, 3);
 } else {
-  const otherRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category === spoke.category);
-  const remainingRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category !== spoke.category);
+  const otherRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category === spoke.category);
+  const remainingRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category !== spoke.category);
   relatedSpokes = [...otherRoom30Spokes, ...remainingRoom30Spokes].slice(0, 3);
 }
 
@@ -300,6 +376,18 @@ if (isVipImmersion) {
   productSchemaName = "LinkStack Stan Store Alternative Platform";
   productSchemaPrice = "0.00";
   productSchemaUrl = "https://www.linkstack.fyi/p/compare?ref=jlb&subid=ugcdfy";
+} else if (isFameswapReview || isFameswapAlternatives) {
+  productSchemaName = "Fameswap Social Media Escrow Marketplace";
+  productSchemaPrice = "0.00";
+  productSchemaUrl = "https://fameswap.com/?ref=1514192&sub=ugcdfy";
+} else if (isBuyMonetizedYoutube) {
+  productSchemaName = "Fameswap Monetized YouTube Channel Marketplace";
+  productSchemaPrice = "100.00";
+  productSchemaUrl = "https://fameswap.com/browse-youtube-accounts-for-sale?ref=1514192&sub=ugcdfy";
+} else if (isBuyTikTokAccounts) {
+  productSchemaName = "Fameswap Aged TikTok Accounts Marketplace";
+  productSchemaPrice = "50.00";
+  productSchemaUrl = "https://fameswap.com/browse-tiktok-accounts-for-sale?ref=1514192&sub=ugcdfy";
 }
 
 const productSchema = {
@@ -568,21 +656,121 @@ const productSchema = {
     avatarContext={spoke.avatarContext}
     painPoints={spoke.painPoints}
     keyBenefits={spoke.keyBenefits}
-    solutionBadge={isLinkStackPage ? "The LinkStack All-In-One Architecture" : isDfyDavePage ? "The DFY Dave Asset Advantage" : "The Room30 Turnkey Advantage"}
-    solutionTitle={isLinkStackPage ? "Storefront, Checkout & DM Automation in One Link" : isDfyDavePage ? "Turnkey Handover & Onboarding Protocol" : "Built & Delivered In 24 Hours"}
-    beforeBadge={isLinkStackPage ? "Before LinkStack" : isDfyDavePage ? "Before DFY Dave" : "Before Room30"}
-    beforeQuote={isLinkStackPage ? "Paying $29–$99/month for Stan Store, another $15–$45/month for ManyChat, and losing 40% of mobile buyers to clunky link trees." : isDfyDavePage ? "Stuck in the 12-month subscriber grind, struggling to hit 4,000 watch hours, and earning $0 for months of video production." : "Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."}
-    afterBadge={isLinkStackPage ? "After LinkStack Setup" : isDfyDavePage ? "After Turnkey Handover" : "After 24-Hour Setup"}
-    afterQuote={isLinkStackPage ? "Running a unified bio storefront with 0% software tax, automated Instagram/TikTok DM sales funnels, and instant Stripe payouts." : isDfyDavePage ? "Owning an enrolled, cash-flowing digital media asset with immediate monetization, automated production, and zero camera requirements." : "Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."}
-    workflowTitle={isLinkStackPage ? "The Zero-Friction Creator Commerce Protocol" : isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
-    workflowSubtitle={isLinkStackPage ? "How LinkStack converts social traffic into direct Stripe sales and newsletter subscribers with zero technical overhead." : isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
+    solutionBadge={isFameswapPage ? "The Fameswap Escrow Protocol" : isLinkStackPage ? "The LinkStack All-In-One Architecture" : isDfyDavePage ? "The DFY Dave Asset Advantage" : "The Room30 Turnkey Advantage"}
+    solutionTitle={isFameswapPage ? "Aged, Monetized Assets with Zero Wire Fraud Risk" : isLinkStackPage ? "Storefront, Checkout & DM Automation in One Link" : isDfyDavePage ? "Turnkey Handover & Onboarding Protocol" : "Built & Delivered In 24 Hours"}
+    beforeBadge={isFameswapPage ? "Before Escrow" : isLinkStackPage ? "Before LinkStack" : isDfyDavePage ? "Before DFY Dave" : "Before Room30"}
+    beforeQuote={isFameswapPage ? "Risking hundreds of dollars sending irreversible crypto or PayPal Friends & Family payments on Discord or unmoderated forums only to have accounts pulled back." : isLinkStackPage ? "Paying $29–$99/month for Stan Store, another $15–$45/month for ManyChat, and losing 40% of mobile buyers to clunky link trees." : isDfyDavePage ? "Stuck in the 12-month subscriber grind, struggling to hit 4,000 watch hours, and earning $0 for months of video production." : "Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."}
+    afterBadge={isFameswapPage ? "After Fameswap Handover" : isLinkStackPage ? "After LinkStack Setup" : isDfyDavePage ? "After Turnkey Handover" : "After 24-Hour Setup"}
+    afterQuote={isFameswapPage ? "Taking ownership of an established, strike-free channel with guaranteed original email (OGE) access and an inspection period before releasing funds." : isLinkStackPage ? "Running a unified bio storefront with 0% software tax, automated Instagram/TikTok DM sales funnels, and instant Stripe payouts." : isDfyDavePage ? "Owning an enrolled, cash-flowing digital media asset with immediate monetization, automated production, and zero camera requirements." : "Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."}
+    workflowTitle={isFameswapPage ? "The 4-Step Escrow Handover Protocol" : isLinkStackPage ? "The Zero-Friction Creator Commerce Protocol" : isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
+    workflowSubtitle={isFameswapPage ? "How Fameswap secures buyer funds, audits account compliance, and transfers root credentials safely." : isLinkStackPage ? "How LinkStack converts social traffic into direct Stripe sales and newsletter subscribers with zero technical overhead." : isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
     isDfyDave={isDfyDavePage}
     isLinkStack={isLinkStackPage}
+    isFameswap={isFameswapPage}
     isRoom30={isRoom30Page}
     affiliateUrl={customAffiliateUrl}
     midCtaText={customCtaText || "Lock In Your Turnkey Solution"}
-    midCtaSubtext={isLinkStackPage ? "Free Forever Core Account • Instant Direct Stripe Payouts • No Credit Card Required" : isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}
+    midCtaSubtext={isFameswapPage ? "100% Escrow Protection • 24–72h Buyer Inspection Window • Verified OGE Transfer" : isLinkStackPage ? "Free Forever Core Account • Instant Direct Stripe Payouts • No Credit Card Required" : isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}
   />
+
+  {/* Fameswap Verified Independent Audit & Scorecard */}
+  {isFameswapPage && spoke.category === "reviews" && (
+    <section class="py-12 bg-slate-900/30 border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <span>Verified Marketplace Audit • 2026 Assessment</span>
+          </div>
+          <h2 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            Independent Audit: Fameswap Social Media Escrow Platform
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Comprehensive audit of buyer escrow security, original email (OGE) transfer integrity, seller KYC vetting, and dispute resolution performance.
+          </p>
+        </div>
+
+        <!-- Overall Score Card -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-6 sm:p-8 shadow-2xl mb-8">
+          <div class="flex flex-col sm:flex-row items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Marketplace Security Verdict</div>
+              <div class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 mt-1">
+                <span>Top-Rated Social Media Escrow Marketplace</span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-right">
+                <div class="text-xs text-slate-400 font-medium">Composite Score</div>
+                <div class="text-xs text-emerald-400 font-bold">Tier 1 Rating</div>
+              </div>
+              <div class="w-16 h-16 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-center font-black text-2xl text-emerald-400 shadow-inner">
+                9.5
+              </div>
+            </div>
+          </div>
+
+          <!-- 6-Metric Audit Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Escrow Payment Protection</span>
+                <span class="text-xs font-bold text-emerald-400">9.8 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Funds locked securely in neutral escrow until buyer confirms verified account control.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">OGE Handover Protocol</span>
+                <span class="text-xs font-bold text-emerald-400">9.6 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Enforces original email transfer to prevent recovery disputes post-handover.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Inventory Liquidity</span>
+                <span class="text-xs font-bold text-emerald-400">9.7 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Largest open catalog of YouTube, TikTok, and Instagram accounts across 30+ niches.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Buyer Inspection Window</span>
+                <span class="text-xs font-bold text-emerald-400">9.4 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Guaranteed 24 to 72 hours for security auditing, phone updates, and 2FA migration.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Seller Vetting & KYC</span>
+                <span class="text-xs font-bold text-emerald-400">9.3 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">ID, bank account, and phone verification requirements filter fraudulent actors.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Platform Track Record</span>
+                <span class="text-xs font-bold text-emerald-400">9.9 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Continuous operations since 2013 with over 1,000,000 registered community users.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+            <span class="italic text-center sm:text-left">
+              "Auditor Verdict: Fameswap is the safest and most liquid peer-to-peer marketplace for buying established social media accounts without wire fraud risks."
+            </span>
+            <a
+              href={customAffiliateUrl}
+              class="flex-shrink-0 font-bold text-emerald-400 hover:text-emerald-300 underline"
+            >
+              Explore Verified Fameswap Listings →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   {/* LinkStack Verified Independent Audit & Scorecard */}
   {isLinkStackPage && (
@@ -894,7 +1082,7 @@ const productSchema = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <h2 class="text-xl sm:text-3xl font-bold text-white tracking-tight mb-2">
-          {isLinkStackPage ? "Related Creator Commerce Blueprints" : isDfyDavePage ? "Related Turnkey Assets & Blueprints" : "Related AI Portfolios & Use Cases"}
+          {isFameswapPage ? "Related Social Media & Turnkey Blueprints" : isLinkStackPage ? "Related Creator Commerce Blueprints" : isDfyDavePage ? "Related Turnkey Assets & Blueprints" : "Related AI Portfolios & Use Cases"}
         </h2>
         <p class="text-slate-400 text-sm">
           Explore specialized turnkey frameworks designed for complementary professions, channels, and business models.
