@@ -20,6 +20,9 @@ interface Props {
   isDfyDave?: boolean;
   isLinkStack?: boolean;
   isFameswap?: boolean;
+  isSkool?: boolean;
+  isAiUgc?: boolean;
+  isTikTokAgency?: boolean;
   isRoom30?: boolean;
 }
 
@@ -42,6 +45,9 @@ const {
   isDfyDave = false,
   isLinkStack = false,
   isFameswap = false,
+  isSkool = false,
+  isAiUgc = false,
+  isTikTokAgency = false,
   isRoom30 = false
 } = Astro.props;
 ---
@@ -270,6 +276,171 @@ const {
             </div>
             <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
               Full 24-72h inspection window
+            </div>
+          </div>
+        </div>
+      ) : isSkool ? (
+        <!-- Skool 4-Step Creator Community Flywheel -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Step 01</div>
+              <h4 class="text-base font-bold text-white mb-2">Community & Classroom</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Launch a clean unified community discussion feed, interactive event calendar, and structured video course classroom in under 5 minutes.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Zero complicated plugins or web code
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Step 02</div>
+              <h4 class="text-base font-bold text-white mb-2">Gamification Engine</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Members earn level points by liking posts, answering questions, and helping peers. Automatically unlock exclusive modules as members level up.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Drives 3x higher organic participation
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 03</div>
+              <h4 class="text-base font-bold text-white mb-2">Direct Stripe Billing</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Charge one-time fees or recurring monthly subscriptions ($20 to $299+/mo) with 100% direct bank payouts and zero hidden transaction cuts.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Predictable recurring monthly cash flow
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 04</div>
+              <h4 class="text-base font-bold text-white mb-2">Mobile App Retention</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Members engage via native iOS and Android apps with instant push notifications, sustaining 80%+ 90-day retention and low member churn.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Industry-leading 80%+ member retention
+            </div>
+          </div>
+        </div>
+      ) : isTikTokAgency ? (
+        <!-- TikTok Shop Agency 4-Step Scaling Architecture -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 01</div>
+              <h4 class="text-base font-bold text-white mb-2">Account Vetting & Handover</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Acquire seasoned, strike-free accounts via escrow or white-glove delivery, bypassing algorithmic sandboxes and strict region blocks.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Guaranteed clean algorithmic standing
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 02</div>
+              <h4 class="text-base font-bold text-white mb-2">Shop Showcase Activation</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Immediately access the TikTok Shop Affiliate showcase without grinding for months to reach the standard 5,000 follower requirement.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Immediate day-1 product tagging rights
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Step 03</div>
+              <h4 class="text-base font-bold text-white mb-2">Viral Product Tagging</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Tag trending DTC and dropshipping products directly in viral faceless video hooks or live streams with 1-click in-app checkout buttons.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Native in-app commerce conversion
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Step 04</div>
+              <h4 class="text-base font-bold text-white mb-2">Automated Commissions</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Collect 10% to 30% affiliate revenue on all merchant sales, deposited straight to your linked corporate or personal payout account.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Scalable hands-off e-commerce royalties
+            </div>
+          </div>
+        </div>
+      ) : isAiUgc ? (
+        <!-- AI UGC Video Generator 4-Step Pipeline -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 01</div>
+              <h4 class="text-base font-bold text-white mb-2">LoRA Identity Training</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Train specialized visual weights on proprietary creator datasets to yield a 100% photorealistic digital persona with zero identity drift.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Consistent face, skin & aesthetic
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Step 02</div>
+              <h4 class="text-base font-bold text-white mb-2">Script-to-Hook Synthesis</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Generate dynamic direct-response video scripts with proven pattern interrupts engineered to capture viewer attention in the first 3 seconds.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              High-CTR psychological frameworks
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Step 03</div>
+              <h4 class="text-base font-bold text-white mb-2">Photorealistic Lip-Sync</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Synthesize natural vocal cadences, micro-expressions, and realistic mouth movements that bypass viewer uncanny-valley skepticism.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              Ultra-realistic human performance
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Step 04</div>
+              <h4 class="text-base font-bold text-white mb-2">Batch Creative Syndication</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Produce 30 to 100 variations in hours for rapid A/B testing across TikTok, Meta, and YouTube Shorts without paying human UGC creators.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
+              10x content output at 90% lower cost
             </div>
           </div>
         </div>

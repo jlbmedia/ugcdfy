@@ -38,7 +38,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Discover top-tier AI influencer software and virtual persona generators. Compare done-for-you systems designed to launch profitable digital creators.",
     h1: "AI Influencer Software & Portfolio Systems",
     description: "The complete directory and breakdown of automated AI influencer generators, virtual creator platforms, and turnkey monetization portfolios.",
-    spokeSlugs: ["for-agencies", "for-beginners", "for-creators", "for-freelancers", "for-startups", "for-realtors", "for-ecommerce", "for-fitness-coaches"]
+    spokeSlugs: ["for-agencies", "for-beginners", "for-creators", "for-freelancers", "for-startups", "for-realtors", "for-ecommerce", "for-fitness-coaches", "ai-ugc-video-generator"]
   },
   "faceless-automation": {
     slug: "faceless-automation",
@@ -47,7 +47,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Master faceless channel automation with leading AI video tools. Build hands-off content revenue streams without ever showing your face on camera.",
     h1: "Faceless Channel & Video Automation Systems",
     description: "Explore turnkey faceless video systems, AI content syndication, and hands-off media assets that generate recurring traffic on autopilot.",
-    spokeSlugs: ["for-beginners", "for-teams", "for-introverts", "for-professionals", "for-tiktok-shop", "for-youtube-shorts", "for-instagram-reels", "for-busy-executives", "for-teachers", "monetized-channels-for-busy-executives", "monetized-tiktok-for-dropshippers", "buy-tiktok-accounts"]
+    spokeSlugs: ["for-beginners", "for-teams", "for-introverts", "for-professionals", "for-tiktok-shop", "for-youtube-shorts", "for-instagram-reels", "for-busy-executives", "for-teachers", "monetized-channels-for-busy-executives", "monetized-tiktok-for-dropshippers", "buy-tiktok-accounts", "tiktok-shop-agency"]
   },
   "ai-income-systems": {
     slug: "ai-income-systems",
@@ -65,7 +65,7 @@ export const HUBS: Record<string, HubPage> = {
     metaDescription: "Unbiased reviews, track record verifications, and performance audits of leading done-for-you AI business models and virtual influencer portfolios.",
     h1: "AI System Audits, Verifications & Reviews",
     description: "Independent breakdowns of turnkey AI influencer systems, examining earnings proof, refund policies, founder credibility, and real user outcomes.",
-    spokeSlugs: ["room30-review", "linkstack-review", "stan-store-alternative", "fameswap-review", "buy-monetized-youtube-channel", "fameswap-alternatives", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg", "dfy-dave-monetized-youtube-channel", "dfy-dave-monetized-tiktok-account", "dfy-dave-amazon-affiliate-website", "dfy-dave-done-for-you-youtube-videos", "dfy-dave-review", "room30-vs-dfy-dave"]
+    spokeSlugs: ["room30-review", "skool-review", "skool-vs-circle", "linkstack-review", "stan-store-alternative", "fameswap-review", "buy-monetized-youtube-channel", "fameswap-alternatives", "greg-cooke-ai-portfolio", "room30-vs-dropshipping", "room30-vs-diy-faceless-channels", "room30-cost-and-pricing", "room30-done-for-you-service", "three-days-with-greg", "dfy-dave-monetized-youtube-channel", "dfy-dave-monetized-tiktok-account", "dfy-dave-amazon-affiliate-website", "dfy-dave-done-for-you-youtube-videos", "dfy-dave-review", "room30-vs-dfy-dave"]
   }
 };
 
@@ -1648,6 +1648,178 @@ export const SPOKES: SpokePage[] = [
       {
         question: "Where can I find verified TikTok accounts for sale?",
         answer: "You can browse verified, escrow-protected TikTok listings sorted by follower count and niche directly through our official partner link at /go/fameswap-tiktok."
+      }
+    ]
+  },
+  {
+    slug: "skool-review",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "skool review",
+    audience: "Community Leaders, Course Creators & AI Influencer Brands",
+    title: "Skool Review: Creator Community & Pricing Audit | UGC DFY",
+    metaDescription: "Comprehensive Skool review and pricing audit for 2026. See how Sam Ovens' community platform stacks up on gamification, courses, and creator monetization.",
+    h1: "Skool Review: Creator Community, Pricing & Gamification Audit",
+    badge: "2026 Community Platform Audit",
+    heroHeadline: "The Unvarnished Truth About Skool: Is It Worth $99/Month for Creators?",
+    heroSubheadline: "An exhaustive technical audit of Sam Ovens' Skool platform: community engagement gamification, course hosting, 40% recurring economics, and mobile usability.",
+    avatarContext: "Digital educators, community leaders, and virtual influencer brands struggle with disjointed software stacks—paying hundreds of dollars for Kajabi or Teachable while fighting low student engagement in dead Facebook groups. Skool unifies discussions, structured course classrooms, and gamified leveling into a single clean subscription.",
+    painPoints: [
+      "Fragmented software fatigue: Paying $150 to $399/mo across separate tools for community forums, video courses, event calendars, and email software.",
+      "Abysmal student completion rates: Industry course completion languishing at 5% to 15% due to lack of peer recognition or progress motivation.",
+      "Dead Facebook group engagement: Fighting algorithmic newsfeed suppression where less than 8% of group members ever see your announcements."
+    ],
+    keyBenefits: [
+      "Addictive Leveling Gamification: Members earn points, climb leaderboards, and unlock exclusive training modules simply by engaging with posts.",
+      "Flat $99/Month Pricing: Host unlimited courses and unlimited community members with zero tiered penalties or hidden percentage transaction fees.",
+      "Native Mobile Ingestion: Top-rated iOS and Android apps send direct push notifications to members, sustaining 80%+ 90-day retention rates."
+    ],
+    faqList: [
+      {
+        question: "What is Skool and how does it work?",
+        answer: "Skool is an all-in-one community and online course hosting platform created by Sam Ovens. It combines a clean social discussion feed, structured video classroom, event calendar, and gamification leaderboard into a single seamless interface."
+      },
+      {
+        question: "How much does Skool cost per month?",
+        answer: "Skool costs a flat $99 per month per group, which includes unlimited courses, unlimited members, video hosting, and mobile apps. There are no transaction fees on free communities, and a standard 2.9% stripe processing fee on paid groups."
+      },
+      {
+        question: "Can I charge members for access to my Skool community?",
+        answer: "Yes. Skool has direct native Stripe integration, allowing you to charge one-time fees or recurring monthly subscriptions ($10 to $500+/mo) that deposit directly to your bank account."
+      },
+      {
+        question: "How does the Skool Games and affiliate program work?",
+        answer: "Skool offers an industry-leading 40% recurring monthly referral commission for life on every group launched through your link ($39.60/month per active community)."
+      }
+    ]
+  },
+  {
+    slug: "skool-vs-circle",
+    category: "reviews",
+    categoryName: "Audits & Reviews",
+    categoryPath: "/reviews/",
+    keyword: "skool vs circle",
+    audience: "Membership Founders, Digital Educators & Community Operators",
+    title: "Skool vs Circle: 2026 Community Platform Comparison | UGC DFY",
+    metaDescription: "Skool vs Circle and Kajabi comparison: Analyze pricing, engagement gamification, course delivery, and mobile apps to pick the best community platform in 2026.",
+    h1: "Skool vs Circle: Head-to-Head Creator Community Platform Audit",
+    badge: "Head-to-Head Platform Matrix",
+    heroHeadline: "Skool vs Circle vs Kajabi: Which Creator Platform Actually Drives Retention?",
+    heroSubheadline: "Compare features, community engagement rates, pricing models, and video hosting across the top three membership platforms to find your optimal stack.",
+    avatarContext: "When launching a digital community or premium membership, founders face a critical fork between Skool's gamified simplicity and Circle.so's complex modular spaces. Choosing the wrong infrastructure leads to member confusion, software bloat, and premature subscription churn.",
+    painPoints: [
+      "Cognitive overload in complex spaces: Circle's fragmented multi-channel layout overwhelming members and suppressing organic conversation.",
+      "Ballooning subscription tiers: Circle requiring $99 to $399+/month plus member surcharges and separate branded app fees.",
+      "Manual zapier retention workarounds: Spending dozens of hours wiring external webhook automations to reward active community members."
+    ],
+    keyBenefits: [
+      "Superior Retention Through Simplicity: Skool's clean single-page layout eliminates navigation friction, keeping members interacting daily.",
+      "Native Automated Gamification: Unlike Circle which requires complex third-party tools, Skool features built-in levels, leaderboards, and auto-perks.",
+      "Zero Surcharge Cost Certainty: Skool remains $99/mo regardless of whether you have 100 members or 50,000 members, protecting profit margins."
+    ],
+    faqList: [
+      {
+        question: "What is the main difference between Skool and Circle?",
+        answer: "Skool prioritizes extreme simplicity and engagement gamification (single feed, classroom, leaderboard), while Circle focuses on modular spaces, custom branding, and corporate discussion channels."
+      },
+      {
+        question: "Is Skool cheaper than Circle.so?",
+        answer: "Yes. Skool is a flat $99/mo with unlimited members and courses. Circle starts at $99/mo for basic plans, but quickly climbs to $219 to $399+/mo as your member count and feature requirements grow."
+      },
+      {
+        question: "Which platform is better for course creators?",
+        answer: "Skool is generally better for course creators because the classroom is tightly integrated with the community feed, and members unlock advanced modules by leveling up through participation."
+      },
+      {
+        question: "Can I migrate from Circle or Kajabi to Skool?",
+        answer: "Yes. You can export your member list and video assets, launch your Skool group in under 15 minutes, and invite existing members via private access links."
+      }
+    ]
+  },
+  {
+    slug: "ai-ugc-video-generator",
+    category: "ai-influencers",
+    categoryName: "AI Influencers",
+    categoryPath: "/ai-influencers/",
+    keyword: "ai ugc video generator",
+    audience: "E-Commerce Brands, DTC Marketers & Performance Agencies",
+    title: "AI UGC Video Generator: Top Virtual Creator Tools | UGC DFY",
+    metaDescription: "Discover the best AI UGC video generators for 2026. Compare turnkey virtual influencers, photorealistic lip-sync, and automated script-to-video production.",
+    h1: "AI UGC Video Generator: Photorealistic Virtual Creator Systems",
+    badge: "Enterprise Virtual UGC Framework",
+    heroHeadline: "Scale UGC Video Ads Without Human Creators, Shipping Delays, or Retakes",
+    heroSubheadline: "How brands and agencies generate thousands of high-converting TikTok and Instagram Reels using photorealistic AI personas, dynamic scripts, and voice cloning.",
+    avatarContext: "DTC e-commerce brands and performance marketing agencies burn tens of thousands of dollars each month shipping physical product samples to unreliable human UGC creators, waiting weeks for video assets that frequently miss the brief. Photorealistic AI UGC video engines eliminate this bottleneck entirely.",
+    painPoints: [
+      "Extravagant creator costs and delays: Paying $150 to $350 per video to TikTok creators who take 2 weeks to deliver uninspired content.",
+      "Creative burnout & testing fatigue: Performance ads fatiguing within 7 to 10 days, requiring constant expensive reshoots to maintain ROAS.",
+      "Limited asset ownership: Human creators granting only 30 to 90 days of paid advertising usage rights before demanding licensing renewals."
+    ],
+    keyBenefits: [
+      "24-Hour Batch Video Production: Generate 30 to 100 photorealistic video variations with dynamic hooks, script angles, and calls to action.",
+      "100% Brand-Owned Virtual Personas: Own your digital UGC creator indefinitely with zero recurring model usage fees or contract disputes.",
+      "Sub-$10 Creative Unit Economics: Slash your cost per creative variation by over 90% while testing 10x more ad hooks across Meta and TikTok."
+    ],
+    faqList: [
+      {
+        question: "What is an AI UGC video generator?",
+        answer: "An AI UGC video generator is an automated software system or agency pipeline that uses trained LoRA visual weights and voice cloning to produce photorealistic video ads that look indistinguishable from real human creator testimonials."
+      },
+      {
+        question: "Are AI UGC video ads allowed on TikTok and Meta Ads?",
+        answer: "Yes. Both Meta and TikTok permit synthetic media in advertising provided the content complies with standard advertising guidelines and disclaims digital generation when required."
+      },
+      {
+        question: "How does Room30 deliver turnkey AI UGC personas?",
+        answer: "Room30 builds a bespoke virtual creator tailored to your brand's demographic, trains custom visual and voice models, and provisions a turnkey 90-day content pipeline delivered in 24 hours."
+      },
+      {
+        question: "How do AI UGC ads compare to real creator ROAS?",
+        answer: "In performance benchmarks, high-fidelity AI UGC videos achieve equivalent click-through rates (CTR) to human UGC while enabling 5x higher testing velocity and reducing production costs from $250 to under $10 per asset."
+      }
+    ]
+  },
+  {
+    slug: "tiktok-shop-agency",
+    category: "faceless-automation",
+    categoryName: "Faceless Automation",
+    categoryPath: "/faceless-automation/",
+    keyword: "tiktok shop agency",
+    audience: "DTC Brands, TikTok Shop Affiliates & Dropshipping Founders",
+    title: "TikTok Shop Agency: Pre-Qualified Affiliate Accounts | UGC DFY",
+    metaDescription: "Scale your e-commerce brand with a verified TikTok Shop agency framework. Learn how to acquire pre-qualified US accounts and automate creator product tagging.",
+    h1: "TikTok Shop Agency Framework: Pre-Qualified Accounts & Automation",
+    badge: "E-Commerce Scaling Architecture",
+    heroHeadline: "Scale TikTok Shop Revenue Without the 5,000 Follower Setup Delay",
+    heroSubheadline: "How top e-commerce brands and dropshippers use agency account frameworks, aged creator assets, and automated product showcases to drive viral commission sales.",
+    avatarContext: "TikTok Shop is currently the fastest-growing social commerce channel in the world, but traditional merchants face steep barrier walls: accounts require 5,000 organic followers to unlock affiliate product tagging, strict US/UK entity verification, and harsh algorithmic throttling on new profiles.",
+    painPoints: [
+      "The 5,000-follower showcase barrier: Spending months posting organic videos to unlock TikTok Shop affiliate tagging rights.",
+      "Algorithmic 200-view throttling: Brand-new merchant and creator accounts getting restricted by automated bot filters during launch.",
+      "Regional jurisdiction walls: Non-US founders locked out of the massive US TikTok Shop market due to physical SIM and tax verification blocks."
+    ],
+    keyBenefits: [
+      "Day-1 Product Showcase Access: Deploy seasoned, pre-qualified accounts with affiliate showcase permissions unlocked immediately.",
+      "Proven US/UK Market Reach: Target high-intent American buyers with high average order values (AOV) and fast 3-day local fulfillment.",
+      "Turnkey Escrow & Handover: Acquire verified accounts safely via Fameswap neutral escrow or white-glove agency delivery with zero wire fraud risks."
+    ],
+    faqList: [
+      {
+        question: "What does a TikTok Shop agency framework do?",
+        answer: "A TikTok Shop agency framework provides verified, pre-qualified accounts, automates affiliate creator outreach, tags products in viral video assets, and handles store compliance to scale e-commerce GMV."
+      },
+      {
+        question: "Can I buy an account that already has TikTok Shop affiliate permissions?",
+        answer: "Yes. On marketplaces like Fameswap, you can acquire established accounts with over 5,000 followers that already have active TikTok Shop showcase features enabled."
+      },
+      {
+        question: "How do international sellers access US TikTok Shop?",
+        answer: "International brands acquire aged US-registered TikTok accounts via verified escrow marketplaces and operate them using dedicated residential US proxies and anti-detect browsers."
+      },
+      {
+        question: "What is the difference between Fameswap and DFY Dave for TikTok Shop?",
+        answer: "Fameswap is an open escrow marketplace to buy established niche accounts from vetted sellers, while DFY Dave provides white-glove, agency-provisioned pre-monetized accounts ready for day-1 handover."
       }
     ]
   }

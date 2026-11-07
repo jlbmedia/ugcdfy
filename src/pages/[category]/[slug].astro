@@ -49,8 +49,17 @@ const isFameswapAlternatives = spoke.slug === "fameswap-alternatives";
 const isBuyTikTokAccounts = spoke.slug === "buy-tiktok-accounts";
 const isFameswapPage = isFameswapReview || isBuyMonetizedYoutube || isFameswapAlternatives || isBuyTikTokAccounts;
 
+// Skool spokes
+const isSkoolReview = spoke.slug === "skool-review";
+const isSkoolVsCircle = spoke.slug === "skool-vs-circle";
+const isSkoolPage = isSkoolReview || isSkoolVsCircle;
+
+// Additional High-CPC spokes
+const isAiUgcPage = spoke.slug === "ai-ugc-video-generator";
+const isTikTokAgencyPage = spoke.slug === "tiktok-shop-agency";
+
 // Room30 Spokes & Strict Review Whitelist (Prevents Room30 images from showing on non-Room30 pages)
-const isRoom30Page = !isDfyDavePage && !isLinkStackPage && !isFameswapPage;
+const isRoom30Page = (!isDfyDavePage && !isLinkStackPage && !isFameswapPage && !isSkoolPage && !isTikTokAgencyPage) || isAiUgcPage;
 const room30ReviewSlugs = [
   "room30-review",
   "greg-cooke-ai-portfolio",
@@ -120,6 +129,22 @@ if (isVipImmersion) {
   customAffiliateUrl = "/go/fameswap";
   customCtaText = "Compare Escrow Marketplaces →";
   customStickyText = "Why Fameswap's neutral escrow beats unvetted Discord channels and risky forums.";
+} else if (isSkoolReview) {
+  customAffiliateUrl = "/go/skool";
+  customCtaText = "Claim 14-Day Free Skool Trial →";
+  customStickyText = "Launch your gamified community & online course hub with 14 days free on Skool.";
+} else if (isSkoolVsCircle) {
+  customAffiliateUrl = "/go/skool-compare";
+  customCtaText = "Test Skool with 14 Days Free →";
+  customStickyText = "See why creators choose Skool's flat $99/mo gamification over complex Circle spaces.";
+} else if (isAiUgcPage) {
+  customAffiliateUrl = "/go/dfy";
+  customCtaText = "Deploy Turnkey AI UGC Personas →";
+  customStickyText = "Produce 30–100 photorealistic video ad variations in 24 hours with zero creator fees.";
+} else if (isTikTokAgencyPage) {
+  customAffiliateUrl = "/go/fameswap-tiktok";
+  customCtaText = "Browse Verified TikTok Shop Accounts →";
+  customStickyText = "Unlock day-1 TikTok Shop affiliate showcases without the 5,000 follower delay.";
 }
 
 // Global Layout CTAs & Announcement Bar Context
@@ -159,6 +184,18 @@ if (isVipImmersion) {
   layoutAnnouncementCtaUrl = customAffiliateUrl || "/go/fameswap";
   layoutHeaderCtaText = "Explore Fameswap Assets";
   layoutHeaderCtaUrl = customAffiliateUrl || "/go/fameswap";
+} else if (isSkoolPage) {
+  layoutAnnouncementText = "🎮 The Creator Community Revolution: Gamified Courses & 40% Recurring Economics on Skool.";
+  layoutAnnouncementCtaText = "Start 14-Day Free Trial →";
+  layoutAnnouncementCtaUrl = customAffiliateUrl || "/go/skool";
+  layoutHeaderCtaText = "Try Skool Free";
+  layoutHeaderCtaUrl = customAffiliateUrl || "/go/skool";
+} else if (isTikTokAgencyPage) {
+  layoutAnnouncementText = "⚡ TikTok Shop Scaling Architecture: Pre-Qualified Accounts & Viral Affiliate Showcase.";
+  layoutAnnouncementCtaText = "Browse Verified Assets →";
+  layoutAnnouncementCtaUrl = customAffiliateUrl || "/go/fameswap-tiktok";
+  layoutHeaderCtaText = "Explore Accounts";
+  layoutHeaderCtaUrl = customAffiliateUrl || "/go/fameswap-tiktok";
 }
 
 // Tailored Hero Authority Signals
@@ -253,10 +290,38 @@ if (isDfyDaveYouTube) {
     "KYC & Phone-Verified Sellers",
     "Full Dispute Resolution Desk"
   ];
+} else if (isSkoolReview) {
+  authoritySignals = [
+    "40% Recurring Lifetime MRR",
+    "Built-in Level Gamification",
+    "Flat $99/Mo Unlimited",
+    "Top-Rated iOS & Android Apps"
+  ];
+} else if (isSkoolVsCircle) {
+  authoritySignals = [
+    "$99/mo Flat vs $399/mo Tiers",
+    "Native Automated Gamification",
+    "15-Minute Turnkey Setup",
+    "Single-Feed Cognitive Ease"
+  ];
+} else if (isAiUgcPage) {
+  authoritySignals = [
+    "Sub-$10 Video Unit Economics",
+    "100% Brand-Owned Persona Rights",
+    "Zero Human Creator Delays",
+    "24-Hour Batch Ad Delivery"
+  ];
+} else if (isTikTokAgencyPage) {
+  authoritySignals = [
+    "Day-1 Showcase Product Tagging",
+    "Bypass 5k Follower Gate",
+    "Bank-Grade Escrow Protection",
+    "Active US/UK Creator Rewards"
+  ];
 }
 
 // Comparison Table Variant
-type CompVariant = "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack" | "fameswap" | "buy-youtube-marketplace-vs-dfy" | "fameswap-alternatives" | "buy-tiktok-accounts";
+type CompVariant = "room30" | "dfy-dave-youtube" | "dfy-dave-tiktok" | "dfy-dave-amazon" | "dfy-dave-videos" | "dfy-dave-platform" | "room30-vs-dfy-dave" | "linkstack" | "stan-store-vs-linkstack" | "fameswap" | "buy-youtube-marketplace-vs-dfy" | "fameswap-alternatives" | "buy-tiktok-accounts" | "skool" | "skool-vs-circle" | "ai-ugc-generator" | "tiktok-shop-agency";
 let comparisonVariant: CompVariant = "room30";
 
 if (isDfyDaveYouTube) {
@@ -283,6 +348,14 @@ if (isDfyDaveYouTube) {
   comparisonVariant = "fameswap-alternatives";
 } else if (isBuyTikTokAccounts) {
   comparisonVariant = "buy-tiktok-accounts";
+} else if (isSkoolReview) {
+  comparisonVariant = "skool";
+} else if (isSkoolVsCircle) {
+  comparisonVariant = "skool-vs-circle";
+} else if (isAiUgcPage) {
+  comparisonVariant = "ai-ugc-generator";
+} else if (isTikTokAgencyPage) {
+  comparisonVariant = "tiktok-shop-agency";
 }
 
 const breadcrumbs = [
@@ -292,7 +365,7 @@ const breadcrumbs = [
 ];
 
 // Related spokes for internal linking mesh:
-// Strictly isolate DFY Dave, LinkStack, and Fameswap spokes from Room30 spokes for maximum offer congruency
+// Strictly isolate DFY Dave, LinkStack, Fameswap, and Skool spokes for maximum offer congruency
 const dfyDaveSlugs = [
   "dfy-dave-monetized-youtube-channel",
   "dfy-dave-monetized-tiktok-account",
@@ -316,22 +389,37 @@ const fameswapSlugs = [
   "buy-tiktok-accounts"
 ];
 
+const skoolSlugs = [
+  "skool-review",
+  "skool-vs-circle"
+];
+
 let relatedSpokes: SpokePage[];
-if (isFameswapPage) {
+if (isSkoolPage) {
+  const otherSkoolSpokes = SPOKES.filter((s) => skoolSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "linkstack-review" || s.slug === "room30-review");
+  relatedSpokes = [...otherSkoolSpokes, ...complementarySpokes].slice(0, 3);
+} else if (isAiUgcPage) {
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "for-ecommerce" || s.slug === "room30-review" || s.slug === "tiktok-shop-agency");
+  relatedSpokes = complementarySpokes.slice(0, 3);
+} else if (isTikTokAgencyPage) {
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "buy-tiktok-accounts" || s.slug === "monetized-tiktok-for-dropshippers" || s.slug === "fameswap-review");
+  relatedSpokes = complementarySpokes.slice(0, 3);
+} else if (isFameswapPage) {
   const otherFameswapSpokes = SPOKES.filter((s) => fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug);
-  const complementarySpokes = SPOKES.filter((s) => s.slug === "dfy-dave-monetized-youtube-channel" || s.slug === "dfy-dave-monetized-tiktok-account" || s.slug === "room30-review");
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "tiktok-shop-agency" || s.slug === "dfy-dave-monetized-youtube-channel" || s.slug === "room30-review");
   relatedSpokes = [...otherFameswapSpokes, ...complementarySpokes].slice(0, 3);
 } else if (isDfyDavePage) {
   const otherDfySpokes = SPOKES.filter((s) => dfyDaveSlugs.includes(s.slug) && s.slug !== spoke.slug);
-  const remainingSpokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug);
+  const remainingSpokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && !skoolSlugs.includes(s.slug) && s.slug !== spoke.slug);
   relatedSpokes = [...otherDfySpokes, ...remainingSpokes].slice(0, 3);
 } else if (isLinkStackPage) {
   const partnerLinkStackSpoke = SPOKES.filter((s) => linkStackSlugs.includes(s.slug) && s.slug !== spoke.slug);
-  const complementarySpokes = SPOKES.filter((s) => s.slug === "faceless-ugc-for-course-creators" || s.slug === "room30-done-for-you-service");
+  const complementarySpokes = SPOKES.filter((s) => s.slug === "skool-review" || s.slug === "room30-review");
   relatedSpokes = [...partnerLinkStackSpoke, ...complementarySpokes].slice(0, 3);
 } else {
-  const otherRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category === spoke.category);
-  const remainingRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category !== spoke.category);
+  const otherRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && !skoolSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category === spoke.category);
+  const remainingRoom30Spokes = SPOKES.filter((s) => !dfyDaveSlugs.includes(s.slug) && !linkStackSlugs.includes(s.slug) && !fameswapSlugs.includes(s.slug) && !skoolSlugs.includes(s.slug) && s.slug !== spoke.slug && s.category !== spoke.category);
   relatedSpokes = [...otherRoom30Spokes, ...remainingRoom30Spokes].slice(0, 3);
 }
 
@@ -387,6 +475,18 @@ if (isVipImmersion) {
 } else if (isBuyTikTokAccounts) {
   productSchemaName = "Fameswap Aged TikTok Accounts Marketplace";
   productSchemaPrice = "50.00";
+  productSchemaUrl = "https://fameswap.com/browse-tiktok-accounts-for-sale?ref=1514192&sub=ugcdfy";
+} else if (isSkoolReview || isSkoolVsCircle) {
+  productSchemaName = "Skool Creator Community & Course Platform";
+  productSchemaPrice = "99.00";
+  productSchemaUrl = "https://www.skool.com/signup?ref=f5c036bfb1ee414b80732fbee6b19ccd&utm_source=ugcdfy";
+} else if (isAiUgcPage) {
+  productSchemaName = "Room30 AI UGC Video Generation Engine";
+  productSchemaPrice = "175.00";
+  productSchemaUrl = "https://room30.ai/offer?fpr=joseph65&fp_sid=ugcdfy";
+} else if (isTikTokAgencyPage) {
+  productSchemaName = "Fameswap TikTok Shop Pre-Qualified Account";
+  productSchemaPrice = "150.00";
   productSchemaUrl = "https://fameswap.com/browse-tiktok-accounts-for-sale?ref=1514192&sub=ugcdfy";
 }
 
@@ -656,22 +756,124 @@ const productSchema = {
     avatarContext={spoke.avatarContext}
     painPoints={spoke.painPoints}
     keyBenefits={spoke.keyBenefits}
-    solutionBadge={isFameswapPage ? "The Fameswap Escrow Protocol" : isLinkStackPage ? "The LinkStack All-In-One Architecture" : isDfyDavePage ? "The DFY Dave Asset Advantage" : "The Room30 Turnkey Advantage"}
-    solutionTitle={isFameswapPage ? "Aged, Monetized Assets with Zero Wire Fraud Risk" : isLinkStackPage ? "Storefront, Checkout & DM Automation in One Link" : isDfyDavePage ? "Turnkey Handover & Onboarding Protocol" : "Built & Delivered In 24 Hours"}
-    beforeBadge={isFameswapPage ? "Before Escrow" : isLinkStackPage ? "Before LinkStack" : isDfyDavePage ? "Before DFY Dave" : "Before Room30"}
-    beforeQuote={isFameswapPage ? "Risking hundreds of dollars sending irreversible crypto or PayPal Friends & Family payments on Discord or unmoderated forums only to have accounts pulled back." : isLinkStackPage ? "Paying $29–$99/month for Stan Store, another $15–$45/month for ManyChat, and losing 40% of mobile buyers to clunky link trees." : isDfyDavePage ? "Stuck in the 12-month subscriber grind, struggling to hit 4,000 watch hours, and earning $0 for months of video production." : "Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."}
-    afterBadge={isFameswapPage ? "After Fameswap Handover" : isLinkStackPage ? "After LinkStack Setup" : isDfyDavePage ? "After Turnkey Handover" : "After 24-Hour Setup"}
-    afterQuote={isFameswapPage ? "Taking ownership of an established, strike-free channel with guaranteed original email (OGE) access and an inspection period before releasing funds." : isLinkStackPage ? "Running a unified bio storefront with 0% software tax, automated Instagram/TikTok DM sales funnels, and instant Stripe payouts." : isDfyDavePage ? "Owning an enrolled, cash-flowing digital media asset with immediate monetization, automated production, and zero camera requirements." : "Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."}
-    workflowTitle={isFameswapPage ? "The 4-Step Escrow Handover Protocol" : isLinkStackPage ? "The Zero-Friction Creator Commerce Protocol" : isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
-    workflowSubtitle={isFameswapPage ? "How Fameswap secures buyer funds, audits account compliance, and transfers root credentials safely." : isLinkStackPage ? "How LinkStack converts social traffic into direct Stripe sales and newsletter subscribers with zero technical overhead." : isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
+    solutionBadge={isSkoolPage ? "The Skool Community Flywheel" : isAiUgcPage ? "The Turnkey AI UGC Engine" : isTikTokAgencyPage ? "The TikTok Shop Agency Protocol" : isFameswapPage ? "The Fameswap Escrow Protocol" : isLinkStackPage ? "The LinkStack All-In-One Architecture" : isDfyDavePage ? "The DFY Dave Asset Advantage" : "The Room30 Turnkey Advantage"}
+    solutionTitle={isSkoolPage ? "Community, Classroom & Gamified Retention in One Hub" : isAiUgcPage ? "Photorealistic Virtual Personas Built & Tested in 24 Hours" : isTikTokAgencyPage ? "Day-1 Showcase Product Tagging with Zero Follower Delays" : isFameswapPage ? "Aged, Monetized Assets with Zero Wire Fraud Risk" : isLinkStackPage ? "Storefront, Checkout & DM Automation in One Link" : isDfyDavePage ? "Turnkey Handover & Onboarding Protocol" : "Built & Delivered In 24 Hours"}
+    beforeBadge={isSkoolPage ? "Before Skool" : isAiUgcPage ? "Before AI UGC" : isTikTokAgencyPage ? "Before Agency Setup" : isFameswapPage ? "Before Escrow" : isLinkStackPage ? "Before LinkStack" : isDfyDavePage ? "Before DFY Dave" : "Before Room30"}
+    beforeQuote={isSkoolPage ? "Paying $149–$399/mo for Kajabi or Teachable while struggling with ghost-town engagement in dead Facebook groups where nobody sees course updates." : isAiUgcPage ? "Spending $250+ per video on unreliable TikTok creators, waiting weeks for shipping and reshoots, and burning ad budget on creative fatigue." : isTikTokAgencyPage ? "Grinding 100+ organic videos for 4 months trying to hit 5,000 followers, only to get hit with 200-view shadowbans and strict regional restrictions." : isFameswapPage ? "Risking hundreds of dollars sending irreversible crypto or PayPal Friends & Family payments on Discord or unmoderated forums only to have accounts pulled back." : isLinkStackPage ? "Paying $29–$99/month for Stan Store, another $15–$45/month for ManyChat, and losing 40% of mobile buyers to clunky link trees." : isDfyDavePage ? "Stuck in the 12-month subscriber grind, struggling to hit 4,000 watch hours, and earning $0 for months of video production." : "Exhausted by technical hurdles, constant software subscriptions, and anxiety about putting my face on camera."}
+    afterBadge={isSkoolPage ? "After Skool Setup" : isAiUgcPage ? "After AI UGC Deployment" : isTikTokAgencyPage ? "After Agency Handover" : isFameswapPage ? "After Fameswap Handover" : isLinkStackPage ? "After LinkStack Setup" : isDfyDavePage ? "After Turnkey Handover" : "After 24-Hour Setup"}
+    afterQuote={isSkoolPage ? "Running an addicted, highly engaged community where members climb leaderboards, complete courses, and pay recurring monthly subscriptions directly to Stripe." : isAiUgcPage ? "Producing 50+ photorealistic video ad variations in hours, testing unlimited psychological hooks, and scaling ROAS without human creator bottlenecks." : isTikTokAgencyPage ? "Operating a pre-qualified US TikTok Shop account with day-1 product tagging rights, active Creator Rewards, and automated 10%–30% affiliate commissions." : isFameswapPage ? "Taking ownership of an established, strike-free channel with guaranteed original email (OGE) access and an inspection period before releasing funds." : isLinkStackPage ? "Running a unified bio storefront with 0% software tax, automated Instagram/TikTok DM sales funnels, and instant Stripe payouts." : isDfyDavePage ? "Owning an enrolled, cash-flowing digital media asset with immediate monetization, automated production, and zero camera requirements." : "Effortlessly managing a self-liquidating AI influencer portfolio in 15 minutes a day, enjoying 100% privacy and recurring profits."}
+    workflowTitle={isSkoolPage ? "The 4-Step Skool Community Flywheel" : isAiUgcPage ? "The Turnkey AI UGC Video Pipeline" : isTikTokAgencyPage ? "The TikTok Shop Agency Scaling Architecture" : isFameswapPage ? "The 4-Step Escrow Handover Protocol" : isLinkStackPage ? "The Zero-Friction Creator Commerce Protocol" : isDfyDavePage ? "The Turnkey Asset Handover Architecture" : "The 24-Hour Automated Execution Architecture"}
+    workflowSubtitle={isSkoolPage ? "How Skool unifies discussions, gamified leveling, and course classrooms to drive 80%+ member retention." : isAiUgcPage ? "How trained LoRA weights and photorealistic lip-sync synthesize unlimited video ads at 90% lower cost." : isTikTokAgencyPage ? "How pre-qualified accounts bypass follower gates and unlock native viral product commission streams." : isFameswapPage ? "How Fameswap secures buyer funds, audits account compliance, and transfers root credentials safely." : isLinkStackPage ? "How LinkStack converts social traffic into direct Stripe sales and newsletter subscribers with zero technical overhead." : isDfyDavePage ? "How pre-monetized channels and digital assets are securely transferred and linked to your payout accounts." : "How our turnkey systems eliminate technical bottlenecks from niche selection to high-ticket revenue capture."}
     isDfyDave={isDfyDavePage}
     isLinkStack={isLinkStackPage}
     isFameswap={isFameswapPage}
+    isSkool={isSkoolPage}
+    isAiUgc={isAiUgcPage}
+    isTikTokAgency={isTikTokAgencyPage}
     isRoom30={isRoom30Page}
     affiliateUrl={customAffiliateUrl}
     midCtaText={customCtaText || "Lock In Your Turnkey Solution"}
-    midCtaSubtext={isFameswapPage ? "100% Escrow Protection • 24–72h Buyer Inspection Window • Verified OGE Transfer" : isLinkStackPage ? "Free Forever Core Account • Instant Direct Stripe Payouts • No Credit Card Required" : isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}
+    midCtaSubtext={isSkoolPage ? "14-Day Free Trial • Flat $99/mo Unlimited • Direct Stripe Payouts" : isAiUgcPage ? "100% Brand-Owned Persona • Sub-$10 Creative Cost • 24h Turnkey Handover" : isTikTokAgencyPage ? "Day-1 Product Showcase • Verified US/UK Standing • Neutral Escrow Protection" : isFameswapPage ? "100% Escrow Protection • 24–72h Buyer Inspection Window • Verified OGE Transfer" : isLinkStackPage ? "Free Forever Core Account • Instant Direct Stripe Payouts • No Credit Card Required" : isDfyDavePage ? "Backed by Dave Nick Onboarding Protocol & 24/7 Verified Handover Support" : "Backed by 24-Hour Handover Protocol & Dedicated Implementation"}
   />
+
+  {/* Skool Verified Independent Audit & Scorecard */}
+  {isSkoolPage && spoke.category === "reviews" && (
+    <section class="py-12 bg-slate-900/30 border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <span>Verified Community Audit • 2026 Assessment</span>
+          </div>
+          <h2 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            Independent Audit: Skool Creator Community Platform
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Comprehensive evaluation of gamified engagement mechanics, student course completion velocity, flat fee pricing integrity, and 40% recurring partner economics.
+          </p>
+        </div>
+
+        <!-- Overall Score Card -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-6 sm:p-8 shadow-2xl mb-8">
+          <div class="flex flex-col sm:flex-row items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Community Architecture Verdict</div>
+              <div class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 mt-1">
+                <span>Top-Rated Creator Community & Course Platform</span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-right">
+                <div class="text-xs text-slate-400 font-medium">Composite Score</div>
+                <div class="text-xs text-amber-400 font-bold">Tier 1 Rating</div>
+              </div>
+              <div class="w-16 h-16 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex items-center justify-center font-black text-2xl text-amber-400 shadow-inner">
+                9.6
+              </div>
+            </div>
+          </div>
+
+          <!-- 6-Metric Audit Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Gamification & Retention</span>
+                <span class="text-xs font-bold text-amber-400">9.8 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Automated points and level progression yield 3x higher participation than static Facebook groups.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Software Fee Predictability</span>
+                <span class="text-xs font-bold text-amber-400">9.9 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Flat $99/mo eliminates tiered member penalty fees and costly third-party video hosting.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Direct Stripe Monetization</span>
+                <span class="text-xs font-bold text-amber-400">9.8 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Direct Stripe payouts for one-time and recurring memberships with zero hidden platform cuts.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Classroom Integration</span>
+                <span class="text-xs font-bold text-amber-400">9.5 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Seamless classroom tab keeps students learning and discussing in a single unified dashboard.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Mobile App Ingestion</span>
+                <span class="text-xs font-bold text-amber-400">9.7 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">High-rated iOS and Android push notifications keep daily active member engagement over 80%.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-slate-300">Creator Affiliate Economics</span>
+                <span class="text-xs font-bold text-amber-400">9.7 / 10</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Founding affiliate program pays 40% recurring lifetime MRR ($39.60/month per active group).</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+            <span class="italic text-center sm:text-left">
+              "Auditor Verdict: Skool is the premier community and course platform for creators seeking high member completion rates and predictable flat-rate subscription economics."
+            </span>
+            <a
+              href={customAffiliateUrl}
+              class="flex-shrink-0 font-bold text-amber-400 hover:text-amber-300 underline"
+            >
+              Launch Your 14-Day Free Skool Trial →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   {/* Fameswap Verified Independent Audit & Scorecard */}
   {isFameswapPage && spoke.category === "reviews" && (
@@ -1082,7 +1284,7 @@ const productSchema = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <h2 class="text-xl sm:text-3xl font-bold text-white tracking-tight mb-2">
-          {isFameswapPage ? "Related Social Media & Turnkey Blueprints" : isLinkStackPage ? "Related Creator Commerce Blueprints" : isDfyDavePage ? "Related Turnkey Assets & Blueprints" : "Related AI Portfolios & Use Cases"}
+          {isSkoolPage ? "Related Creator Community & Membership Blueprints" : isTikTokAgencyPage ? "Related E-Commerce & Creator Blueprints" : isFameswapPage ? "Related Social Media & Turnkey Blueprints" : isLinkStackPage ? "Related Creator Commerce Blueprints" : isDfyDavePage ? "Related Turnkey Assets & Blueprints" : "Related AI Portfolios & Use Cases"}
         </h2>
         <p class="text-slate-400 text-sm">
           Explore specialized turnkey frameworks designed for complementary professions, channels, and business models.
