@@ -12,3 +12,4 @@ All sites built in this workspace or spawned in subdirectories MUST adhere to th
 7. **Complete Favicon Suite:** Generate multi-resolution icons (`favicon.ico`, `favicon.svg`, `favicon-48x48.png` for Google SERP, 32x32, 16x16, `apple-touch-icon.png`, `site.webmanifest`).
 8. **Cloudflare Edge Routing:** Deploy `_worker.js` for instant 301 redirects from `www` to apex canonical, and always deploy with `--branch=main`.
 9. **Search Ingestion:** Submit sitemap to Google Search Console via Service Account API and ping IndexNow (`api.indexnow.org` and `bing.com`) for all site URLs.
+10. **Merchant Firewall (`petmedoutlet.com`):** NEVER link or redirect to `1800petmeds.com` or `allivet.com`. All competitor benchmark rows must route to authorized paying partners (`CanadaPetCare`, `Pet Optimum`, `ALZOO`). See `.agents/rules/merchant-firewall.md`.
